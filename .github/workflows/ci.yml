@@ -63,12 +63,12 @@ jobs:
         run: cargo install just
 
       - name: Build
-        run: cd book && just build
+        run: just build
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './book/book/html'
+          path: './output/html'
 
       - name: Deploy to GitHub Pages
         id: deployment

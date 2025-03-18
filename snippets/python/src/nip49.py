@@ -25,7 +25,7 @@ def decrypt():
     # ANCHOR_END: parse-ncryptsec
 
     # ANCHOR: decrypt
-    secret_key = encrypted.to_secret_key("nostr")
+    secret_key = encrypted.decrypt("nostr")
     # ANCHOR_END: decrypt
 
     print(f"Decrypted secret key: {secret_key.to_bech32()}")

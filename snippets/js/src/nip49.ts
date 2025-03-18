@@ -26,7 +26,7 @@ function decrypt() {
     // ANCHOR_END: parse-ncryptsec
 
     // ANCHOR: decrypt
-    let secretKey: SecretKey = encrypted.toSecretKey("nostr");
+    let secretKey: SecretKey = encrypted.asSecretKey("nostr");
     // ANCHOR_END: decrypt
 
     console.log("Decrypted secret key:", secretKey.toBech32());

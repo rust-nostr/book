@@ -10,7 +10,7 @@ dependencies:
   nostr_sdk:
     git:
       url: https://github.com/rust-nostr/nostr-sdk-flutter.git
-      ref: f732b3f44d335aa993eb9cc96b384743cefd28b0
+      ref: 22f12c9ba52daebe8ba98f65f02ffe63fab886a8
 
 dev_dependencies:
   lints: ^3.0.0

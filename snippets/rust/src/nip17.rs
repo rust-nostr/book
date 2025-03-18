@@ -26,7 +26,7 @@ pub async fn run() -> Result<()> {
         .kind(Kind::GiftWrap)
         .pubkey(bob_keys.public_key())
         .limit(0);
-    let subscription_id = bob_client.subscribe(message_filter, None).await?;
+    let output = bob_client.subscribe(message_filter, None).await?;
 
     // Alice sends private message to Bob
     alice_client.send_private_msg(bob_keys.public_key(), "Hello Bob!", []).await?;
@@ -46,7 +46,7 @@ pub async fn run() -> Result<()> {
         Ok(false)
     }).await?;
 
-    bob_client.unsubscribe(subscription_id.val).await;
+    bob_client.unsubscribe(output.id()).await;
 
     // ANCHOR_END: nip17
 

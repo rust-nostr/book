@@ -27,7 +27,7 @@ func decrypt() throws {
     // ANCHOR_END: parse-ncryptsec
 
     // ANCHOR: decrypt
-    let secretKey = try encrypted.toSecretKey(password: "nostr")
+    let secretKey = try encrypted.decrypt(password: "nostr")
     // ANCHOR_END: decrypt
 
     print("Decrypted secret key: \(try secretKey.toBech32())")

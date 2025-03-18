@@ -1,4 +1,4 @@
-import {EventId, Keys, Timestamp, Kind, EventBuilder, loadWasmSync} from "@rust-nostr/nostr-sdk"
+import {EventId, Keys, Timestamp, Kind, EventBuilder, loadWasmSync, Tags} from "@rust-nostr/nostr-sdk"
 
 function eventId() {
     // Load WASM
@@ -12,7 +12,7 @@ function eventId() {
 
     // ANCHOR: build-event-id
     console.log("  Build Event ID:");
-    let event_id = new EventId(keys.publicKey, Timestamp.now(), new Kind(1), [], "");
+    let event_id = new EventId(keys.publicKey, Timestamp.now(), new Kind(1), new Tags(), "");
     console.log(`     - ${event_id}`);
     // ANCHOR_END: build-event-id
 

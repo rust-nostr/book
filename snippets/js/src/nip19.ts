@@ -1,4 +1,13 @@
-import {Keys, EventBuilder, Nip19Profile, Nip19Event, Coordinate, Kind, loadWasmSync} from "@rust-nostr/nostr-sdk";
+import {
+    Keys,
+    EventBuilder,
+    Nip19Profile,
+    Nip19Event,
+    Coordinate,
+    Kind,
+    loadWasmSync,
+    Nip19Coordinate
+} from "@rust-nostr/nostr-sdk";
 
 function run() {
     // Load WASM
@@ -51,12 +60,14 @@ function run() {
     // Create NIP-19 coordinate
     let kind = new Kind(0);
     let coord = new Coordinate(kind, keys.publicKey);
-    console.log(` Coordinate (encoded): ${coord.toBech32()}`);
+    let coordinate = new Nip19Coordinate(coord, [])
+    let bech32Coordinate = coordinate.toBech32();
+    console.log(` Coordinate (encoded): ${bech32Coordinate}`);
     // ANCHOR_END: nip19-naddr-encode
 
     // ANCHOR: nip19-naddr-decode
     // Decode NIP-19 coordinate
-    let decode_coord = Coordinate.parse(coord.toBech32());
+    let decode_coord = Nip19Coordinate.fromBech32(bech32Coordinate);
     console.log(` Coordinate (decoded): ${decode_coord}`);
     // ANCHOR_END: nip19-naddr-decode
 }

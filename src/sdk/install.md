@@ -9,14 +9,14 @@ Add the `nostr-sdk` dependency in your `Cargo.toml` file:
 
 ```toml
 [dependencies]
-nostr-sdk = "0.39"
+nostr-sdk = "0.40"
 ```
 
 Alternatively, you can add it directly from `git` source:
 
 ```toml
 [dependencies]
-nostr-sdk = { git = "https://github.com/rust-nostr/nostr", tag = "v0.39.0" }
+nostr-sdk = { git = "https://github.com/rust-nostr/nostr", tag = "v0.40.0" }
 ```
 
 ```admonish info
@@ -45,7 +45,7 @@ Alternatively, you can manually add the dependency in your `requrements.txt`, `s
 <!-- TODO: change the supported python versions (add 3.13) -->
 
 ```
-nostr-sdk==0.39.0
+nostr-sdk==0.40.0
 ```
 
 Import the library in your code:
@@ -65,7 +65,7 @@ following [these instructions](https://github.com/rust-nostr/nostr/blob/master/b
 
 | 3.8 | 3.9 | 3.10 | 3.11 | 3.12 | 3.13 |
 |-----|-----|------|------|------|------|
-| ❌   | ✅   | ✅    | ✅    | ✅    | ❌    |
+| ❌   | ✅   | ✅    | ✅    | ✅    | ✅    |
 
 #### Platform support
 
@@ -104,7 +104,7 @@ Alternatively, you can manually add the dependency in your `package.json` file:
 ```json
 {
     "dependencies": {
-        "@rust-nostr/nostr-sdk": "0.39.0"
+        "@rust-nostr/nostr-sdk": "0.40.0"
     }
 }
 ```
@@ -158,7 +158,7 @@ repositories {
 }
 
 dependencies { 
-    implementation("org.rust-nostr:nostr-sdk:0.39.0")
+    implementation("org.rust-nostr:nostr-sdk:0.40.0")
 }
 ```
 
@@ -170,7 +170,7 @@ repositories {
 }
 
 dependencies { 
-    implementation("org.rust-nostr:nostr-sdk-jvm:0.39.0")
+    implementation("org.rust-nostr:nostr-sdk-jvm:0.40.0")
 }
 ```
 
@@ -239,7 +239,7 @@ as a package dependency in Xcode.
 Add the following to the dependency array in your `Package.swift`:
 
 ``` swift
-.package(url: "https://github.com/rust-nostr/nostr-sdk-swift.git", from: "0.39.0"),
+.package(url: "https://github.com/rust-nostr/nostr-sdk-swift.git", from: "0.40.0"),
 ```
 
 ### Supported platforms
@@ -248,13 +248,11 @@ Add the following to the dependency array in your `Package.swift`:
 |------------------|--------|---------|-------|-----|
 | iOS (>=14.0)     | ❌      | ✅       | ❌     | ❌   |
 | iOS Simulator    | ✅      | ✅       | ❌     | ❌   |
-| **Mac Catalyst   | ✅      | ✅       | ❌     | ❌   |
+| Mac Catalyst     | ✅      | ✅       | ❌     | ❌   |
 | macOS (>=12.0)   | ✅      | ✅       | ❌     | ❌   |
 | visionOS (>=1.0) | ❌      | ❌       | ❌     | ❌   |
 | watchOS          | ❌      | ❌       | ❌     | ❌   |
 | tvOS             | ❌      | ❌       | ❌     | ❌   |
-
-** Available from `0.40.0-beta.1`!
 
 </section>
 
@@ -267,7 +265,7 @@ Add the following code to your package:
 nostr_sdk:
     git:
         url: https://github.com/rust-nostr/nostr-sdk-flutter.git
-        ref: f732b3f44d335aa993eb9cc96b384743cefd28b0
+        ref: 22f12c9ba52daebe8ba98f65f02ffe63fab886a8
 ```
 
 </section>

@@ -28,7 +28,7 @@ fun decrypt() {
     // ANCHOR_END: parse-ncryptsec
 
     // ANCHOR: decrypt
-    val secretKey: SecretKey = encrypted.toSecretKey(password = "nostr")
+    val secretKey: SecretKey = encrypted.decrypt(password = "nostr")
     // ANCHOR_END: decrypt
 
     println("Decrypted secret key: ${secretKey.toBech32()}")

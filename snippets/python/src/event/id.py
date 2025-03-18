@@ -1,4 +1,4 @@
-from nostr_sdk import EventId, Keys, Timestamp, Kind, EventBuilder
+from nostr_sdk import EventId, Keys, Timestamp, Kind, EventBuilder, Tags
 
 
 def event_id():
@@ -9,7 +9,7 @@ def event_id():
 
     # ANCHOR: build-event-id
     print("  Build Event ID:")
-    event_id = EventId(keys.public_key(), Timestamp.now(), Kind(1), [], "content")
+    event_id = EventId(keys.public_key(), Timestamp.now(), Kind(1), Tags(), "content")
     print(f"     - {event_id}")
     # ANCHOR_END: build-event-id
 

@@ -1,4 +1,4 @@
-from nostr_sdk import Keys, EventBuilder, Nip19Profile, Nip19, Nip19Event, Coordinate, Kind
+from nostr_sdk import Keys, EventBuilder, Nip19Profile, Nip19, Nip19Event, Coordinate, Kind, Nip19Coordinate
 
 
 def nip19():
@@ -51,12 +51,13 @@ def nip19():
     # ANCHOR: nip19-naddr-encode
     # Create NIP-19 coordinate
     coord = Coordinate(Kind(0),keys.public_key())
-    print(f" Coordinate (encoded): {coord.to_bech32()}")
+    coordinate = Nip19Coordinate(coord, [])
+    print(f" Coordinate (encoded): {coordinate.to_bech32()}")
     # ANCHOR_END: nip19-naddr-encode
 
     # ANCHOR: nip19-naddr-decode
     # Decode NIP-19 coordinate
-    decode_coord = Nip19.from_bech32(coord.to_bech32())
+    decode_coord = Nip19.from_bech32(coordinate.to_bech32())
     print(f" Coordinate (decoded): {decode_coord}")
     # ANCHOR_END: nip19-naddr-decode
 

@@ -10,7 +10,7 @@ pub fn encrypt() -> Result<()> {
     let password: &str = "nostr";
     let encrypted: EncryptedSecretKey = secret_key.encrypt(password)?;
     // ANCHOR_END: encrypt-default
-    
+
     println!("Encrypted secret key: {}", encrypted.to_bech32()?);
 
     // ANCHOR: encrypt-custom
@@ -28,7 +28,7 @@ pub fn decrypt() -> Result<()> {
     // ANCHOR_END: parse-ncryptsec
 
     // ANCHOR: decrypt
-    let secret_key: SecretKey = encrypted.to_secret_key("nostr")?;
+    let secret_key: SecretKey = encrypted.decrypt("nostr")?;
     // ANCHOR_END: decrypt
 
     println!("Decrypted secret key: {}", secret_key.to_bech32()?);

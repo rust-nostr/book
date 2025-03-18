@@ -1,4 +1,5 @@
-from nostr_sdk import Keys, PublicKey, EventBuilder, EventId, Nip21, Nip19Profile, Nip19Event, Kind, Coordinate
+from nostr_sdk import Keys, PublicKey, EventBuilder, EventId, Nip21, Nip19Profile, Nip19Event, Kind, Coordinate, \
+    Nip19Coordinate
 
 
 def nip21():
@@ -72,16 +73,11 @@ def nip21():
 
     # ANCHOR: naddr
     coord = Coordinate(Kind(0), keys.public_key())
+    coordinate = Nip19Coordinate(coord, ["wss://relay.damus.io"])
 
     # URI naddr
-    coord_uri = coord.to_nostr_uri()
-    print(f" Coordinate (URI):    {coord_uri}")
-
-    # bech32 naddr
-    coord_parse = Nip21.parse(coord_uri)
-    if coord_parse.as_enum().is_coord():
-        coord_bech32 = Coordinate.parse(coord_uri).to_bech32()
-        print(f" Coordinate (bech32): {coord_bech32}")
+    coord_uri = coordinate.to_nostr_uri()
+    print(f" Coordinate (URI): {coord_uri}")
     # ANCHOR_END: naddr
 
 if __name__ == '__main__':

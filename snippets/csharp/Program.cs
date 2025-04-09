@@ -12,5 +12,8 @@ internal static class Program
         var keys = new KeysGenRestore();
         keys.Generate();
         keys.Restore();
+
+        var json = new EventJson();
+        json.DeSer();
     }
 }

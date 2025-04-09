@@ -49,6 +49,15 @@
 
 </section>
 
+<div slot="title">C#</div>
+<section>
+
+```swift,ignore
+{{#include ../../../snippets/csharp/EventJson.cs:deserialize}}
+```
+
+</section>
+
 <div slot="title">Flutter</div>
 <section>
 
@@ -108,6 +117,15 @@
 
 </section>
 
+<div slot="title">C#</div>
+<section>
+
+```swift,ignore
+{{#include ../../../snippets/csharp/EventJson.cs:serialize}}
+```
+
+</section>
+
 <div slot="title">Flutter</div>
 <section>
 
@@ -163,6 +181,15 @@
 
 ```swift,ignore
 {{#include ../../../snippets/swift/NostrSnippets/Sources/Event/Json.swift:full}}
+```
+
+</section>
+
+<div slot="title">C#</div>
+<section>
+
+```swift,ignore
+{{#include ../../../snippets/csharp/EventJson.cs:full}}
 ```
 
 </section>

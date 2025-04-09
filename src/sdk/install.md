@@ -259,11 +259,23 @@ Add the following to the dependency array in your `Package.swift`:
 <div slot="title">C#</div>
 <section>
 
+### Import the library
+
 The `Nostr.Sdk` package is available on [nuget](https://www.nuget.org/packages/Nostr.Sdk):
 
 ```bash
 dotnet add package Nostr.Sdk --version 0.40.0
 ```
+
+Requires .NET 6.0 or above.
+
+### Supported platforms
+
+| OS      | x64 | aarch64 | arm | i686 |
+|---------|-----|---------|-----|------|
+| Linux   | ✅   | ✅       | ❌   | ❌    |
+| macOS   | ✅   | ✅       | ❌   | ❌    |
+| Windows | ✅   | ❌       | ❌   | ❌    |
 
 </section>
 

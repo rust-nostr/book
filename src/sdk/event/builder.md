@@ -55,6 +55,15 @@ In the below example we are going to build a text note:
 
 </section>
 
+<div slot="title">C#</div>
+<section>
+
+```swift,ignore
+{{#include ../../../snippets/csharp/EventBuilding.cs:standard}}
+```
+
+</section>
+
 <div slot="title">Flutter</div>
 <section>
 
@@ -115,6 +124,15 @@ setting a fixed timestamp or adding more tags:
 
 </section>
 
+<div slot="title">C#</div>
+<section>
+
+```swift,ignore
+{{#include ../../../snippets/csharp/EventBuilding.cs:std-custom}}
+```
+
+</section>
+
 <div slot="title">Flutter</div>
 <section>
 
@@ -170,6 +188,15 @@ If you need to create a non-standard event, you can use the default `EventBuilde
 
 ```swift,ignore
 {{#include ../../../snippets/swift/NostrSnippets/Sources/Event/Builder.swift:custom}}
+```
+
+</section>
+
+<div slot="title">C#</div>
+<section>
+
+```swift,ignore
+{{#include ../../../snippets/csharp/EventBuilding.cs:custom}}
 ```
 
 </section>
@@ -235,6 +262,15 @@ After the `EventBuilder` construction, you can finally build and sign the event:
 
 </section>
 
+<div slot="title">C#</div>
+<section>
+
+```swift,ignore
+{{#include ../../../snippets/csharp/EventBuilding.cs:sign}}
+```
+
+</section>
+
 <div slot="title">Flutter</div>
 <section>
 
@@ -290,6 +326,15 @@ After the `EventBuilder` construction, you can finally build and sign the event:
 
 ```swift,ignore
 {{#include ../../../snippets/swift/NostrSnippets/Sources/Event/Builder.swift:full}}
+```
+
+</section>
+
+<div slot="title">C#</div>
+<section>
+
+```swift,ignore
+{{#include ../../../snippets/csharp/EventBuilding.cs:full}}
 ```
 
 </section>

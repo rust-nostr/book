@@ -51,6 +51,15 @@ To generate a new key pair use the `generate()` method:
 
 </section>
 
+<div slot="title">C#</div>
+<section>
+
+```swift,ignore
+{{#include ../../../snippets/csharp/KeysGenRestore.cs:generate}}
+```
+
+</section>
+
 <div slot="title">Flutter</div>
 <section>
 
@@ -108,6 +117,14 @@ To generate a new key pair use the `generate()` method:
 {{#include ../../../snippets/swift/NostrSnippets/Sources/Keys.swift:restore}}
 ```
 
+</section>
+
+<div slot="title">C#</div>
+<section>
+
+```swift,ignore
+{{#include ../../../snippets/csharp/KeysGenRestore.cs:restore}}
+```
 </section>
 
 <div slot="title">Flutter</div>

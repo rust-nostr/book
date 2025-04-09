@@ -256,6 +256,17 @@ Add the following to the dependency array in your `Package.swift`:
 
 </section>
 
+<div slot="title">C#</div>
+<section>
+
+The `Nostr.Sdk` package is available on [nuget](https://www.nuget.org/packages/Nostr.Sdk):
+
+```bash
+dotnet add package Nostr.Sdk --version 0.40.0
+```
+
+</section>
+
 <div slot="title">Flutter</div>
 <section>
 

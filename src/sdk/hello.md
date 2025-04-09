@@ -52,6 +52,15 @@ The first step is to generate random keys needed for the client and construct th
 
 </section>
 
+<div slot="title">C#</div>
+<section>
+
+```cs,ignore
+{{#include ../../snippets/csharp/Hello.cs:client}}
+```
+
+</section>
+
 <div slot="title">Flutter</div>
 <section>
 
@@ -108,6 +117,15 @@ Next, add some relays to your client and connect to them.
 
 ```swift,ignore
 {{#include ../../snippets/swift/NostrSnippets/Sources/Hello.swift:connect}}
+```
+
+</section>
+
+<div slot="title">C#</div>
+<section>
+
+```cs,ignore
+{{#include ../../snippets/csharp/Hello.cs:connect}}
 ```
 
 </section>
@@ -174,6 +192,15 @@ build a text note with the [EventBuilder](event/builder.md) and publish it to re
 
 </section>
 
+<div slot="title">C#</div>
+<section>
+
+```cs,ignore
+{{#include ../../snippets/csharp/Hello.cs:publish}}
+```
+
+</section>
+
 <div slot="title">Flutter</div>
 <section>
 
@@ -234,6 +261,15 @@ Published the event, you can inspect the output to ensure everything worked corr
 
 </section>
 
+<div slot="title">C#</div>
+<section>
+
+```cs,ignore
+{{#include ../../snippets/csharp/Hello.cs:output}}
+```
+
+</section>
+
 <div slot="title">Flutter</div>
 <section>
 
@@ -290,6 +326,15 @@ Here’s the full example that includes all the steps from generating keys to in
 
 ```swift,ignore
 {{#include ../../snippets/swift/NostrSnippets/Sources/Hello.swift:full}}
+```
+
+</section>
+
+<div slot="title">C#</div>
+<section>
+
+```cs,ignore
+{{#include ../../snippets/csharp/Hello.cs:full}}
 ```
 
 </section>

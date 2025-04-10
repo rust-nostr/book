@@ -4,19 +4,28 @@ rust:
 	cd rust && cargo build
 
 python:
-	cd python && just test
+	bash python/check.sh
 
 js:
-	cd js && just test
+	bash js/check.sh
 
 kotlin:
-	cd kotlin && just test
-
-flutter:
-	cd flutter && just test
-
-swift:
-	cd swift && just test
+	cd kotlin && ./gradlew build
 
 csharp:
     cd csharp && dotnet build
+
+flutter:
+	bash flutter/check.sh
+
+[macos]
+swift:
+	cd swift/NostrSnippets && swift build
+
+[linux]
+test:
+    @echo "This command is not supported on Linux platforms (require macOS)."
+
+[windows]
+test:
+    @echo "This command is not supported on Windows platforms (require macOS)."

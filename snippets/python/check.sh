@@ -15,4 +15,4 @@ python -m venv "${PYTHON_ENV_PATH}" || virtualenv "${PYTHON_ENV_PATH}"
 pip install -r "${SCRIPT_DIR}/requirements.txt"
 
 # Check
-PYRIGHT_PYTHON_FORCE_VERSION=latest pyright "${SCRIPT_DIR}/src"
+pyright "${SCRIPT_DIR}/src"

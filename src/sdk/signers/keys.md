@@ -54,7 +54,7 @@ To generate a new key pair use the `generate()` method:
 <div slot="title">C#</div>
 <section>
 
-```swift,ignore
+```cs,ignore
 {{#include ../../../snippets/csharp/KeysGenRestore.cs:generate}}
 ```
 
@@ -122,7 +122,7 @@ To generate a new key pair use the `generate()` method:
 <div slot="title">C#</div>
 <section>
 
-```swift,ignore
+```cs,ignore
 {{#include ../../../snippets/csharp/KeysGenRestore.cs:restore}}
 ```
 </section>

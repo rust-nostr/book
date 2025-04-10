@@ -58,7 +58,7 @@ In the below example we are going to build a text note:
 <div slot="title">C#</div>
 <section>
 
-```swift,ignore
+```cs,ignore
 {{#include ../../../snippets/csharp/EventBuilding.cs:standard}}
 ```
 
@@ -127,7 +127,7 @@ setting a fixed timestamp or adding more tags:
 <div slot="title">C#</div>
 <section>
 
-```swift,ignore
+```cs,ignore
 {{#include ../../../snippets/csharp/EventBuilding.cs:std-custom}}
 ```
 
@@ -195,7 +195,7 @@ If you need to create a non-standard event, you can use the default `EventBuilde
 <div slot="title">C#</div>
 <section>
 
-```swift,ignore
+```cs,ignore
 {{#include ../../../snippets/csharp/EventBuilding.cs:custom}}
 ```
 
@@ -265,7 +265,7 @@ After the `EventBuilder` construction, you can finally build and sign the event:
 <div slot="title">C#</div>
 <section>
 
-```swift,ignore
+```cs,ignore
 {{#include ../../../snippets/csharp/EventBuilding.cs:sign}}
 ```
 
@@ -333,7 +333,7 @@ After the `EventBuilder` construction, you can finally build and sign the event:
 <div slot="title">C#</div>
 <section>
 
-```swift,ignore
+```cs,ignore
 {{#include ../../../snippets/csharp/EventBuilding.cs:full}}
 ```
 

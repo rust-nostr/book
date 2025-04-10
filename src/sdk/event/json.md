@@ -52,7 +52,7 @@
 <div slot="title">C#</div>
 <section>
 
-```swift,ignore
+```cs,ignore
 {{#include ../../../snippets/csharp/EventJson.cs:deserialize}}
 ```
 
@@ -120,7 +120,7 @@
 <div slot="title">C#</div>
 <section>
 
-```swift,ignore
+```cs,ignore
 {{#include ../../../snippets/csharp/EventJson.cs:serialize}}
 ```
 
@@ -188,7 +188,7 @@
 <div slot="title">C#</div>
 <section>
 
-```swift,ignore
+```cs,ignore
 {{#include ../../../snippets/csharp/EventJson.cs:full}}
 ```
 

@@ -20,8 +20,7 @@ concurrency:
 
 jobs:
   check-book:
-    name: Check book
-    runs-on: macos-latest # Use macOS to check also Swift snippets
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -29,10 +28,55 @@ jobs:
       - name: Install just
         run: cargo install just
 
+      - name: Check
+        run: just build
+
+      - name: Upload built book
+        uses: actions/upload-artifact@v4
+        with:
+          name: built-book
+          path: ./output/html
+
+  check-rust:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Check
+        working-directory: snippets/rust
+        run: cargo build
+
+  check-python:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
       - name: Setup Python
         uses: actions/setup-python@v4
         with:
           python-version: "3.12"
+
+      - name: Check
+        working-directory: snippets/python
+        run: bash check.sh
+
+  check-js:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Check
+        working-directory: snippets/js
+        run: bash check.sh
+
+  check-kotlin:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
 
       # Required for kotlin snippets
       - name: Set up Java 17
@@ -41,20 +85,50 @@ jobs:
           distribution: "temurin"
           java-version: 17
 
+      - name: Check
+        working-directory: snippets/kotlin
+        run: ./gradlew build
+
+  check-swift:
+    runs-on: macos-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Check
+        working-directory: snippets/swift
+        run: swift build
+
+  check-csharp:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
       - name: Setup dotnet
         uses: actions/setup-dotnet@v4
         with:
           dotnet-version: '9.0.x'
 
-      # Required for dart/flutter snippets
+      - name: Check
+        working-directory: snippets/csharp
+        run: dotnet build
+
+  check-flutter:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
       - uses: subosito/flutter-action@v2
 
       - name: Check
-        run: just check
+        working-directory: snippets/flutter
+        run: bash check.sh
 
   deploy:
     name: Deploy book
-    needs: [check-book]
+    needs: [check-book, check-rust, check-python, check-js, check-kotlin, check-swift, check-csharp, check-flutter]
     if: github.ref == 'refs/heads/master'
     environment:
       name: github-pages
@@ -64,13 +138,13 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Install just
-        run: cargo install just
+      - name: Download built book
+        uses: actions/download-artifact@v4
+        with:
+          name: built-book
+          path: ./output/html
 
-      - name: Build
-        run: just build
-
-      - name: Upload artifact
+      - name: Upload pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: './output/html'

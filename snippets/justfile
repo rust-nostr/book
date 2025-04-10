@@ -20,7 +20,7 @@ flutter:
 
 [macos]
 swift:
-	cd swift/NostrSnippets && swift build
+	cd swift && swift build
 
 [linux]
 test:

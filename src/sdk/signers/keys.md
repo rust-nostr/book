@@ -46,7 +46,7 @@ To generate a new key pair use the `generate()` method:
 <section>
 
 ```swift,ignore
-{{#include ../../../snippets/swift/NostrSnippets/Sources/Keys.swift:generate}}
+{{#include ../../../snippets/swift/Sources/Keys.swift:generate}}
 ```
 
 </section>
@@ -114,7 +114,7 @@ To generate a new key pair use the `generate()` method:
 <section>
 
 ```swift,ignore
-{{#include ../../../snippets/swift/NostrSnippets/Sources/Keys.swift:restore}}
+{{#include ../../../snippets/swift/Sources/Keys.swift:restore}}
 ```
 
 </section>

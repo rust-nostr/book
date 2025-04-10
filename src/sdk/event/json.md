@@ -44,7 +44,7 @@
 <section>
 
 ```swift,ignore
-{{#include ../../../snippets/swift/NostrSnippets/Sources/Event/Json.swift:deserialize}}
+{{#include ../../../snippets/swift/Sources/Event/Json.swift:deserialize}}
 ```
 
 </section>
@@ -112,7 +112,7 @@
 <section>
 
 ```swift,ignore
-{{#include ../../../snippets/swift/NostrSnippets/Sources/Event/Json.swift:serialize}}
+{{#include ../../../snippets/swift/Sources/Event/Json.swift:serialize}}
 ```
 
 </section>
@@ -180,7 +180,7 @@
 <section>
 
 ```swift,ignore
-{{#include ../../../snippets/swift/NostrSnippets/Sources/Event/Json.swift:full}}
+{{#include ../../../snippets/swift/Sources/Event/Json.swift:full}}
 ```
 
 </section>

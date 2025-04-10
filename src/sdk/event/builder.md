@@ -50,7 +50,7 @@ In the below example we are going to build a text note:
 <section>
 
 ```swift,ignore
-{{#include ../../../snippets/swift/NostrSnippets/Sources/Event/Builder.swift:standard}}
+{{#include ../../../snippets/swift/Sources/Event/Builder.swift:standard}}
 ```
 
 </section>
@@ -119,7 +119,7 @@ setting a fixed timestamp or adding more tags:
 <section>
 
 ```swift,ignore
-{{#include ../../../snippets/swift/NostrSnippets/Sources/Event/Builder.swift:std-custom}}
+{{#include ../../../snippets/swift/Sources/Event/Builder.swift:std-custom}}
 ```
 
 </section>
@@ -187,7 +187,7 @@ If you need to create a non-standard event, you can use the default `EventBuilde
 <section>
 
 ```swift,ignore
-{{#include ../../../snippets/swift/NostrSnippets/Sources/Event/Builder.swift:custom}}
+{{#include ../../../snippets/swift/Sources/Event/Builder.swift:custom}}
 ```
 
 </section>
@@ -257,7 +257,7 @@ After the `EventBuilder` construction, you can finally build and sign the event:
 <section>
 
 ```swift,ignore
-{{#include ../../../snippets/swift/NostrSnippets/Sources/Event/Builder.swift:sign}}
+{{#include ../../../snippets/swift/Sources/Event/Builder.swift:sign}}
 ```
 
 </section>
@@ -325,7 +325,7 @@ After the `EventBuilder` construction, you can finally build and sign the event:
 <section>
 
 ```swift,ignore
-{{#include ../../../snippets/swift/NostrSnippets/Sources/Event/Builder.swift:full}}
+{{#include ../../../snippets/swift/Sources/Event/Builder.swift:full}}
 ```
 
 </section>

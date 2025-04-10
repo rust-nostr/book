@@ -47,7 +47,7 @@ The first step is to generate random keys needed for the client and construct th
 <section>
 
 ```swift,ignore
-{{#include ../../snippets/swift/NostrSnippets/Sources/Hello.swift:client}}
+{{#include ../../snippets/swift/Sources/Hello.swift:client}}
 ```
 
 </section>
@@ -116,7 +116,7 @@ Next, add some relays to your client and connect to them.
 <section>
 
 ```swift,ignore
-{{#include ../../snippets/swift/NostrSnippets/Sources/Hello.swift:connect}}
+{{#include ../../snippets/swift/Sources/Hello.swift:connect}}
 ```
 
 </section>
@@ -187,7 +187,7 @@ build a text note with the [EventBuilder](event/builder.md) and publish it to re
 <section>
 
 ```swift,ignore
-{{#include ../../snippets/swift/NostrSnippets/Sources/Hello.swift:publish}}
+{{#include ../../snippets/swift/Sources/Hello.swift:publish}}
 ```
 
 </section>
@@ -256,7 +256,7 @@ Published the event, you can inspect the output to ensure everything worked corr
 <section>
 
 ```swift,ignore
-{{#include ../../snippets/swift/NostrSnippets/Sources/Hello.swift:output}}
+{{#include ../../snippets/swift/Sources/Hello.swift:output}}
 ```
 
 </section>
@@ -325,7 +325,7 @@ Here’s the full example that includes all the steps from generating keys to in
 <section>
 
 ```swift,ignore
-{{#include ../../snippets/swift/NostrSnippets/Sources/Hello.swift:full}}
+{{#include ../../snippets/swift/Sources/Hello.swift:full}}
 ```
 
 </section>

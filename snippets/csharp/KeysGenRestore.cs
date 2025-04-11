@@ -5,7 +5,7 @@ using Nostr.Sdk;
 public class KeysGenRestore
 {
     // ANCHOR: generate
-    public void Generate()
+    public static void Generate()
     {
         var keys = Keys.Generate();
 
@@ -22,7 +22,7 @@ public class KeysGenRestore
 
 
     // ANCHOR: restore
-    public void Restore()
+    public static void Restore()
     {
         // Parse keys directly from secret key
         var keys1 = Keys.Parse("nsec1j4c6269y9w0q2er2xjw8sv2ehyrtfxq3jwgdlxj6qfn8z4gjsq5qfvfk99");

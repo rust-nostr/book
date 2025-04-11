@@ -4,7 +4,7 @@ using Nostr.Sdk;
 
 public class Nip44
 {
-    public void Run()
+    public static void Run()
     {
         var keys = Keys.Generate();
 

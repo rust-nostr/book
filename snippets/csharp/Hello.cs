@@ -5,7 +5,7 @@ using Nostr.Sdk;
 
 public class Hello
 {
-    public async Task SayHello()
+    public static async Task SayHello()
     {
         // ANCHOR: client
         var keys = Keys.Generate();

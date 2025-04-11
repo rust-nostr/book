@@ -5,7 +5,7 @@ using Nostr.Sdk;
 
 public class EventBuilding
 {
-    async Task SignAndPrint(NostrSigner signer, EventBuilder builder)
+    private static async Task SignAndPrint(NostrSigner signer, EventBuilder builder)
     {
         // ANCHOR: sign
         var nostrEvent = await builder.Sign(signer);
@@ -14,7 +14,7 @@ public class EventBuilding
         Console.WriteLine(nostrEvent.AsJson());
     }
 
-    public async Task Build()
+    public static async Task Build()
     {
         var keys = Keys.Generate();
         var signer = NostrSigner.Keys(keys);

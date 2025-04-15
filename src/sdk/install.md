@@ -9,14 +9,14 @@ Add the `nostr-sdk` dependency in your `Cargo.toml` file:
 
 ```toml
 [dependencies]
-nostr-sdk = "0.40"
+nostr-sdk = "0.41"
 ```
 
 Alternatively, you can add it directly from `git` source:
 
 ```toml
 [dependencies]
-nostr-sdk = { git = "https://github.com/rust-nostr/nostr", tag = "v0.40.0" }
+nostr-sdk = { git = "https://github.com/rust-nostr/nostr", tag = "v0.41.0" }
 ```
 
 ```admonish info
@@ -45,7 +45,7 @@ Alternatively, you can manually add the dependency in your `requrements.txt`, `s
 <!-- TODO: change the supported python versions (add 3.13) -->
 
 ```
-nostr-sdk==0.40.0
+nostr-sdk==0.41.0
 ```
 
 Import the library in your code:
@@ -59,7 +59,7 @@ from nostr_sdk import *
 The wheels are distributed for the following python `versions` and `platforms`.
 If your `version`/`platform` is not currently supported, 
 you can compile the wheel by yourself 
-following [these instructions](https://github.com/rust-nostr/nostr/blob/master/bindings/nostr-sdk-ffi/README.md#python).
+following [these instructions](https://github.com/rust-nostr/nostr-sdk-ffi/blob/master/BUILD.md#python).
 
 #### Python version
 
@@ -104,7 +104,7 @@ Alternatively, you can manually add the dependency in your `package.json` file:
 ```json
 {
     "dependencies": {
-        "@rust-nostr/nostr-sdk": "0.40.0"
+        "@rust-nostr/nostr-sdk": "0.41.1"
     }
 }
 ```
@@ -158,7 +158,7 @@ repositories {
 }
 
 dependencies { 
-    implementation("org.rust-nostr:nostr-sdk:0.40.0")
+    implementation("org.rust-nostr:nostr-sdk:0.41.0")
 }
 ```
 
@@ -170,7 +170,7 @@ repositories {
 }
 
 dependencies { 
-    implementation("org.rust-nostr:nostr-sdk-jvm:0.40.0")
+    implementation("org.rust-nostr:nostr-sdk-jvm:0.41.0")
 }
 ```
 
@@ -187,9 +187,9 @@ import rust.nostr.sdk.*
 | OS      | x64 | aarch64 | arm | i686 | Package         |
 |---------|-----|---------|-----|------|-----------------|
 | Android | ✅   | ✅       | ✅   | ✅    | `nostr-sdk`     |
-| Linux   | ✅   | ✅       | ❌   | ❌    | `nostr-sdk-jvm` |
+| Linux   | ✅   | ✅       | ❌   | ✅    | `nostr-sdk-jvm` |
 | macOS   | ✅   | ✅       | ❌   | ❌    | `nostr-sdk-jvm` |
-| Windows | ✅   | ❌       | ❌   | ❌    | `nostr-sdk-jvm` |
+| Windows | ✅   | ✅       | ❌   | ✅    | `nostr-sdk-jvm` |
 
 ### Known issues
 
@@ -239,7 +239,7 @@ as a package dependency in Xcode.
 Add the following to the dependency array in your `Package.swift`:
 
 ``` swift
-.package(url: "https://github.com/rust-nostr/nostr-sdk-swift.git", from: "0.40.0"),
+.package(url: "https://github.com/rust-nostr/nostr-sdk-swift.git", from: "0.41.0"),
 ```
 
 ### Supported platforms
@@ -264,7 +264,7 @@ Add the following to the dependency array in your `Package.swift`:
 The `Nostr.Sdk` package is available on [nuget](https://www.nuget.org/packages/Nostr.Sdk):
 
 ```bash
-dotnet add package Nostr.Sdk --version 0.40.0
+dotnet add package Nostr.Sdk --version 0.41.0
 ```
 
 Requires .NET 6.0 or above.
@@ -273,9 +273,9 @@ Requires .NET 6.0 or above.
 
 | OS      | x64 | aarch64 | arm | i686 |
 |---------|-----|---------|-----|------|
-| Linux   | ✅   | ✅       | ❌   | ❌    |
+| Linux   | ✅   | ✅       | ❌   | ✅    |
 | macOS   | ✅   | ✅       | ❌   | ❌    |
-| Windows | ✅   | ❌       | ❌   | ❌    |
+| Windows | ✅   | ✅       | ❌   | ✅    |
 
 </section>
 

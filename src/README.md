@@ -16,7 +16,7 @@
 
 ## Why rust-nostr?
 
-* **Multi-Language Support**: we support native APIs including `Rust`, `Python`, `JavaScript`, `Kotlin`, `Swift` and `Flutter` so you can build nostr apps in your preferred programming language.
+* **Multi-Language Support**: we support native APIs including `Rust`, `Python`, `C#`, `Kotlin`, `Swift`, `JavaScript` and `Flutter` so you can build nostr apps in your preferred programming language.
 
 * **Multi-Platform Support**: write nostr apps for `desktop`, `server`, `mobile`, `web` and/or `embedded` devices!
 

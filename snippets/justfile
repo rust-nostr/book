@@ -23,9 +23,9 @@ swift:
 	cd swift && swift build
 
 [linux]
-test:
+swift:
     @echo "This command is not supported on Linux platforms (require macOS)."
 
 [windows]
-test:
+swift:
     @echo "This command is not supported on Windows platforms (require macOS)."

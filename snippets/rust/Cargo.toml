@@ -3,10 +3,6 @@ name = "snippets-rust"
 version = "0.1.0"
 edition = "2021"
 
-# Prevent this from interfering with workspaces
-[workspace]
-members = ["."]
-
 [dependencies]
 nostr-sdk = { version = "0.41", features = ["all-nips"] }
 nostr-relay-builder = "0.41"

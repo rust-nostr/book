@@ -1,6 +1,7 @@
 # Summary
 
 [Introduction](README.md)
+[Projects](projects.md)
 
 # SDK
 

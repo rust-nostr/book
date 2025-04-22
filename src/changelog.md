@@ -1,4 +1,4 @@
-# Changelogs
+## Changelogs
 
 * Main: <https://github.com/rust-nostr/nostr/blob/master/CHANGELOG.md>
 * Nostr SDK FFI: <https://github.com/rust-nostr/nostr-sdk-ffi/blob/master/CHANGELOG.md>

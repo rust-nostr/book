@@ -50,6 +50,13 @@
 
 ---
 
+# Keyring
+
+* [Getting Started]()
+  * [Installation]()
+
+---
+
 # CLI
 
 * [Getting Started]()

@@ -12,6 +12,7 @@ mod nip44;
 mod nip47;
 mod nip49;
 mod nip59;
+mod req;
 
 #[tokio::main]
 async fn main() {}

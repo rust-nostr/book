@@ -1,3 +1,5 @@
+using Snippets.Req;
+
 namespace Snippets;
 
 internal static class Program
@@ -19,5 +21,8 @@ internal static class Program
         
         // NIP44
         Nip44.Run();
+
+        // Requesting events
+        await Fetch.Run();
     }
 }

@@ -22,6 +22,11 @@
     * [Options](sdk/client/options/index.md)
         * [Proxy](sdk/client/options/proxy.md)
         * [Embedded Tor](sdk/client/options/tor.md)
+    * [Requesting events](sdk/client/req/index.md)
+        * [Fetch](sdk/client/req/fetch.md) 
+        * [Stream](sdk/client/req/stream.md)
+        * [Sync](sdk/client/req/sync.md)
+        * [Subscribe](sdk/client/req/subscribe.md)
 
 * [Middleware]()
     * [Admission]()

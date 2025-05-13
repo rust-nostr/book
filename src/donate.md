@@ -6,10 +6,10 @@ If you actively uses `rust-nostr`, then please consider supporting this project!
 
 #### Bitcoin
 
-* 🔗 On-chain: `bc1quk478kpm45744q5pt3p9j42fnv72ykytmt3z0j`
-* ⚡ Lightning: `pay@yukikishimoto.com`
-* 💧 Liquid: `lq1qqdwn93gehkq4mtz2amsagawgfd6y9ksrkekal5u8tmle07f9fa0kgcnfez4lguhekeeyhy78nfqy8tyqvxayywgpwvm73t6av`
-* Coinos (🔗, ⚡, 🥜, 💧 and BOLT12): <https://coinos.io/yuki>
+- 🔗 On-chain: `bc1quk478kpm45744q5pt3p9j42fnv72ykytmt3z0j`
+- ⚡ Lightning: `pay@yukikishimoto.com`
+- 💧 Liquid: `lq1qqdwn93gehkq4mtz2amsagawgfd6y9ksrkekal5u8tmle07f9fa0kgcnfez4lguhekeeyhy78nfqy8tyqvxayywgpwvm73t6av`
+- Coinos (🔗, ⚡, 🥜, 💧 and BOLT12): <https://coinos.io/yuki>
 
 #### Altcoins
 
@@ -17,9 +17,9 @@ We don't accept coins different from bitcoin.
 If you are interested to support `rust-nostr` with these,
 here you can find some swap services to convert them directly into bitcoin:
 
-* <https://sideshift.ai/>
-* <https://fixedfloat.com/>
-* <https://flyp.me/>
+- <https://sideshift.ai/>
+- <https://fixedfloat.com/>
+- <https://flyp.me/>
 
 Disclaimer: `rust-nostr` is not affiliated in any way with these services!
 
@@ -28,7 +28,7 @@ Disclaimer: `rust-nostr` is not affiliated in any way with these services!
 Consider becoming a sustaining supporter of the `rust-nostr` project by giving a recurring monthly donation.
 
 You can setup an automatically recurring donation here:
-* <https://subscribe.rust-nostr.org> (experimental)
+- <https://subscribe.rust-nostr.org> (experimental)
 
 ### Become a Patron
 

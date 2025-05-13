@@ -16,23 +16,23 @@
 
 ## Why rust-nostr?
 
-* **Multi-Language Support**: we support native APIs including `Rust`, `Python`, `C#`, `Kotlin`, `Swift`, `JavaScript` and `Flutter` so you can build nostr apps in your preferred programming language.
+- **Multi-Language Support**: we support native APIs including `Rust`, `Python`, `C#`, `Kotlin`, `Swift`, `JavaScript` and `Flutter` so you can build nostr apps in your preferred programming language.
 
-* **Multi-Platform Support**: write nostr apps for `desktop`, `server`, `mobile`, `web` and/or `embedded` devices!
+- **Multi-Platform Support**: write nostr apps for `desktop`, `server`, `mobile`, `web` and/or `embedded` devices!
 
-* **WASM Compatibility**: most of our libraries compile to `WebAssembly` so that they can be integrated into web applications. 
+- **WASM Compatibility**: most of our libraries compile to `WebAssembly` so that they can be integrated into web applications. 
 
-* **High performance**: powered by `Rust`'s unparalleled `performance` and `memory safety`, our libraries offers `speed`, `stability` and `reliability`.
+- **High performance**: powered by `Rust`'s unparalleled `performance` and `memory safety`, our libraries offers `speed`, `stability` and `reliability`.
 
-* **Broad NIP Support**: support to most relevant `NIPs`. 
+- **Broad NIP Support**: support to most relevant `NIPs`. 
 
-* **Customizable**: the libraries are built in modular way, allowing to build customized nostr apps.
+- **Customizable**: the libraries are built in modular way, allowing to build customized nostr apps.
 
 ## Communication
 
-* Nostr community: <nostr:naddr1qvzqqqyx7cpzq6xcz9jerqgqkldy8lpg7lglcyj4g3nwzy2cs6u70wejdaj7csnjqyg8wumn8ghj7mn0wd68ytnddakj7qgawaehxw309ahx7um5wghx6at5d9h8jampd3kx2apwvdhk6tcqpfe82um594hx7um5wguyvg2q>
-* Nostr public channel: <nostr:nevent1qvzqqqqq9qpzq6xcz9jerqgqkldy8lpg7lglcyj4g3nwzy2cs6u70wejdaj7csnjqyg8wumn8ghj7mn0wd68ytnddakj7qg4waehxw309ahx7um5wghx77r5wghxgetk9uqzpw86ja20989g7vupv08fq78z03aevh5kheqr6al07v7sslzqxmhhxau0ah>
-* Matrix space with some rooms at [#rustnostr:matrix.org](https://matrix.to/#/#rustnostr:matrix.org).
+- Nostr community: <nostr:naddr1qvzqqqyx7cpzq6xcz9jerqgqkldy8lpg7lglcyj4g3nwzy2cs6u70wejdaj7csnjqyg8wumn8ghj7mn0wd68ytnddakj7qgawaehxw309ahx7um5wghx6at5d9h8jampd3kx2apwvdhk6tcqpfe82um594hx7um5wguyvg2q>
+- Nostr public channel: <nostr:nevent1qvzqqqqq9qpzq6xcz9jerqgqkldy8lpg7lglcyj4g3nwzy2cs6u70wejdaj7csnjqyg8wumn8ghj7mn0wd68ytnddakj7qg4waehxw309ahx7um5wghx77r5wghxgetk9uqzpw86ja20989g7vupv08fq78z03aevh5kheqr6al07v7sslzqxmhhxau0ah>
+- Matrix space with some rooms at [#rustnostr:matrix.org](https://matrix.to/#/#rustnostr:matrix.org).
 
 ## State
 

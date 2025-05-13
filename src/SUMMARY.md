@@ -23,6 +23,10 @@
         * [Proxy](sdk/client/options/proxy.md)
         * [Embedded Tor](sdk/client/options/tor.md)
 
+* [Middleware]()
+    * [Admission]()
+    * [Authentication]()
+
 * [NIPs](sdk/nips/index.md)
     * [NIP-01: Basic protocol flow description](sdk/nips/01.md)
     * [NIP-05: Mapping nostr keys to DNS-based internet identifiers](sdk/nips/05.md)

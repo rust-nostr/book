@@ -7,7 +7,9 @@ If you actively uses `rust-nostr`, then please consider supporting this project!
 #### Bitcoin
 
 - 🔗 On-chain: `bc1quk478kpm45744q5pt3p9j42fnv72ykytmt3z0j`
-- ⚡ Lightning: `pay@yukikishimoto.com`
+- ⚡ Lightning:
+  - `pay@yukikishimoto.com`
+  - `yuki@minibits.cash`
 - 💧 Liquid: `lq1qqdwn93gehkq4mtz2amsagawgfd6y9ksrkekal5u8tmle07f9fa0kgcnfez4lguhekeeyhy78nfqy8tyqvxayywgpwvm73t6av`
 - Coinos (🔗, ⚡, 🥜, 💧 and BOLT12): <https://coinos.io/yuki>
 

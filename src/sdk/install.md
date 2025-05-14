@@ -42,8 +42,6 @@ pip install nostr-sdk
 
 Alternatively, you can manually add the dependency in your `requrements.txt`, `setup.py`, etc.:
 
-<!-- TODO: change the supported python versions (add 3.13) -->
-
 ```
 nostr-sdk==0.41.0
 ```
@@ -54,26 +52,19 @@ Import the library in your code:
 from nostr_sdk import *
 ```
 
-### Support matrix
+### Requirements and supported platforms
 
-The wheels are distributed for the following python `versions` and `platforms`.
-If your `version`/`platform` is not currently supported, 
-you can compile the wheel by yourself 
-following [these instructions](https://github.com/rust-nostr/nostr-sdk-ffi/blob/master/BUILD.md#python).
+Requires Python 3.9 or above.
 
-#### Python version
+The following OS and architectures are supported:
 
-| 3.8 | 3.9 | 3.10 | 3.11 | 3.12 | 3.13 |
-|-----|-----|------|------|------|------|
-| ❌   | ✅   | ✅    | ✅    | ✅    | ✅    |
+| OS      | x86_64 | aarch64 | armv7 | i686 |
+|---------|--------|---------|-------|------|
+| Linux   | ✅      | ✅       | ❌     | ✅*   |
+| macOS   | ✅      | ✅       | ❌     | ❌    |
+| Windows | ✅      | ✅*      | ❌     | ✅*   |
 
-#### Platform support
-
-| OS      | x64 | aarch64 | arm | i686 |
-|---------|-----|---------|-----|------|
-| Linux   | ✅   | ✅       | ❌   | ❌    |
-| macOS   | ✅   | ✅       | ❌   | ❌    |
-| Windows | ✅   | ❌       | ❌   | ❌    |
+<small>* Supported from 0.42.0 or above.</small>
 
 ### Known issues
 
@@ -184,12 +175,14 @@ import rust.nostr.sdk.*
 
 ### Supported platforms
 
-| OS      | x64 | aarch64 | arm | i686 | Package         |
-|---------|-----|---------|-----|------|-----------------|
-| Android | ✅   | ✅       | ✅   | ✅    | `nostr-sdk`     |
-| Linux   | ✅   | ✅       | ❌   | ✅    | `nostr-sdk-jvm` |
-| macOS   | ✅   | ✅       | ❌   | ❌    | `nostr-sdk-jvm` |
-| Windows | ✅   | ✅       | ❌   | ✅    | `nostr-sdk-jvm` |
+The following OS and architectures are supported:
+
+| OS      | x64 | aarch64 | armv7 | i686 | Package         |
+|---------|-----|---------|-------|------|-----------------|
+| Android | ✅   | ✅       | ✅     | ✅    | `nostr-sdk`     |
+| Linux   | ✅   | ✅       | ❌     | ✅    | `nostr-sdk-jvm` |
+| macOS   | ✅   | ✅       | ❌     | ❌    | `nostr-sdk-jvm` |
+| Windows | ✅   | ✅       | ❌     | ✅    | `nostr-sdk-jvm` |
 
 ### Known issues
 
@@ -244,15 +237,17 @@ Add the following to the dependency array in your `Package.swift`:
 
 ### Supported platforms
 
-| OS               | x86_64 | aarch64 | armv7 | x86 |
-|------------------|--------|---------|-------|-----|
-| iOS (>=14.0)     | ❌      | ✅       | ❌     | ❌   |
-| iOS Simulator    | ✅      | ✅       | ❌     | ❌   |
-| Mac Catalyst     | ✅      | ✅       | ❌     | ❌   |
-| macOS (>=12.0)   | ✅      | ✅       | ❌     | ❌   |
-| visionOS (>=1.0) | ❌      | ❌       | ❌     | ❌   |
-| watchOS          | ❌      | ❌       | ❌     | ❌   |
-| tvOS             | ❌      | ❌       | ❌     | ❌   |
+The following OS and architectures are supported:
+
+| OS               | x86_64 | aarch64 | armv7 | i686 |
+|------------------|--------|---------|-------|------|
+| iOS (>=14.0)     | ❌      | ✅       | ❌     | ❌    |
+| iOS Simulator    | ✅      | ✅       | ❌     | ❌    |
+| Mac Catalyst     | ✅      | ✅       | ❌     | ❌    |
+| macOS (>=12.0)   | ✅      | ✅       | ❌     | ❌    |
+| visionOS (>=1.0) | ❌      | ❌       | ❌     | ❌    |
+| watchOS          | ❌      | ❌       | ❌     | ❌    |
+| tvOS             | ❌      | ❌       | ❌     | ❌    |
 
 </section>
 
@@ -267,15 +262,17 @@ The `Nostr.Sdk` package is available on [nuget](https://www.nuget.org/packages/N
 dotnet add package Nostr.Sdk --version 0.41.0
 ```
 
+### Requirements and supported platforms
+
 Requires .NET 6.0 or above.
 
-### Supported platforms
+The following OS and architectures are supported:
 
-| OS      | x64 | aarch64 | arm | i686 |
-|---------|-----|---------|-----|------|
-| Linux   | ✅   | ✅       | ❌   | ✅    |
-| macOS   | ✅   | ✅       | ❌   | ❌    |
-| Windows | ✅   | ✅       | ❌   | ✅    |
+| OS      | x86_64 | aarch64 | armv7 | i686 |
+|---------|--------|---------|-------|------|
+| Linux   | ✅      | ✅       | ❌     | ✅    |
+| macOS   | ✅      | ✅       | ❌     | ❌    |
+| Windows | ✅      | ✅       | ❌     | ✅    |
 
 </section>
 

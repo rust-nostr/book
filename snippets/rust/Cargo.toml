@@ -8,3 +8,7 @@ nostr-sdk = { version = "0.41", features = ["all-nips"] }
 nostr-relay-builder = "0.41"
 nwc = "0.41"
 tokio = { version = "1", features = ["rt-multi-thread", "macros"] }
+
+[[bin]]
+name = "stream"
+path = "src/req/stream.rs"

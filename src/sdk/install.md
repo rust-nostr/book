@@ -60,8 +60,8 @@ The following OS and architectures are supported:
 
 | OS            | x86_64 | aarch64 | armv7 | i686 |
 |---------------|--------|---------|-------|------|
-| Linux (GLIBC) | ✅      | ✅       | ❌     | ✅*   |
-| Linux (MUSL)  | ✅*     | ✅*      | ❌     | ✅*   |
+| Linux (GLIBC) | ✅      | ✅       | ✅*    | ✅*   |
+| Linux (MUSL)  | ✅*     | ✅*      | ✅*    | ✅*   |
 | macOS         | ✅      | ✅       | ❌     | ❌    |
 | Windows       | ✅      | ✅*      | ❌     | ✅*   |
 
@@ -181,8 +181,8 @@ The following OS and architectures are supported:
 | OS            | x64 | aarch64 | armv7 | i686 | Package         |
 |---------------|-----|---------|-------|------|-----------------|
 | Android       | ✅   | ✅       | ✅     | ✅    | `nostr-sdk`     |
-| Linux (GLIBC) | ✅   | ✅       | ❌     | ✅    | `nostr-sdk-jvm` |
-| Linux (MUSL)  | ✅*  | ✅*      | ❌     | ✅*   | `nostr-sdk-jvm` |
+| Linux (GLIBC) | ✅   | ✅       | ✅*    | ✅    | `nostr-sdk-jvm` |
+| Linux (MUSL)  | ✅*  | ✅*      | ✅*    | ✅*   | `nostr-sdk-jvm` |
 | macOS         | ✅   | ✅       | ❌     | ❌    | `nostr-sdk-jvm` |
 | Windows       | ✅   | ✅       | ❌     | ✅    | `nostr-sdk-jvm` |
 
@@ -274,8 +274,8 @@ The following OS and architectures are supported:
 
 | OS            | x86_64 | aarch64 | armv7 | i686 |
 |---------------|--------|---------|-------|------|
-| Linux (GLIBC) | ✅      | ✅       | ❌     | ✅    |
-| Linux (MUSL)  | ✅*     | ✅*      | ❌     | ✅*   |
+| Linux (GLIBC) | ✅      | ✅       | ✅*    | ✅    |
+| Linux (MUSL)  | ✅*     | ✅*      | ✅*    | ✅*   |
 | macOS         | ✅      | ✅       | ❌     | ❌    |
 | Windows       | ✅      | ✅       | ❌     | ✅    |
 

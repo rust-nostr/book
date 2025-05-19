@@ -58,12 +58,12 @@ Requires Python 3.9 or above.
 
 The following OS and architectures are supported:
 
-| OS            | x86_64 | aarch64 | armv7 | i686 |
-|---------------|--------|---------|-------|------|
-| Linux (GLIBC) | ✅      | ✅       | ✅*    | ✅*   |
-| Linux (MUSL)  | ✅*     | ✅*      | ✅*    | ✅*   |
-| macOS         | ✅      | ✅       | ❌     | ❌    |
-| Windows       | ✅      | ✅*      | ❌     | ✅*   |
+| OS            | x86_64 | aarch64 | armv7 | i686 | riscv64 |
+|---------------|--------|---------|-------|------|---------|
+| Linux (GLIBC) | ✅      | ✅       | ✅*    | ✅*   | ✅*      |
+| Linux (MUSL)  | ✅*     | ✅*      | ✅*    | ✅*   | ✅*      |
+| macOS         | ✅      | ✅       | ❌     | ❌    | ❌       |
+| Windows       | ✅      | ✅*      | ❌     | ✅*   | ❌       |
 
 <small>* Supported from 0.42.0 or above.</small>
 
@@ -178,13 +178,13 @@ import rust.nostr.sdk.*
 
 The following OS and architectures are supported:
 
-| OS            | x64 | aarch64 | armv7 | i686 | Package         |
-|---------------|-----|---------|-------|------|-----------------|
-| Android       | ✅   | ✅       | ✅     | ✅    | `nostr-sdk`     |
-| Linux (GLIBC) | ✅   | ✅       | ✅*    | ✅    | `nostr-sdk-jvm` |
-| Linux (MUSL)  | ✅*  | ✅*      | ✅*    | ✅*   | `nostr-sdk-jvm` |
-| macOS         | ✅   | ✅       | ❌     | ❌    | `nostr-sdk-jvm` |
-| Windows       | ✅   | ✅       | ❌     | ✅    | `nostr-sdk-jvm` |
+| OS            | x86_64 | aarch64 | armv7 | i686 | riscv64 | Package         |
+|---------------|--------|---------|-------|------|---------|-----------------|
+| Android       | ✅      | ✅       | ✅     | ✅    | ❌       | `nostr-sdk`     |
+| Linux (GLIBC) | ✅      | ✅       | ✅*    | ✅    | ✅*      | `nostr-sdk-jvm` |
+| Linux (MUSL)  | ✅*     | ✅*      | ✅*    | ✅*   | ✅*      | `nostr-sdk-jvm` |
+| macOS         | ✅      | ✅       | ❌     | ❌    | ❌       | `nostr-sdk-jvm` |
+| Windows       | ✅      | ✅       | ❌     | ✅    | ❌       | `nostr-sdk-jvm` |
 
 <small>* Supported from 0.42.0 or above.</small>
 
@@ -272,12 +272,12 @@ Requires .NET 6.0 or above.
 
 The following OS and architectures are supported:
 
-| OS            | x86_64 | aarch64 | armv7 | i686 |
-|---------------|--------|---------|-------|------|
-| Linux (GLIBC) | ✅      | ✅       | ✅*    | ✅    |
-| Linux (MUSL)  | ✅*     | ✅*      | ✅*    | ✅*   |
-| macOS         | ✅      | ✅       | ❌     | ❌    |
-| Windows       | ✅      | ✅       | ❌     | ✅    |
+| OS            | x86_64 | aarch64 | armv7 | i686 | riscv64 |
+|---------------|--------|---------|-------|------|---------|
+| Linux (GLIBC) | ✅      | ✅       | ✅*    | ✅    | ✅*      |
+| Linux (MUSL)  | ✅*     | ✅*      | ✅*    | ✅*   | ✅*      |
+| macOS         | ✅      | ✅       | ❌     | ❌    | ❌       |
+| Windows       | ✅      | ✅       | ❌     | ✅    | ❌       |
 
 <small>* Supported from 0.42.0 or above.</small>
 

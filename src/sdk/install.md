@@ -66,6 +66,8 @@ The following OS and architectures are supported:
 | macOS         | ✅      | ✅       | ❌     | ❌    | ❌       |
 | Windows       | ✅      | ✅*      | ❌     | ✅*   | ❌       |
 
+Are you interested in other platforms? Open an issue [here](https://github.com/rust-nostr/nostr-sdk-ffi).
+
 <small>* Supported from 0.42.0 or above.</small>
 
 ### Known issues
@@ -187,6 +189,8 @@ The following OS and architectures are supported:
 | macOS         | ✅      | ✅       | ❌     | ❌    | ❌       | `nostr-sdk-jvm` |
 | Windows       | ✅      | ✅       | ❌     | ✅    | ❌       | `nostr-sdk-jvm` |
 
+Are you interested in other platforms? Open an issue [here](https://github.com/rust-nostr/nostr-sdk-ffi).
+
 <small>* Supported from 0.42.0 or above.</small>
 
 ### Known issues
@@ -254,6 +258,8 @@ The following OS and architectures are supported:
 | watchOS          | ❌      | ❌       | ❌     | ❌    |
 | tvOS             | ❌      | ❌       | ❌     | ❌    |
 
+Are you interested in other platforms? Open an issue [here](https://github.com/rust-nostr/nostr-sdk-ffi).
+
 </section>
 
 <div slot="title">C#</div>
@@ -280,6 +286,8 @@ The following OS and architectures are supported:
 | Linux (MUSL)  | ✅*     | ✅*      | ✅*    | ✅*   | ✅*      |
 | macOS         | ✅      | ✅       | ❌     | ❌    | ❌       |
 | Windows       | ✅      | ✅       | ❌     | ✅    | ❌       |
+
+Are you interested in other platforms? Open an issue [here](https://github.com/rust-nostr/nostr-sdk-ffi).
 
 <small>* Supported from 0.42.0 or above.</small>
 

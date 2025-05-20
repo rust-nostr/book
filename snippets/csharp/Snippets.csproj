@@ -8,7 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Nostr.Sdk" Version="0.41.0" />
+    <PackageReference Include="Nostr.Sdk" Version="0.42.0" />
   </ItemGroup>
 
 </Project>

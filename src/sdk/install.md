@@ -9,14 +9,14 @@ Add the `nostr-sdk` dependency in your `Cargo.toml` file:
 
 ```toml
 [dependencies]
-nostr-sdk = "0.41"
+nostr-sdk = "0.42"
 ```
 
 Alternatively, you can add it directly from `git` source:
 
 ```toml
 [dependencies]
-nostr-sdk = { git = "https://github.com/rust-nostr/nostr", tag = "v0.41.0" }
+nostr-sdk = { git = "https://github.com/rust-nostr/nostr", tag = "v0.42.0" }
 ```
 
 ```admonish info
@@ -43,7 +43,7 @@ pip install nostr-sdk
 Alternatively, you can manually add the dependency in your `requrements.txt`, `setup.py`, etc.:
 
 ```
-nostr-sdk==0.41.0
+nostr-sdk==0.42.0
 ```
 
 Import the library in your code:
@@ -61,14 +61,14 @@ The following OS and architectures are supported:
 | OS            | x86_64 | aarch64 | armv7 | i686 | riscv64 |
 |---------------|--------|---------|-------|------|---------|
 | Android       | ❌      | ❌       | ❌     | ❌    | ❌       |
-| Linux (GLIBC) | ✅      | ✅       | ✅*    | ✅*   | ✅*      |
-| Linux (MUSL)  | ✅*     | ✅*      | ✅*    | ✅*   | ✅*      |
+| Linux (GLIBC) | ✅      | ✅       | ✅     | ✅    | ✅*      |
+| Linux (MUSL)  | ✅      | ✅       | ✅     | ✅    | ✅*      |
 | macOS         | ✅      | ✅       | ❌     | ❌    | ❌       |
-| Windows       | ✅      | ✅*      | ❌     | ✅*   | ❌       |
+| Windows       | ✅      | ✅       | ❌     | ✅    | ❌       |
 
 Are you interested in other platforms? Open an issue [here](https://github.com/rust-nostr/nostr-sdk-ffi).
 
-<small>* Supported from 0.42.0 or above.</small>
+<small>* PyPI currently doesn't allow uploading riscv64 wheels</small>
 
 ### Known issues
 
@@ -99,7 +99,7 @@ Alternatively, you can manually add the dependency in your `package.json` file:
 ```json
 {
     "dependencies": {
-        "@rust-nostr/nostr-sdk": "0.41.1"
+        "@rust-nostr/nostr-sdk": "0.42.0"
     }
 }
 ```
@@ -153,7 +153,7 @@ repositories {
 }
 
 dependencies { 
-    implementation("org.rust-nostr:nostr-sdk:0.41.0")
+    implementation("org.rust-nostr:nostr-sdk:0.42.0")
 }
 ```
 
@@ -165,7 +165,7 @@ repositories {
 }
 
 dependencies { 
-    implementation("org.rust-nostr:nostr-sdk-jvm:0.41.0")
+    implementation("org.rust-nostr:nostr-sdk-jvm:0.42.0")
 }
 ```
 
@@ -184,14 +184,12 @@ The following OS and architectures are supported:
 | OS            | x86_64 | aarch64 | armv7 | i686 | riscv64 | Package         |
 |---------------|--------|---------|-------|------|---------|-----------------|
 | Android       | ✅      | ✅       | ✅     | ✅    | ❌       | `nostr-sdk`     |
-| Linux (GLIBC) | ✅      | ✅       | ✅*    | ✅    | ✅*      | `nostr-sdk-jvm` |
-| Linux (MUSL)  | ✅*     | ✅*      | ✅*    | ✅*   | ✅*      | `nostr-sdk-jvm` |
+| Linux (GLIBC) | ✅      | ✅       | ✅     | ✅    | ✅       | `nostr-sdk-jvm` |
+| Linux (MUSL)  | ✅      | ✅       | ✅     | ✅    | ✅       | `nostr-sdk-jvm` |
 | macOS         | ✅      | ✅       | ❌     | ❌    | ❌       | `nostr-sdk-jvm` |
 | Windows       | ✅      | ✅       | ❌     | ✅    | ❌       | `nostr-sdk-jvm` |
 
 Are you interested in other platforms? Open an issue [here](https://github.com/rust-nostr/nostr-sdk-ffi).
-
-<small>* Supported from 0.42.0 or above.</small>
 
 ### Known issues
 
@@ -241,7 +239,7 @@ as a package dependency in Xcode.
 Add the following to the dependency array in your `Package.swift`:
 
 ``` swift
-.package(url: "https://github.com/rust-nostr/nostr-sdk-swift.git", from: "0.41.0"),
+.package(url: "https://github.com/rust-nostr/nostr-sdk-swift.git", from: "0.42.0"),
 ```
 
 ### Supported platforms
@@ -270,7 +268,7 @@ Are you interested in other platforms? Open an issue [here](https://github.com/r
 The `Nostr.Sdk` package is available on [nuget](https://www.nuget.org/packages/Nostr.Sdk):
 
 ```bash
-dotnet add package Nostr.Sdk --version 0.41.0
+dotnet add package Nostr.Sdk --version 0.42.0
 ```
 
 ### Requirements and supported platforms
@@ -282,14 +280,12 @@ The following OS and architectures are supported:
 | OS            | x86_64 | aarch64 | armv7 | i686 | riscv64 |
 |---------------|--------|---------|-------|------|---------|
 | Android       | ❌      | ❌       | ❌     | ❌    | ❌       |
-| Linux (GLIBC) | ✅      | ✅       | ✅*    | ✅    | ✅*      |
-| Linux (MUSL)  | ✅*     | ✅*      | ✅*    | ✅*   | ✅*      |
+| Linux (GLIBC) | ✅      | ✅       | ✅     | ✅    | ✅       |
+| Linux (MUSL)  | ✅      | ✅       | ✅     | ✅    | ✅       |
 | macOS         | ✅      | ✅       | ❌     | ❌    | ❌       |
 | Windows       | ✅      | ✅       | ❌     | ✅    | ❌       |
 
 Are you interested in other platforms? Open an issue [here](https://github.com/rust-nostr/nostr-sdk-ffi).
-
-<small>* Supported from 0.42.0 or above.</small>
 
 </section>
 

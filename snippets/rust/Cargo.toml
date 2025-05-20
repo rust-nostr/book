@@ -4,9 +4,9 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
-nostr-sdk = { version = "0.41", features = ["all-nips"] }
-nostr-relay-builder = "0.41"
-nwc = "0.41"
+nostr-sdk = { version = "0.42", features = ["all-nips"] }
+nostr-relay-builder = "0.42"
+nwc = "0.42"
 tokio = { version = "1", features = ["rt-multi-thread", "macros"] }
 
 [[bin]]

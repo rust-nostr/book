@@ -43,7 +43,7 @@ pip install nostr-sdk
 Alternatively, you can manually add the dependency in your `requrements.txt`, `setup.py`, etc.:
 
 ```
-nostr-sdk==0.42.0
+nostr-sdk==0.42.1
 ```
 
 Import the library in your code:
@@ -99,7 +99,7 @@ Alternatively, you can manually add the dependency in your `package.json` file:
 ```json
 {
     "dependencies": {
-        "@rust-nostr/nostr-sdk": "0.42.0"
+        "@rust-nostr/nostr-sdk": "0.42.1"
     }
 }
 ```
@@ -153,7 +153,7 @@ repositories {
 }
 
 dependencies { 
-    implementation("org.rust-nostr:nostr-sdk:0.42.0")
+    implementation("org.rust-nostr:nostr-sdk:0.42.1")
 }
 ```
 
@@ -165,7 +165,7 @@ repositories {
 }
 
 dependencies { 
-    implementation("org.rust-nostr:nostr-sdk-jvm:0.42.0")
+    implementation("org.rust-nostr:nostr-sdk-jvm:0.42.1")
 }
 ```
 
@@ -239,7 +239,7 @@ as a package dependency in Xcode.
 Add the following to the dependency array in your `Package.swift`:
 
 ``` swift
-.package(url: "https://github.com/rust-nostr/nostr-sdk-swift.git", from: "0.42.0"),
+.package(url: "https://github.com/rust-nostr/nostr-sdk-swift.git", from: "0.42.1"),
 ```
 
 ### Supported platforms
@@ -268,7 +268,7 @@ Are you interested in other platforms? Open an issue [here](https://github.com/r
 The `Nostr.Sdk` package is available on [nuget](https://www.nuget.org/packages/Nostr.Sdk):
 
 ```bash
-dotnet add package Nostr.Sdk --version 0.42.0
+dotnet add package Nostr.Sdk --version 0.42.1
 ```
 
 ### Requirements and supported platforms

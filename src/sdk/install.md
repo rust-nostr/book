@@ -153,7 +153,7 @@ repositories {
 }
 
 dependencies { 
-    implementation("org.rust-nostr:nostr-sdk:0.42.1")
+    implementation("org.rust-nostr:nostr-sdk:0.42.3")
 }
 ```
 

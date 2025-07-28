@@ -2,14 +2,15 @@
 import asyncio
 from datetime import timedelta
 
-from nostr_sdk import Client, Filter, Events, Kind, KindStandard
+from nostr_sdk import Client, Filter, Events, Kind, KindStandard, RelayUrl
 
 
 async def fetch():
     # ANCHOR: client
     client = Client()
 
-    await client.add_relay("wss://relay.damus.io")
+    relay_url = RelayUrl.parse("wss://relay.damus.io")
+    await client.add_relay(relay_url)
     await client.connect()
     # ANCHOR_END: client
 
@@ -20,7 +21,7 @@ async def fetch():
 
     # ANCHOR: fetch-from
     filter: Filter = Filter().kind(Kind.from_std(KindStandard.TEXT_NOTE)).limit(5)
-    events: Events = await client.fetch_events_from(["wss://relay.damus.io"], filter, timedelta(seconds=10))
+    events: Events = await client.fetch_events_from([relay_url], filter, timedelta(seconds=10))
     # ANCHOR_END: fetch-from
 
 

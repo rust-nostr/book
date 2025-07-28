@@ -12,7 +12,8 @@ suspend fun hello() {
     // ANCHOR_END: client
 
     // ANCHOR: connect
-    client.addRelay("wss://relay.damus.io")
+    val relayUrl = RelayUrl.parse("wss://relay.damus.io")
+    client.addRelay(relayUrl)
     client.connect()
     // ANCHOR_END: connect
 

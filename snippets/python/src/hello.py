@@ -1,6 +1,6 @@
 # ANCHOR: full
 import asyncio
-from nostr_sdk import Keys, Client, EventBuilder, NostrSigner
+from nostr_sdk import Keys, Client, EventBuilder, NostrSigner, RelayUrl
 
 
 async def hello():
@@ -11,7 +11,8 @@ async def hello():
     # ANCHOR_END: client
 
     # ANCHOR: connect
-    await client.add_relay("wss://relay.damus.io")
+    relay_url = RelayUrl.parse("wss://relay.damus.io")
+    await client.add_relay(relay_url)
     await client.connect()
     # ANCHOR_END: connect
 

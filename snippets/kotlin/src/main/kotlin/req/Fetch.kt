@@ -9,7 +9,8 @@ suspend fun fetch() {
     // ANCHOR: client
     val client = Client()
 
-    client.addRelay("wss://relay.damus.io")
+    val relayUrl = RelayUrl.parse("wss://relay.damus.io")
+    client.addRelay(relayUrl)
     client.connect()
     // ANCHOR_END: client
 
@@ -21,7 +22,7 @@ suspend fun fetch() {
     // ANCHOR: fetch-from
     val filter2: Filter = Filter().kind(Kind.fromStd(KindStandard.TEXT_NOTE)).limit(5u)
     val events2: Events = client.fetchEventsFrom(
-        urls = listOf("wss://relay.damus.io"),
+        urls = listOf(relayUrl),
         filter = filter2,
         timeout = Duration.ofSeconds(10L)
     )

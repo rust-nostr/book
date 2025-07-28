@@ -20,13 +20,11 @@ async function main() {
     console.log("Balance", balance, "mSAT");
 
     // Pay an invoice
-    let payInvoiceParams = new PayInvoiceRequest();
-    payInvoiceParams.invoice = "lnbc..";
+    let payInvoiceParams = new PayInvoiceRequest("lnbc...");
     await nwc.payInvoice(payInvoiceParams);
 
     // Make an invoice
-    let makeInvoiceParams = new MakeInvoiceRequest();
-    makeInvoiceParams.amount = BigInt(100);
+    let makeInvoiceParams = new MakeInvoiceRequest(BigInt(100));
     const result = await nwc.makeInvoice(makeInvoiceParams)
     console.log("Invoice: " + result.invoice);
 

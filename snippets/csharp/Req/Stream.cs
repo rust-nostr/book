@@ -9,7 +9,8 @@ public class Stream
     {
         var client = new Client();
 
-        await client.AddRelay("wss://relay.damus.io");
+        var relayUrl = RelayUrl.Parse("wss://relay.damus.io");
+        await client.AddRelay(relayUrl);
         await client.Connect();
 
         // ANCHOR: init-stream

@@ -1,4 +1,4 @@
-from nostr_sdk import Keys, Metadata, EventBuilder
+from nostr_sdk import Keys, Metadata, EventBuilder, MetadataRecord
 
 
 def nip01():
@@ -7,17 +7,19 @@ def nip01():
 
     # ANCHOR: create-event
     # Create metadata object with desired content
-    metadata_content = Metadata()\
-        .set_name("TestName")\
-        .set_display_name("PyTestur")\
-        .set_about("This is a Test Account for Rust Nostr Python Bindings")\
-        .set_website("https://rust-nostr.org/")\
-        .set_picture("https://avatars.githubusercontent.com/u/123304603?s=200&v=4")\
-        .set_banner("https://nostr-resources.com/assets/images/cover.png")\
-        .set_nip05("TestName@rustNostr.com")
+    metadata_record = MetadataRecord(
+        name="TestName",
+        display_name="PyTestur",
+        about="This is a Test Account for Rust Nostr Python Bindings",
+        website="https://rust-nostr.org/",
+        picture="https://avatars.githubusercontent.com/u/123304603?s=200&v=4",
+        banner="https://nostr-resources.com/assets/images/cover.png",
+        nip05="TestName@rustNostr.com",
+    )
 
     # Build metadata event and assign content
-    builder = EventBuilder.metadata(metadata_content)
+    metadata = Metadata.from_record(metadata_record)
+    builder = EventBuilder.metadata(metadata)
 
     # Signed event and print details
     print("Creating Metadata Event:")
@@ -37,15 +39,16 @@ def nip01():
     # Deserialize Metadata from event
     print("Deserializing Metadata Event:")
     metadata = Metadata().from_json(event.content())
+    metadata_record = metadata.as_record()
 
     print(" Metadata Details:")
-    print(f"     Name      : {metadata.get_name()}")
-    print(f"     Display   : {metadata.get_display_name()}")
-    print(f"     About     : {metadata.get_about()}")
-    print(f"     Website   : {metadata.get_website()}")
-    print(f"     Picture   : {metadata.get_picture()}")
-    print(f"     Banner    : {metadata.get_banner()}")
-    print(f"     NIP05     : {metadata.get_nip05()}")
+    print(f"     Name      : {metadata_record.name}")
+    print(f"     Display   : {metadata_record.display_name}")
+    print(f"     About     : {metadata_record.about}")
+    print(f"     Website   : {metadata_record.website}")
+    print(f"     Picture   : {metadata_record.picture}")
+    print(f"     Banner    : {metadata_record.banner}")
+    print(f"     NIP05     : {metadata_record.nip05}")
     # ANCHOR_END: create-metadata
 
 if __name__ == '__main__':

@@ -27,7 +27,7 @@ pub fn nip19() -> Result<()> {
     // Create NIP-19 profile including relays data
     let relay_url = RelayUrl::parse("wss://relay.damus.io")?;
     let relays = vec![relay_url];
-    let nprofile = Nip19Profile::new(keys.public_key, &relays)?;
+    let nprofile = Nip19Profile::new(keys.public_key, relays.clone());
     println!("Profile (encoded): {}", nprofile.to_bech32()?);
     // ANCHOR_END: nip19-nprofile-encode
 
@@ -89,7 +89,7 @@ pub fn nip19() -> Result<()> {
     // Create NIP-19 coordinate
     let kind = Kind::TextNote;
     let coord = Coordinate::new(kind, keys.public_key);
-    let coordinate = Nip19Coordinate::new(coord, &relays)?;
+    let coordinate = Nip19Coordinate::new(coord, relays);
     let bech_32_coordinate = coordinate.to_bech32()?;
     println!(" Coordinate (encoded): {}", bech_32_coordinate);
     // ANCHOR_END: nip19-naddr-encode

@@ -14,7 +14,8 @@ public class Hello
         // ANCHOR_END: client
         
         // ANCHOR: connect
-        await client.AddRelay("wss://relay.damus.io");
+        var relayUrl = RelayUrl.Parse("wss://relay.damus.io");
+        await client.AddRelay(relayUrl);
         await client.Connect();
         // ANCHOR_END: connect
         

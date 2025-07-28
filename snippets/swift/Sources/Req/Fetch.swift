@@ -6,8 +6,9 @@ func fetch() async throws {
     // ANCHOR: client
     let client = Client()
 
-    try await client.addRelay(url: "wss://relay.damus.io")
-        await client.connect()
+    let relayUrl = try RelayUrl.parse(url: "wss://relay.damus.io")
+    try await client.addRelay(url: relayUrl)
+    await client.connect()
     // ANCHOR_END: client
 
     // ANCHOR: fetch
@@ -18,7 +19,7 @@ func fetch() async throws {
     // ANCHOR: fetch-from
     let filter2 = Filter().kind(kind: Kind.fromStd(e: KindStandard.textNote)).limit(limit: 5)
     let events2 = try await client.fetchEventsFrom(
-        urls: ["wss://relay.damus.io"],
+        urls: [relayUrl],
         filter: filter2,
         timeout: 10.0
     )

@@ -5,7 +5,8 @@ import NostrSDK
 func stream() async throws {
     let client = Client()
 
-    try await client.addRelay(url: "wss://relay.damus.io")
+    let relayUrl = try RelayUrl.parse(url: "wss://relay.damus.io")
+    try await client.addRelay(url: relayUrl)
     await client.connect()
 
     // ANCHOR: init-stream

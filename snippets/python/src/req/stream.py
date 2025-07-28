@@ -2,13 +2,14 @@
 import asyncio
 from datetime import timedelta
 
-from nostr_sdk import Client
+from nostr_sdk import Client, RelayUrl
 
 
 async def stream():
     client = Client()
 
-    await client.add_relay("wss://relay.damus.io")
+    relay_url = RelayUrl.parse("wss://relay.damus.io")
+    await client.add_relay(relay_url)
     await client.connect()
 
     # ANCHOR: init-stream

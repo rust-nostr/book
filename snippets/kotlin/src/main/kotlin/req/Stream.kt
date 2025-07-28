@@ -7,7 +7,8 @@ import rust.nostr.sdk.*
 suspend fun stream() {
     val client = Client()
 
-    client.addRelay("wss://relay.damus.io")
+    val relayUrl = RelayUrl.parse("wss://relay.damus.io")
+    client.addRelay(relayUrl)
     client.connect()
 
     // ANCHOR: init-stream

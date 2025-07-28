@@ -10,7 +10,8 @@ public class Fetch
         // ANCHOR: client
         var client = new Client();
 
-        await client.AddRelay("wss://relay.damus.io");
+        var relayUrl = RelayUrl.Parse("wss://relay.damus.io");
+        await client.AddRelay(relayUrl);
         await client.Connect();
         // ANCHOR_END: client
         
@@ -21,7 +22,7 @@ public class Fetch
 
         // ANCHOR: fetch-from
         var filter2 = new Filter().Kind(Kind.FromStd(KindStandard.TextNote)).Limit(5);
-        var events2 = await client.FetchEventsFrom(["wss://relay.damus.io"], filter2, TimeSpan.FromSeconds(10));
+        var events2 = await client.FetchEventsFrom([relayUrl], filter2, TimeSpan.FromSeconds(10));
         // ANCHOR_END: fetch-from
     }
 }

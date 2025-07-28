@@ -1,5 +1,5 @@
 from typing import cast
-from nostr_sdk import EventBuilder, Keys, Tag, Contact, Coordinate, Kind, RelayMetadata, TagKind
+from nostr_sdk import EventBuilder, Keys, Tag, Contact, Coordinate, Kind, RelayMetadata, TagKind, RelayUrl
 
 
 def tags():
@@ -25,7 +25,7 @@ def tags():
     tag = Tag.identifier("This is an identifier value")
     print(f"     - Identifier         : {tag.as_vec()}")
     # Reference/Relay
-    tag = Tag.relay_metadata("wss://relay.example.com",RelayMetadata.READ)
+    tag = Tag.relay_metadata(RelayUrl.parse("wss://relay.example.com"), RelayMetadata.READ)
     print(f"     - Reference/Relays   : {tag.as_vec()}")
     # Hashtag
     tag = Tag.hashtag("#AskNostr")

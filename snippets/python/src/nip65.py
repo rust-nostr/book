@@ -1,18 +1,22 @@
-from nostr_sdk import EventBuilder, Tag, Kind, Keys, RelayMetadata
+from nostr_sdk import EventBuilder, Tag, Kind, Keys, RelayMetadata, RelayUrl
 
 
 def nip65():
     # Get Keys
     keys = Keys.generate()
 
+    damus = RelayUrl.parse("wss://relay.damus.io")
+    primal = RelayUrl.parse("wss://relay.primal.net")
+    nostr_band = RelayUrl.parse("wss://relay.nostr.band")
+
     print()
     print("Relay Metadata:")
     # ANCHOR: relay-metadata-simple
     # Create relay dictionary
     relays_dict = {
-        "wss://relay.damus.io": RelayMetadata.READ,
-        "wss://relay.primal.net": RelayMetadata.WRITE,
-        "wss://relay.nostr.band": None
+        damus: RelayMetadata.READ,
+        primal: RelayMetadata.WRITE,
+        nostr_band: None
     }
 
     # Build/sign event
@@ -27,9 +31,9 @@ def nip65():
 
     # ANCHOR: relay-metadata-custom
     # Create relay metadata tags
-    tag1 = Tag.relay_metadata("wss://relay.damus.io", RelayMetadata.READ)
-    tag2 = Tag.relay_metadata("wss://relay.primal.net", RelayMetadata.WRITE)
-    tag3 = Tag.relay_metadata("wss://relay.nostr.band", None)
+    tag1 = Tag.relay_metadata(damus, RelayMetadata.READ)
+    tag2 = Tag.relay_metadata(primal, RelayMetadata.WRITE)
+    tag3 = Tag.relay_metadata(nostr_band, None)
 
     # Build/sign event
     kind = Kind(10002)

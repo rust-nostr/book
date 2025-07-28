@@ -12,7 +12,7 @@ function eventId() {
 
     // ANCHOR: build-event-id
     console.log("  Build Event ID:");
-    let event_id = new EventId(keys.publicKey, Timestamp.now(), new Kind(1), new Tags(), "");
+    let event_id = new EventId(keys.publicKey, Timestamp.now(), new Kind(1), Tags.fromList([]), "");
     console.log(`     - ${event_id}`);
     // ANCHOR_END: build-event-id
 

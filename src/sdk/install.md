@@ -182,14 +182,15 @@ import rust.nostr.sdk.*
 
 The following OS and architectures are supported:
 
-| OS            | x86_64 | aarch64 | armv7 | i686 | riscv64 | Package         |
-|---------------|--------|---------|-------|------|---------|-----------------|
-| Android       | ✅      | ✅       | ✅     | ✅    | ❌       | `nostr-sdk`     |
-| Linux (GLIBC) | ✅      | ✅       | ✅     | ✅    | ✅       | `nostr-sdk-jvm` |
-| Linux (MUSL)  | ✅      | ✅       | ✅     | ✅    | ✅       | `nostr-sdk-jvm` |
-| FreeBSD       | ✅      | ❌       | ❌     | ❌    | ❌       | `nostr-sdk-jvm` |
-| macOS         | ✅      | ✅       | ❌     | ❌    | ❌       | `nostr-sdk-jvm` |
-| Windows       | ✅      | ✅       | ❌     | ✅    | ❌       | `nostr-sdk-jvm` |
+| OS            | x86_64 | aarch64 | armv7 | i686 | riscv64 | Package                             |
+|---------------|--------|---------|-------|------|---------|-------------------------------------|
+| Android       | ✅      | ✅       | ✅     | ✅    | ❌       | `nostr-sdk` and `nostr-sdk-kmp`     |
+| iOS           | ✅      | ✅       | ❌     | ❌    | ❌       | `nostr-sdk-kmp`                     |
+| Linux (GLIBC) | ✅      | ✅       | ✅     | ✅    | ✅       | `nostr-sdk-jvm` and `nostr-sdk-kmp` |
+| Linux (MUSL)  | ✅      | ✅       | ✅     | ✅    | ✅       | `nostr-sdk-jvm` and `nostr-sdk-kmp` |
+| FreeBSD       | ✅      | ❌       | ❌     | ❌    | ❌       | `nostr-sdk-jvm` and `nostr-sdk-kmp` |
+| macOS         | ✅      | ✅       | ❌     | ❌    | ❌       | `nostr-sdk-jvm` and `nostr-sdk-kmp` |
+| Windows       | ✅      | ✅       | ❌     | ✅    | ❌       | `nostr-sdk-jvm` and `nostr-sdk-kmp` |
 
 Are you interested in other platforms? Open an issue [here](https://github.com/rust-nostr/nostr-sdk-ffi).
 
@@ -281,7 +282,8 @@ The following OS and architectures are supported:
 
 | OS            | x86_64 | aarch64 | armv7 | i686 | riscv64 |
 |---------------|--------|---------|-------|------|---------|
-| Android       | ❌      | ❌       | ❌     | ❌    | ❌       |
+| Android       | ✅      | ✅       | ✅     | ✅    | ❌       |
+| iOS           | ✅      | ✅       | ❌     | ❌    | ❌       |
 | Linux (GLIBC) | ✅      | ✅       | ✅     | ✅    | ✅       |
 | Linux (MUSL)  | ✅      | ✅       | ✅     | ✅    | ✅       |
 | FreeBSD       | ✅      | ❌       | ❌     | ❌    | ❌       |

@@ -1,4 +1,8 @@
-## Getting Started
+---
+sidebar_position: 1
+---
+
+# Getting Started
 
 Let’s start your `rust-nostr` journey! In this chapter, we’ll discuss:
 

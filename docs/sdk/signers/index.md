@@ -1,4 +1,8 @@
-## Signers
+---
+sidebar_position: 2
+---
+
+# Signers
 
 - [Keys](keys.md)
 - [Browser Extension](../nips/07.md)

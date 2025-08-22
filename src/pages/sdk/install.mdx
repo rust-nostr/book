@@ -1,20 +1,10 @@
-import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+
+import LanguageTabs from '@site/src/components/LanguageTabs';
 
 ## Installing the library
 
-<Tabs
-    defaultValue="rust"
-    values={[
-        {label: 'Rust', value: 'rust'},
-        {label: 'Python', value: 'python'},
-        {label: 'Kotlin', value: 'kotlin'},
-        {label: 'Swift', value: 'swift'},
-        {label: 'C#', value: 'csharp'},
-        {label: 'JavaScript', value: 'js'},
-    ]}
-    queryString="plang"
->
+<LanguageTabs>
     <TabItem value="rust">
         Add the `nostr-sdk` dependency in your `Cargo.toml` file:
 
@@ -36,10 +26,11 @@ import TabItem from '@theme/TabItem';
 
         Import the library in your code:
 
-        ```rust,ignore
+        ```rust
         use nostr_sdk::prelude::*;
         ```
     </TabItem>
+
     <TabItem value="python">
         The `nostr-sdk` package is available on the public PyPI:
 
@@ -55,7 +46,7 @@ import TabItem from '@theme/TabItem';
 
         Import the library in your code:
 
-        ```python,ignore
+        ```python
         from nostr_sdk import *
         ```
 
@@ -84,13 +75,14 @@ import TabItem from '@theme/TabItem';
 
         If you receive `no running event loop` error at runtime, add the following line to your code:
 
-        ```python,ignore
+        ```python
         import asyncio
         from nostr_sdk import uniffi_set_event_loop
 
         uniffi_set_event_loop(asyncio.get_running_loop())
         ```
     </TabItem>
+
     <TabItem value="kotlin">
         Add the following library to your Gradle dependencies:
 
@@ -170,6 +162,7 @@ import TabItem from '@theme/TabItem';
         }
         ```
     </TabItem>
+
     <TabItem value="swift">
         ### Xcode
 
@@ -205,6 +198,7 @@ import TabItem from '@theme/TabItem';
 
         Are you interested in other platforms? Open an issue [here](https://github.com/rust-nostr/nostr-sdk-ffi).
     </TabItem>
+
     <TabItem value="csharp">
         The `Nostr.Sdk` package is available on [nuget](https://www.nuget.org/packages/Nostr.Sdk):
 
@@ -230,6 +224,7 @@ import TabItem from '@theme/TabItem';
 
         Are you interested in other platforms? Open an issue [here](https://github.com/rust-nostr/nostr-sdk-ffi).
     </TabItem>
+
     <TabItem value="js">
         The `nostr-sdk` package is available on the public [npmjs](https://npmjs.com):
 
@@ -242,8 +237,8 @@ import TabItem from '@theme/TabItem';
         ```json
         {
             "dependencies": {
-            "@rust-nostr/nostr-sdk": "0.43.0"
-        }
+                "@rust-nostr/nostr-sdk": "0.43.0"
+            }
         }
         ```
 
@@ -253,32 +248,32 @@ import TabItem from '@theme/TabItem';
 
         #### Load in **async** context
 
-        ```typescript,ignore
+        ```typescript
         import { loadWasmAsync } from "@rust-nostr/nostr-sdk";
 
         async function main() {
-        // Load WASM
-        await loadWasmAsync();
+            // Load WASM
+            await loadWasmAsync();
 
-        // ...
-    }
+            // ...
+        }
 
         main();
         ```
 
         #### Load in **sync** context
 
-        ```typescript,ignore
+        ```typescript
         import { loadWasmSync } from "@rust-nostr/nostr-sdk";
 
         function main() {
-        // Load WASM
-        loadWasmSync();
+            // Load WASM
+            loadWasmSync();
 
-        // ...
-    }
+            // ...
+        }
 
         main();
         ```
     </TabItem>
-</Tabs>
+</LanguageTabs>

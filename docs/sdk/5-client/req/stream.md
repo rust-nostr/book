@@ -4,7 +4,7 @@ Request and immediately receive the events; terminate the stream when all relays
 
 ## Initialize the stream
 
-After building the client and connecting the relays, we can create a [`Filter`](../../messages/filters.md) and initialize the stream.
+After building the client and connecting the relays, we can create a [`Filter`](../../4-filters.md) and initialize the stream.
 
 <custom-tabs category="lang">
 <div slot="title">Rust</div>
@@ -73,7 +73,7 @@ After building the client and connecting the relays, we can create a [`Filter`](
 
 ## Consume the stream
 
-Now that we have the stream, we can consume it and handle the received [`Event`](../../event/index.md):
+Now that we have the stream, we can consume it and handle the received [`Event`](../../3-event/index.md):
 
 <custom-tabs category="lang">
 <div slot="title">Rust</div>

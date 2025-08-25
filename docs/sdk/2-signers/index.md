@@ -1,5 +1,5 @@
 # Signers
 
 - [Keys](keys.mdx)
-- [Browser Extension](../nips/07.md)
-- [Nostr Connect](../nips/46.md)
+- [Browser Extension](../7-nips/07.md)
+- [Nostr Connect](../7-nips/46.md)

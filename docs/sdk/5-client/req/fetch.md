@@ -76,7 +76,7 @@ Then, add the relays and connect.
 
 ## Fetch
 
-After building the client and connecting the relays, we can create a [`Filter`](../../messages/filters.md) and perform our first fetch.
+After building the client and connecting the relays, we can create a [`Filter`](../../4-filters.md) and perform our first fetch.
 
 <custom-tabs category="lang">
 <div slot="title">Rust</div>

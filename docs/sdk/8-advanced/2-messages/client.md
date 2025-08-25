@@ -33,7 +33,7 @@ These allow for logical tests to be performed to establish the type of message o
 ```
 
 Note that when constructing a `REQ` we want to pass through a `Filter` object which will allow the relay to return data meeting a given set of criteria. 
-Please jump to the [Filter](filters.md) section for more details on how to construct these objects. 
+Please jump to the [Filter](../../4-filters.md) section for more details on how to construct these objects. 
 
 ```python,ignore
 {{#include ../../../snippets/python/src/messages/client.py:req-message}}
@@ -65,7 +65,7 @@ Once we have the `ClientMessage` objects we can use the `asJson()` method to pre
 ```
 
 Note that when constructing a `REQ` we want to pass through a `Filter` object which will allow the relay to return data meeting a given set of criteria. 
-Please jump to the [Filter](filters.md) section for more details on how to construct these objects. 
+Please jump to the [Filter](../../4-filters.md) section for more details on how to construct these objects. 
 
 ```typescript,ignore
 {{#include ../../../snippets/js/src/messages/client.ts:req-message}}

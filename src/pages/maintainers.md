@@ -1,4 +1,4 @@
-## Maintainers
+# Maintainers
 
 Here you can find the list of active maintainers:
 

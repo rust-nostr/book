@@ -1,10 +1,10 @@
-## Patrons
+# Patrons
 
 The `rust-nostr` project relies greatly on the generous support of the organizations, companies, and individuals who have become a Patron. 
 Each year, we seek new sources of significant funding to support our ongoing efforts. 
-Please [contact us](maintainers.md) if you or your organization is interested in becoming a Patron.
+Please [contact us](maintainers) if you or your organization is interested in becoming a Patron.
 
-### Funding by year
+## Funding by year
 
 *Please note that Patrons are listed alphabetically.*
 
@@ -18,14 +18,14 @@ Please [contact us](maintainers.md) if you or your organization is interested in
   - [OpenSats](#opensats)
   - [SmartVaults](#smartvaults)
 
-### About our Patrons
+## About our Patrons
 
 *Please note that Patrons are listed alphabetically.*
 
-#### OpenSats
+### OpenSats
 
 [OpenSats](https://opensats.org) is a non-profit organization dedicated to supporting open-source contributors working on freedom tech and projects that help bitcoin flourish.
 
-#### SmartVaults
+### SmartVaults
 
 [SmartVaults](https://github.com/smartvaults) is developing a multi-custody Bitcoin wallet that leverages nostr for signature orchestration.

@@ -42,8 +42,7 @@ const config: Config = {
       {
         docs: {
           sidebarPath: './sidebars.ts',
-          editUrl:
-            'https://github.com/rust-nostr/book',
+          editUrl: 'https://github.com/rust-nostr/book',
         },
         blog: {
           showReadingTime: true,

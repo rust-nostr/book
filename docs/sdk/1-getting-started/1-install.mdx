@@ -50,25 +50,6 @@ import LanguageTabs from '@site/src/components/LanguageTabs';
         from nostr_sdk import *
         ```
 
-        ### Requirements and supported platforms
-
-        Requires Python 3.9 or above.
-
-        The following OS and architectures are supported:
-
-        | OS            | x86_64 | aarch64 | armv7 | i686 | riscv64 |
-        |---------------|--------|---------|-------|------|---------|
-        | Android       | ❌      | ❌       | ❌     | ❌    | ❌       |
-        | Linux (GLIBC) | ✅      | ✅       | ✅     | ✅    | ✅*      |
-        | Linux (MUSL)  | ✅      | ✅       | ✅     | ✅    | ✅*      |
-        | FreeBSD       | ✅*     | ❌       | ❌     | ❌    | ❌       |
-        | macOS         | ✅      | ✅       | ❌     | ❌    | ❌       |
-        | Windows       | ✅      | ✅       | ❌     | ✅    | ❌       |
-
-        Are you interested in other platforms? Open an issue [here](https://github.com/rust-nostr/nostr-sdk-ffi).
-
-        <small>* PyPI currently doesn't allow uploading riscv64 wheels</small>
-
         ### Known issues
 
         #### No running event loop
@@ -86,53 +67,28 @@ import LanguageTabs from '@site/src/components/LanguageTabs';
     <TabItem value="kotlin">
         Add the following library to your Gradle dependencies:
 
-        ### Android
-
         ```kotlin
         repositories {
             mavenCentral()
         }
 
         dependencies {
+            // Android
             implementation("org.rust-nostr:nostr-sdk:0.43.0")
-        }
-        ```
 
-        ### JVM
-
-        ```kotlin
-        repositories {
-            mavenCentral()
-        }
-
-        dependencies {
+            // JVM
             implementation("org.rust-nostr:nostr-sdk-jvm:0.43.0")
+
+            // Kotlin Multiplatform
+            implementation("org.rust-nostr:nostr-sdk-kmp:0.43.0")
         }
         ```
-
-        ### Import the library
 
         Import the library in your code:
 
         ```kotlin
         import rust.nostr.sdk.*
         ```
-
-        ### Supported platforms
-
-        The following OS and architectures are supported:
-
-        | OS            | x86_64 | aarch64 | armv7 | i686 | riscv64 | Package                             |
-        |---------------|--------|---------|-------|------|---------|-------------------------------------|
-        | Android       | ✅      | ✅       | ✅     | ✅    | ❌       | `nostr-sdk` and `nostr-sdk-kmp`     |
-        | iOS           | ✅      | ✅       | ❌     | ❌    | ❌       | `nostr-sdk-kmp`                     |
-        | Linux (GLIBC) | ✅      | ✅       | ✅     | ✅    | ✅       | `nostr-sdk-jvm` and `nostr-sdk-kmp` |
-        | Linux (MUSL)  | ✅      | ✅       | ✅     | ✅    | ✅       | `nostr-sdk-jvm` and `nostr-sdk-kmp` |
-        | FreeBSD       | ✅      | ❌       | ❌     | ❌    | ❌       | `nostr-sdk-jvm` and `nostr-sdk-kmp` |
-        | macOS         | ✅      | ✅       | ❌     | ❌    | ❌       | `nostr-sdk-jvm` and `nostr-sdk-kmp` |
-        | Windows       | ✅      | ✅       | ❌     | ✅    | ❌       | `nostr-sdk-jvm` and `nostr-sdk-kmp` |
-
-        Are you interested in other platforms? Open an issue [here](https://github.com/rust-nostr/nostr-sdk-ffi).
 
         ### Known issues
 
@@ -181,22 +137,6 @@ import LanguageTabs from '@site/src/components/LanguageTabs';
         ``` swift
         .package(url: "https://github.com/rust-nostr/nostr-sdk-swift.git", from: "0.43.0"),
         ```
-
-        ### Supported platforms
-
-        The following OS and architectures are supported:
-
-        | OS               | x86_64 | aarch64 | armv7 | i686 |
-        |------------------|--------|---------|-------|------|
-        | iOS (>=14.0)     | ❌      | ✅       | ❌     | ❌    |
-        | iOS Simulator    | ✅      | ✅       | ❌     | ❌    |
-        | Mac Catalyst     | ✅      | ✅       | ❌     | ❌    |
-        | macOS (>=12.0)   | ✅      | ✅       | ❌     | ❌    |
-        | visionOS (>=1.0) | ❌      | ❌       | ❌     | ❌    |
-        | watchOS          | ❌      | ❌       | ❌     | ❌    |
-        | tvOS             | ❌      | ❌       | ❌     | ❌    |
-
-        Are you interested in other platforms? Open an issue [here](https://github.com/rust-nostr/nostr-sdk-ffi).
     </TabItem>
 
     <TabItem value="csharp">
@@ -205,24 +145,6 @@ import LanguageTabs from '@site/src/components/LanguageTabs';
         ```bash
         dotnet add package Nostr.Sdk --version 0.43.0
         ```
-
-        ### Requirements and supported platforms
-
-        Requires .NET 6.0 or above.
-
-        The following OS and architectures are supported:
-
-        | OS            | x86_64 | aarch64 | armv7 | i686 | riscv64 |
-        |---------------|--------|---------|-------|------|---------|
-        | Android       | ✅      | ✅       | ✅     | ✅    | ❌       |
-        | iOS           | ✅      | ✅       | ❌     | ❌    | ❌       |
-        | Linux (GLIBC) | ✅      | ✅       | ✅     | ✅    | ✅       |
-        | Linux (MUSL)  | ✅      | ✅       | ✅     | ✅    | ✅       |
-        | FreeBSD       | ✅      | ❌       | ❌     | ❌    | ❌       |
-        | macOS         | ✅      | ✅       | ❌     | ❌    | ❌       |
-        | Windows       | ✅      | ✅       | ❌     | ✅    | ❌       |
-
-        Are you interested in other platforms? Open an issue [here](https://github.com/rust-nostr/nostr-sdk-ffi).
     </TabItem>
 
     <TabItem value="js">
@@ -275,5 +197,88 @@ import LanguageTabs from '@site/src/components/LanguageTabs';
 
         main();
         ```
+    </TabItem>
+</LanguageTabs>
+
+## Requirements and supported platforms
+
+<LanguageTabs>
+    <TabItem value="rust">
+        Requires **rustc 1.70.0** or above.
+    </TabItem>
+
+    <TabItem value="python">
+        Requires **Python 3.9** or above.
+
+        The following OS and architectures are supported:
+
+        | OS            | x86_64 | aarch64 | armv7 | i686 | riscv64 |
+        |---------------|--------|---------|-------|------|---------|
+        | Android       | ❌      | ❌       | ❌     | ❌    | ❌       |
+        | Linux (GLIBC) | ✅      | ✅       | ✅     | ✅    | ✅*      |
+        | Linux (MUSL)  | ✅      | ✅       | ✅     | ✅    | ✅*      |
+        | FreeBSD       | ✅*     | ❌       | ❌     | ❌    | ❌       |
+        | macOS         | ✅      | ✅       | ❌     | ❌    | ❌       |
+        | Windows       | ✅      | ✅       | ❌     | ✅    | ❌       |
+
+        Are you interested in other platforms? Open an issue [here](https://github.com/rust-nostr/nostr-sdk-ffi).
+
+        <small>* PyPI currently doesn't allow uploading riscv64 wheels</small>
+    </TabItem>
+
+    <TabItem value="kotlin">
+        The following OS and architectures are supported:
+
+        | OS            | x86_64 | aarch64 | armv7 | i686 | riscv64 | Package                             |
+        |---------------|--------|---------|-------|------|---------|-------------------------------------|
+        | Android       | ✅      | ✅       | ✅     | ✅    | ❌       | `nostr-sdk` and `nostr-sdk-kmp`     |
+        | iOS           | ✅      | ✅       | ❌     | ❌    | ❌       | `nostr-sdk-kmp`                     |
+        | Linux (GLIBC) | ✅      | ✅       | ✅     | ✅    | ✅       | `nostr-sdk-jvm` and `nostr-sdk-kmp` |
+        | Linux (MUSL)  | ✅      | ✅       | ✅     | ✅    | ✅       | `nostr-sdk-jvm` and `nostr-sdk-kmp` |
+        | FreeBSD       | ✅      | ❌       | ❌     | ❌    | ❌       | `nostr-sdk-jvm` and `nostr-sdk-kmp` |
+        | macOS         | ✅      | ✅       | ❌     | ❌    | ❌       | `nostr-sdk-jvm` and `nostr-sdk-kmp` |
+        | Windows       | ✅      | ✅       | ❌     | ✅    | ❌       | `nostr-sdk-jvm` and `nostr-sdk-kmp` |
+
+        Are you interested in other platforms? Open an issue [here](https://github.com/rust-nostr/nostr-sdk-ffi).
+    </TabItem>
+
+    <TabItem value="swift">
+        The following OS and architectures are supported:
+
+        | OS               | x86_64 | aarch64 | armv7 | i686 |
+        |------------------|--------|---------|-------|------|
+        | iOS (>=14.0)     | ❌      | ✅       | ❌     | ❌    |
+        | iOS Simulator    | ✅      | ✅       | ❌     | ❌    |
+        | Mac Catalyst     | ✅      | ✅       | ❌     | ❌    |
+        | macOS (>=12.0)   | ✅      | ✅       | ❌     | ❌    |
+        | visionOS (>=1.0) | ❌      | ❌       | ❌     | ❌    |
+        | watchOS          | ❌      | ❌       | ❌     | ❌    |
+        | tvOS             | ❌      | ❌       | ❌     | ❌    |
+
+        Are you interested in other platforms? Open an issue [here](https://github.com/rust-nostr/nostr-sdk-ffi).
+    </TabItem>
+
+    <TabItem value="csharp">
+        Requires **.NET 6.0** or above.
+
+        The following OS and architectures are supported:
+
+        | OS            | x86_64 | aarch64 | armv7 | i686 | riscv64 |
+        |---------------|--------|---------|-------|------|---------|
+        | Android       | ✅      | ✅       | ✅     | ✅    | ❌       |
+        | iOS           | ✅      | ✅       | ❌     | ❌    | ❌       |
+        | Linux (GLIBC) | ✅      | ✅       | ✅     | ✅    | ✅       |
+        | Linux (MUSL)  | ✅      | ✅       | ✅     | ✅    | ✅       |
+        | FreeBSD       | ✅      | ❌       | ❌     | ❌    | ❌       |
+        | macOS         | ✅      | ✅       | ❌     | ❌    | ❌       |
+        | Windows       | ✅      | ✅       | ❌     | ✅    | ❌       |
+
+        Are you interested in other platforms? Open an issue [here](https://github.com/rust-nostr/nostr-sdk-ffi).
+    </TabItem>
+
+    <TabItem value="js">
+        Requires **Node.js 16.0.0** or above.
+
+        Supports both Node.js and WebAssembly.
     </TabItem>
 </LanguageTabs>

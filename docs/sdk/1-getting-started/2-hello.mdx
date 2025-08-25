@@ -1,6 +1,9 @@
 import TabItem from '@theme/TabItem';
 
 import LanguageTabs from '@site/src/components/LanguageTabs';
+import AnchoredCode from "@site/src/components/AnchoredCode";
+
+import RustHello from '!!raw-loader!../../../snippets/rust/src/hello.rs';
 
 # Hello, rust-nostr!
 
@@ -12,7 +15,41 @@ The first step is to generate random keys needed for the client and construct th
 
 <LanguageTabs>
     <TabItem value="rust">
+        <AnchoredCode anchor="client" language="rust">
+            {RustHello}
+        </AnchoredCode>
+    </TabItem>
 
+    <TabItem value="python">
+
+    </TabItem>
+
+    <TabItem value="kotlin">
+
+    </TabItem>
+
+    <TabItem value="swift">
+
+    </TabItem>
+
+    <TabItem value="csharp">
+
+    </TabItem>
+
+    <TabItem value="js">
+
+    </TabItem>
+</LanguageTabs>
+
+## Add some relays and connect
+
+Next, add some relays to your client and connect to them.
+
+<LanguageTabs>
+    <TabItem value="rust">
+        <AnchoredCode anchor="connect" language="rust">
+            {RustHello}
+        </AnchoredCode>
     </TabItem>
 
     <TabItem value="python">
@@ -43,7 +80,9 @@ build a text note with the [`EventBuilder`](../3-event/builder.md) and publish i
 
 <LanguageTabs>
     <TabItem value="rust">
-
+        <AnchoredCode anchor="publish" language="rust">
+            {RustHello}
+        </AnchoredCode>
     </TabItem>
 
     <TabItem value="python">
@@ -73,7 +112,9 @@ Published the event, you can inspect the output to ensure everything worked corr
 
 <LanguageTabs>
     <TabItem value="rust">
-
+        <AnchoredCode anchor="output" language="rust">
+            {RustHello}
+        </AnchoredCode>
     </TabItem>
 
     <TabItem value="python">
@@ -103,7 +144,9 @@ Here’s the full example that includes all the steps from generating keys to in
 
 <LanguageTabs>
     <TabItem value="rust">
-
+        <AnchoredCode anchor="full" language="rust">
+            {RustHello}
+        </AnchoredCode>
     </TabItem>
 
     <TabItem value="python">

@@ -3,7 +3,12 @@ import TabItem from '@theme/TabItem';
 import LanguageTabs from '@site/src/components/LanguageTabs';
 import AnchoredCode from "@site/src/components/AnchoredCode";
 
-import RustHello from '!!raw-loader!../../../snippets/rust/src/hello.rs';
+import RustSnippet from '!!raw-loader!../../../snippets/rust/src/hello.rs';
+import PythonSnippet from '!!raw-loader!../../../snippets/python/src/hello.py';
+import KotlinSnippet from '!!raw-loader!../../../snippets/kotlin/src/main/kotlin/Hello.kt';
+import SwiftSnippet from '!!raw-loader!../../../snippets/swift/Sources/Hello.swift';
+import CsharpSnippet from '!!raw-loader!../../../snippets/csharp/Hello.cs';
+import JsSnippet from '!!raw-loader!../../../snippets/js/src/hello.ts';
 
 # Hello, rust-nostr!
 
@@ -16,28 +21,38 @@ The first step is to generate random keys needed for the client and construct th
 <LanguageTabs>
     <TabItem value="rust">
         <AnchoredCode anchor="client" language="rust">
-            {RustHello}
+            {RustSnippet}
         </AnchoredCode>
     </TabItem>
 
     <TabItem value="python">
-
+        <AnchoredCode anchor="client" language="python">
+            {PythonSnippet}
+        </AnchoredCode>
     </TabItem>
 
     <TabItem value="kotlin">
-
+        <AnchoredCode anchor="client" language="kotlin">
+            {KotlinSnippet}
+        </AnchoredCode>
     </TabItem>
 
     <TabItem value="swift">
-
+        <AnchoredCode anchor="client" language="swift">
+            {SwiftSnippet}
+        </AnchoredCode>
     </TabItem>
 
     <TabItem value="csharp">
-
+        <AnchoredCode anchor="client" language="csharp">
+            {CsharpSnippet}
+        </AnchoredCode>
     </TabItem>
 
     <TabItem value="js">
-
+        <AnchoredCode anchor="client" language="js">
+            {JsSnippet}
+        </AnchoredCode>
     </TabItem>
 </LanguageTabs>
 
@@ -48,28 +63,38 @@ Next, add some relays to your client and connect to them.
 <LanguageTabs>
     <TabItem value="rust">
         <AnchoredCode anchor="connect" language="rust">
-            {RustHello}
+            {RustSnippet}
         </AnchoredCode>
     </TabItem>
 
     <TabItem value="python">
-
+        <AnchoredCode anchor="connect" language="python">
+            {PythonSnippet}
+        </AnchoredCode>
     </TabItem>
 
     <TabItem value="kotlin">
-
+        <AnchoredCode anchor="connect" language="kotlin">
+            {KotlinSnippet}
+        </AnchoredCode>
     </TabItem>
 
     <TabItem value="swift">
-
+        <AnchoredCode anchor="connect" language="swift">
+            {SwiftSnippet}
+        </AnchoredCode>
     </TabItem>
 
     <TabItem value="csharp">
-
+        <AnchoredCode anchor="connect" language="csharp">
+            {CsharpSnippet}
+        </AnchoredCode>
     </TabItem>
 
     <TabItem value="js">
-
+        <AnchoredCode anchor="connect" language="js">
+            {JsSnippet}
+        </AnchoredCode>
     </TabItem>
 </LanguageTabs>
 
@@ -81,28 +106,38 @@ build a text note with the [`EventBuilder`](../3-event/builder.md) and publish i
 <LanguageTabs>
     <TabItem value="rust">
         <AnchoredCode anchor="publish" language="rust">
-            {RustHello}
+            {RustSnippet}
         </AnchoredCode>
     </TabItem>
 
     <TabItem value="python">
-
+        <AnchoredCode anchor="publish" language="python">
+            {PythonSnippet}
+        </AnchoredCode>
     </TabItem>
 
     <TabItem value="kotlin">
-
+        <AnchoredCode anchor="publish" language="kotlin">
+            {KotlinSnippet}
+        </AnchoredCode>
     </TabItem>
 
     <TabItem value="swift">
-
+        <AnchoredCode anchor="publish" language="swift">
+            {SwiftSnippet}
+        </AnchoredCode>
     </TabItem>
 
     <TabItem value="csharp">
-
+        <AnchoredCode anchor="publish" language="csharp">
+            {CsharpSnippet}
+        </AnchoredCode>
     </TabItem>
 
     <TabItem value="js">
-
+        <AnchoredCode anchor="publish" language="js">
+            {JsSnippet}
+        </AnchoredCode>
     </TabItem>
 </LanguageTabs>
 
@@ -113,28 +148,38 @@ Published the event, you can inspect the output to ensure everything worked corr
 <LanguageTabs>
     <TabItem value="rust">
         <AnchoredCode anchor="output" language="rust">
-            {RustHello}
+            {RustSnippet}
         </AnchoredCode>
     </TabItem>
 
     <TabItem value="python">
-
+        <AnchoredCode anchor="output" language="python">
+            {PythonSnippet}
+        </AnchoredCode>
     </TabItem>
 
     <TabItem value="kotlin">
-
+        <AnchoredCode anchor="output" language="kotlin">
+            {KotlinSnippet}
+        </AnchoredCode>
     </TabItem>
 
     <TabItem value="swift">
-
+        <AnchoredCode anchor="output" language="swift">
+            {SwiftSnippet}
+        </AnchoredCode>
     </TabItem>
 
     <TabItem value="csharp">
-
+        <AnchoredCode anchor="output" language="csharp">
+            {CsharpSnippet}
+        </AnchoredCode>
     </TabItem>
 
     <TabItem value="js">
-
+        <AnchoredCode anchor="output" language="js">
+            {JsSnippet}
+        </AnchoredCode>
     </TabItem>
 </LanguageTabs>
 
@@ -145,27 +190,37 @@ Here’s the full example that includes all the steps from generating keys to in
 <LanguageTabs>
     <TabItem value="rust">
         <AnchoredCode anchor="full" language="rust">
-            {RustHello}
+            {RustSnippet}
         </AnchoredCode>
     </TabItem>
 
     <TabItem value="python">
-
+        <AnchoredCode anchor="full" language="python">
+            {PythonSnippet}
+        </AnchoredCode>
     </TabItem>
 
     <TabItem value="kotlin">
-
+        <AnchoredCode anchor="full" language="kotlin">
+            {KotlinSnippet}
+        </AnchoredCode>
     </TabItem>
 
     <TabItem value="swift">
-
+        <AnchoredCode anchor="full" language="swift">
+            {SwiftSnippet}
+        </AnchoredCode>
     </TabItem>
 
     <TabItem value="csharp">
-
+        <AnchoredCode anchor="full" language="csharp">
+            {CsharpSnippet}
+        </AnchoredCode>
     </TabItem>
 
     <TabItem value="js">
-
+        <AnchoredCode anchor="full" language="js">
+            {JsSnippet}
+        </AnchoredCode>
     </TabItem>
 </LanguageTabs>

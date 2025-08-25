@@ -23,29 +23,6 @@ function HomepageHeader() {
                         </p>
                     </div>
 
-                    <div className={styles.heroLinks}>
-                        <Link
-                            href="https://github.com/rust-nostr"
-                            className={styles.heroLink}
-                        >
-                            Project Homepage
-                        </Link>
-                        <span className={styles.separator}>|</span>
-                        <Link
-                            href="https://github.com/rust-nostr/nostr"
-                            className={styles.heroLink}
-                        >
-                            Repository
-                        </Link>
-                        <span className={styles.separator}>|</span>
-                        <Link
-                            to="/donate"
-                            className={styles.heroLink}
-                        >
-                            Become a supporter
-                        </Link>
-                    </div>
-
                     <div className={styles.buttons}>
                         <Link
                             className="button button--primary button--lg"
@@ -54,8 +31,8 @@ function HomepageHeader() {
                         </Link>
                         <Link
                             className="button button--secondary button--lg"
-                            href="https://github.com/rust-nostr/nostr">
-                            View on GitHub
+                            href="https://github.com/rust-nostr">
+                            Repositories
                         </Link>
                     </div>
                 </div>

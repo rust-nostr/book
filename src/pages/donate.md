@@ -35,7 +35,7 @@ You can setup an automatically recurring donation here:
 ## Become a Patron
 
 Are you an organization, company, or individual who believes in our vision and wants to make an impact on our efforts? 
-[Become a Patron](patrons.md) by giving a significant financial contribution.
+[Become a Patron](patrons) by giving a significant financial contribution.
 
 ## Verify donation details
 

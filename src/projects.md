@@ -4,10 +4,11 @@ The `rust-nostr` project is split up into several repositories.
 
 ### Libraries
 
-| Project      | Description                                                                   | Repository                                 | Lead Maintainer  |
-|--------------|-------------------------------------------------------------------------------|--------------------------------------------|------------------|
-| `nostr`      | Rust implementation of the nostr protocol, high-level libraries, NWC and more | <https://github.com/rust-nostr/nostr>      | [Yuki Kishimoto] |
-| `negentropy` | Rust implementation of the negentropy protocol                                | <https://github.com/rust-nostr/negentropy> | [Yuki Kishimoto] |
+| Project          | Description                                                                   | Repository                                     | Lead Maintainer  |
+|------------------|-------------------------------------------------------------------------------|------------------------------------------------|------------------|
+| `nostr`          | Rust implementation of the nostr protocol, high-level libraries, NWC and more | <https://github.com/rust-nostr/nostr>          | [Yuki Kishimoto] |
+| `negentropy`     | Rust implementation of the negentropy protocol                                | <https://github.com/rust-nostr/negentropy>     | [Yuki Kishimoto] |
+| `android-signer` | A library to interact with Android Signers (NIP-55)                           | <https://github.com/rust-nostr/android-signer> | [Yuki Kishimoto] |
 
 ### Bindings
 

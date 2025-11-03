@@ -25,13 +25,6 @@ here you can find some swap services to convert them directly into bitcoin:
 
 Disclaimer: `rust-nostr` is not affiliated in any way with these services!
 
-### Recurring donations
-
-Consider becoming a sustaining supporter of the `rust-nostr` project by giving a recurring monthly donation.
-
-You can setup an automatically recurring donation here:
-- <https://subscribe.rust-nostr.org> (experimental)
-
 ### Become a Patron
 
 Are you an organization, company, or individual who believes in our vision and wants to make an impact on our efforts? 

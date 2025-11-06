@@ -3,7 +3,7 @@ use nostr_relay_builder::prelude::*;
 
 pub async fn run() -> Result<()> {
     let relay = MockRelay::run().await?;
-    let url = relay.url();
+    let url = relay.url().await;
 
     // ANCHOR: nip17
     // Sender

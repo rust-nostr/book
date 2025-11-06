@@ -43,7 +43,7 @@ def client_message():
     message = ClientMessage.from_json('["REQ","ABC123",{"#p":["421a4dd67be773903f805bcb7975b4d3377893e0e09d7563b8972ee41031f551"]}]')
     print(f"     - ENUM: {message.as_enum()}")
     f = Filter().pubkey(keys.public_key())
-    message = ClientMessage.from_enum(cast(ClientMessageEnum, ClientMessageEnum.REQ("ABC123", filter=f)))
+    message = ClientMessage.from_enum(cast(ClientMessageEnum, ClientMessageEnum.REQ("ABC123", filters=[f])))
     print(f"     - JSON: {message.as_json()}")
     # ANCHOR_END: parse-message
 

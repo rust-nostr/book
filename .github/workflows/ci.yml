@@ -28,6 +28,9 @@ jobs:
       - name: Setup just
         uses: extractions/setup-just@v3
 
+      - name: Rust Cache
+        uses: Swatinem/rust-cache@v2.7.8
+
       - name: Check
         run: just build
 
@@ -42,6 +45,9 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
+      - name: Rust Cache
+        uses: Swatinem/rust-cache@v2.7.8
 
       - name: Check
         working-directory: snippets/rust

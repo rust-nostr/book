@@ -19,6 +19,9 @@ internal static class Program
         // Event Building
         await EventBuilding.Build();
         
+        // NIP09
+        Nip09.Run();
+        
         // NIP44
         Nip44.Run();
 

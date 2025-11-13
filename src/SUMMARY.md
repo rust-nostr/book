@@ -37,6 +37,7 @@
     - [NIP-05: Mapping nostr keys to DNS-based internet identifiers](sdk/nips/05.md)
     - [NIP-06: Key derivation from seed phrase](sdk/nips/06.md)
     - [NIP-07: Browser Extension Signer](sdk/nips/07.md)
+    - [NIP-09: Event Deletion Request](sdk/nips/09.md)
     - [NIP-17: Private Direct Messages](sdk/nips/17.md)
     - [NIP-19: bech32-encoded entities](sdk/nips/19.md)
     - [NIP-21: nostr URI scheme](sdk/nips/21.md)

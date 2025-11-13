@@ -1,4 +1,4 @@
-## Client Message
+# Client Message
 
 One of the biggest strengths of the Nostr network is the almost limitless possibilities for interoperable user-facing applications. 
 In protocol terminology these applications are often referred to as Clients. 
@@ -7,7 +7,7 @@ Clients use WebSockets as a means to connect to relays and pass relevant data ba
 In accordance with the protocol base specification ([NIP-01](https://github.com/nostr-protocol/nips/blob/master/01.md#from-client-to-relay-sending-events-and-creating-subscriptions)) there are 3 main types of messages which clients construct and pass to relays as JSON arrays. 
 This section is concerned with the construction of these message objects using the [Client Message Module](https://docs.rs/nostr/latest/nostr/message/client/index.html).
 
-### JSON de/serialization
+## JSON de/serialization
 
 <custom-tabs category="lang">
 
@@ -105,7 +105,7 @@ TODO
 </section>
 </custom-tabs>
 
-### Authorization and Count Messages
+## Authorization and Count Messages
 
 <custom-tabs category="lang">
 
@@ -181,7 +181,7 @@ TODO
 </section>
 </custom-tabs>
 
-### Negentropy Messages
+## Negentropy Messages
 
 <custom-tabs category="lang">
 

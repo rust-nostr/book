@@ -1,9 +1,9 @@
-## Event ID
+# Event ID
 
 An event ID is defined per the [Nostr NIP-01 documentation](https://github.com/nostr-protocol/nips/blob/master/01.md) as the `32-bytes lowercase hex-encoded sha256 of the serialised event data`. 
 It's fundamentally a unique identifier for an event generated from the hash of the content of a Nostr event object (excluding the signature).
 
-### Creation, Formatting and Parsing
+## Creation, Formatting and Parsing
 
 <custom-tabs category="lang">
 
@@ -108,7 +108,7 @@ TODO
 </section>
 </custom-tabs>
 
-### Access and Verify
+## Access and Verify
 
 <custom-tabs category="lang">
 

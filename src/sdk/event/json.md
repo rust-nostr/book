@@ -1,6 +1,6 @@
-## Event JSON
+# Event JSON
 
-### Deserialization
+## Deserialization
 
 <custom-tabs category="lang">
 
@@ -68,7 +68,7 @@
 </section>
 </custom-tabs>
 
-### Serialization
+## Serialization
 
 <custom-tabs category="lang">
 
@@ -136,7 +136,7 @@
 </section>
 </custom-tabs>
 
-### Full example
+## Full example
 
 <custom-tabs category="lang">
 

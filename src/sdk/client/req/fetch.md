@@ -1,8 +1,8 @@
-## Fetching events
+# Fetching events
 
 Request the events and wait until all relays return the result.
 
-### Initialize the client
+## Initialize the client
 
 For fetching events is usually<sup>1</sup> not required a signer, so we can create a `Client` without signer.
 Then, add the relays and connect.
@@ -74,7 +74,7 @@ Then, add the relays and connect.
 
 <small>1. In some cases is required the signer to preform the NIP-42 authentication (i.e., to access to private/paid relays).</small>
 
-### Fetch
+## Fetch
 
 After building the client and connecting the relays, we can create a [`Filter`](../../messages/filters.md) and perform our first fetch.
 
@@ -143,7 +143,7 @@ After building the client and connecting the relays, we can create a [`Filter`](
 </section>
 </custom-tabs>
 
-### Fetch from specific relays
+## Fetch from specific relays
 
 You may want to fetch the events from specific relays:
 
@@ -216,7 +216,7 @@ You may want to fetch the events from specific relays:
 The specified relays must be already added and connected!
 ```
 
-### Full example
+## Full example
 
 <custom-tabs category="lang">
 <div slot="title">Rust</div>

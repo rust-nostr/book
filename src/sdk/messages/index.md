@@ -1,4 +1,4 @@
-## Messages
+# Messages
 
 Underpinning the Nostr Protocol is a relatively simplistic messaging system by which clients (read: applications) communicate with relays (read: databases) to retrieve and store data in a JSON format. 
 This communication process is documented in more detail in [NIP-01 - Communication between clients and relays](https://github.com/nostr-protocol/nips/blob/master/01.md#communication-between-clients-and-relays) but at a very high level is broken down into three main components:

@@ -1,4 +1,4 @@
-## Installing the library
+# Installing the library
 
 <custom-tabs category="lang">
 
@@ -52,7 +52,7 @@ Import the library in your code:
 from nostr_sdk import *
 ```
 
-### Requirements and supported platforms
+## Requirements and supported platforms
 
 Requires Python 3.9 or above.
 
@@ -71,9 +71,9 @@ Are you interested in other platforms? Open an issue [here](https://github.com/r
 
 <small>* PyPI currently doesn't allow uploading riscv64 wheels</small>
 
-### Known issues
+## Known issues
 
-#### No running event loop
+### No running event loop
 
 If you receive `no running event loop` error at runtime, add the following line to your code:
 
@@ -105,11 +105,11 @@ Alternatively, you can manually add the dependency in your `package.json` file:
 }
 ```
 
-### WASM
+## WASM
 
 This library to work **require** to load the WASM code.
 
-#### Load in **async** context
+### Load in **async** context
 
 ```typescript,ignore
 import { loadWasmAsync } from "@rust-nostr/nostr-sdk";
@@ -124,7 +124,7 @@ async function main() {
 main();
 ```
 
-#### Load in **sync** context
+### Load in **sync** context
 
 ```typescript,ignore
 import { loadWasmSync } from "@rust-nostr/nostr-sdk";
@@ -146,7 +146,7 @@ main();
 
 Add the following library to your Gradle dependencies:
 
-### Android
+## Android
 
 ```kotlin
 repositories {
@@ -158,7 +158,7 @@ dependencies {
 }
 ```
 
-### JVM
+## JVM
 
 ```kotlin
 repositories {
@@ -170,7 +170,7 @@ dependencies {
 }
 ```
 
-### KMP
+## KMP
 
 ```kotlin
 repositories {
@@ -182,7 +182,7 @@ dependencies {
 }
 ```
 
-### Import the library
+## Import the library
 
 Import the library in your code:
 
@@ -190,7 +190,7 @@ Import the library in your code:
 import rust.nostr.sdk.*
 ```
 
-### Supported platforms
+## Supported platforms
 
 The following OS and architectures are supported:
 
@@ -206,9 +206,9 @@ The following OS and architectures are supported:
 
 Are you interested in other platforms? Open an issue [here](https://github.com/rust-nostr/nostr-sdk-ffi).
 
-### Known issues
+## Known issues
 
-#### JNA dependency
+### JNA dependency
 
 Depending on the JVM version you use, you might not have the JNA dependency on your classpath. The exception thrown will be
 
@@ -218,7 +218,7 @@ class file for com.sun.jna.Pointer not found
 
 The solution is to add JNA as a dependency like so:
 
-##### Android 
+#### Android 
 
 ```kotlin
 dependencies {
@@ -226,7 +226,7 @@ dependencies {
 }
 ```
 
-##### JVM
+#### JVM
 
 ```kotlin
 dependencies {
@@ -239,7 +239,7 @@ dependencies {
 <div slot="title">Swift</div>
 <section>
 
-### Xcode
+## Xcode
 
 Via `File > Add Packages...`, add
 
@@ -249,7 +249,7 @@ https://github.com/rust-nostr/nostr-sdk-swift.git
 
 as a package dependency in Xcode.
 
-### Swift Package
+## Swift Package
 
 Add the following to the dependency array in your `Package.swift`:
 
@@ -257,7 +257,7 @@ Add the following to the dependency array in your `Package.swift`:
 .package(url: "https://github.com/rust-nostr/nostr-sdk-swift.git", from: "0.44.0"),
 ```
 
-### Supported platforms
+## Supported platforms
 
 The following OS and architectures are supported:
 
@@ -278,7 +278,7 @@ Are you interested in other platforms? Open an issue [here](https://github.com/r
 <div slot="title">C#</div>
 <section>
 
-### Import the library
+## Import the library
 
 The `Nostr.Sdk` package is available on [nuget](https://www.nuget.org/packages/Nostr.Sdk):
 
@@ -286,7 +286,7 @@ The `Nostr.Sdk` package is available on [nuget](https://www.nuget.org/packages/N
 dotnet add package Nostr.Sdk --version 0.44.0
 ```
 
-### Requirements and supported platforms
+## Requirements and supported platforms
 
 Requires .NET 6.0 or above.
 

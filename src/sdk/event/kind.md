@@ -1,4 +1,4 @@
-## Kind
+# Kind
 
 As a core component of nostr objects, kinds are used to signal to clients how to parse the data contained within an event. 
 A `kind` is represented by an integer between `0` and `65535` the most well known of which is the Kind `1`, 
@@ -6,7 +6,7 @@ or `text note` which contains plaintext data to be displayed.
 Other commonly used kinds include kind `0` (user metadata) and Kind `3` (following/contact lists). 
 For more details and to see the full range of proposed/adopted Kinds please refer to the [Nostr NIPs documentation](https://github.com/nostr-protocol/nips/tree/master?tab=readme-ov-file#event-Kinds).
 
-### Kind by Integer and Enum
+## Kind by Integer and Enum
 
 <custom-tabs category="lang">
 
@@ -81,7 +81,7 @@ TODO
 </section>
 </custom-tabs>
 
-### Events and Kinds
+## Events and Kinds
 
 <custom-tabs category="lang">
 
@@ -147,7 +147,7 @@ TODO
 </section>
 </custom-tabs>
 
-### Logical Tests
+## Logical Tests
 
 <custom-tabs category="lang">
 

@@ -1,8 +1,8 @@
-## Projects
+# Projects
 
 The `rust-nostr` project is split up into several repositories.
 
-### Libraries
+## Libraries
 
 | Project          | Description                                                                   | Repository                                     | Lead Maintainer  |
 |------------------|-------------------------------------------------------------------------------|------------------------------------------------|------------------|
@@ -10,7 +10,7 @@ The `rust-nostr` project is split up into several repositories.
 | `negentropy`     | Rust implementation of the negentropy protocol                                | <https://github.com/rust-nostr/negentropy>     | [Yuki Kishimoto] |
 | `android-signer` | A library to interact with Android Signers (NIP-55)                           | <https://github.com/rust-nostr/android-signer> | [Yuki Kishimoto] |
 
-### Bindings
+## Bindings
 
 | Project                  | Description                                | Repository                                             | Lead Maintainer              |
 |--------------------------|--------------------------------------------|--------------------------------------------------------|------------------------------|
@@ -20,13 +20,13 @@ The `rust-nostr` project is split up into several repositories.
 | `nostr-sdk-swift`        | Nostr SDK - Swift Package                  | <https://github.com/rust-nostr/nostr-sdk-swift>        | (depends on nostr-sdk-ffi)   |
 | `nostr-sdk-react-native` | Nostr SDK - React Native Package           | <https://github.com/rust-nostr/nostr-sdk-react-native> | (depends on nostr-sdk-ffi)   |
 
-### Documentation
+## Documentation
 
 | Project | Description                                                            | Repository                           | Lead Maintainer |
 |---------|------------------------------------------------------------------------|--------------------------------------|-----------------|
 | `book`  | Book with documentation and examples for all the `rust-nostr` projects | <https://github.com/rust-nostr/book> |                 |
 
-### Binaries
+## Binaries
 
 | Project         | Description                                               | Repository                                    | Lead Maintainer              |
 |-----------------|-----------------------------------------------------------|-----------------------------------------------|------------------------------|

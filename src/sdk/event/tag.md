@@ -1,4 +1,4 @@
-## Tag
+# Tag
 
 Tags are one of the main element of Nostr event objects and allow for diverse functionality including referencing public keys `p`, relays `r` or even other events `e`. 
 The format tags take is an array of strings where the first position in the array is reserved for the tag name and the subsequent strings are the values.
@@ -7,7 +7,7 @@ The [Tag](https://docs.rs/nostr/latest/nostr/event/tag/struct.Tag.html) struct a
 
 Please refer to the [Standardized Tags](https://github.com/nostr-protocol/nips/tree/master) section of the Nostr Protocol NIP repository for an exhaustive list of tags and their related uses within event kinds.
 
-### Creating Tags
+## Creating Tags
 
 <custom-tabs category="lang">
 
@@ -70,7 +70,7 @@ TODO
 </section>
 </custom-tabs>
 
-### Serializing and Logical Tests
+## Serializing and Logical Tests
 
 <custom-tabs category="lang">
 

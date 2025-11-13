@@ -1,4 +1,4 @@
-## Getting Started
+# Getting Started
 
 Let’s start your `rust-nostr` journey! In this chapter, we’ll discuss:
 

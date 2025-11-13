@@ -1,6 +1,6 @@
-## Keys
+# Keys
 
-### Generate new random keys
+## Generate new random keys
 
 To generate a new key pair use the `generate()` method:
 
@@ -70,7 +70,7 @@ To generate a new key pair use the `generate()` method:
 </section>
 </custom-tabs>
 
-### Keys parsing
+## Keys parsing
 
 <custom-tabs category="lang">
 

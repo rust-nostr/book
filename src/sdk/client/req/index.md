@@ -1,4 +1,4 @@
-## Requesting events
+# Requesting events
 
 In this chapter we'll cover the four ways to request events to relays:
 - [fetching](fetch.md): request the events and wait until all relays return the result.

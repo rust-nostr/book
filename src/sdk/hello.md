@@ -1,8 +1,8 @@
-## Hello, rust-nostr!
+# Hello, rust-nostr!
 
 Now that you’ve installed the SDK, it’s time to write your first nostr program.
 
-### Generate random keys and construct the client
+## Generate random keys and construct the client
 
 The first step is to generate random keys needed for the client and construct the client instance.
 
@@ -71,7 +71,7 @@ The first step is to generate random keys needed for the client and construct th
 </section>
 </custom-tabs>
 
-### Add some relays and connect
+## Add some relays and connect
 
 Next, add some relays to your client and connect to them.
 
@@ -141,7 +141,7 @@ Next, add some relays to your client and connect to them.
 </custom-tabs>
 
 
-### Publish a text note
+## Publish a text note
 
 Now that the client is constructed and the relays are connected, 
 build a text note with the [EventBuilder](event/builder.md) and publish it to relays.
@@ -211,7 +211,7 @@ build a text note with the [EventBuilder](event/builder.md) and publish it to re
 </section>
 </custom-tabs>
 
-### Inspect the output
+## Inspect the output
 
 Published the event, you can inspect the output to ensure everything worked correctly.
 
@@ -280,7 +280,7 @@ Published the event, you can inspect the output to ensure everything worked corr
 </section>
 </custom-tabs>
 
-### Full example
+## Full example
 
 Here’s the full example that includes all the steps from generating keys to inspecting the output.
 

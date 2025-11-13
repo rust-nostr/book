@@ -1,1 +1,1 @@
-## Enabling logging
+# Enabling logging

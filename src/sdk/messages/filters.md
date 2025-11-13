@@ -1,10 +1,10 @@
-## Filters
+# Filters
 
 Though a web-socket subscription model relays can surface events that meet specific criteria on request. 
 The means by which these requests maybe submitted are JSON filters objects which can be constructed using a range of attributes, 
 including `ids`, `authors`, `kinds` and single letter `tags`, along with timestamps, `since`/`until` and record `limit` for the query.
 
-### Create Filters
+## Create Filters
 
 <custom-tabs category="lang">
 
@@ -147,7 +147,7 @@ TODO
 </section>
 </custom-tabs>
 
-### Modify Filters
+## Modify Filters
 
 <custom-tabs category="lang">
 
@@ -207,7 +207,7 @@ TODO
 </section>
 </custom-tabs>
 
-### Other Filter Operations
+## Other Filter Operations
 
 <custom-tabs category="lang">
 

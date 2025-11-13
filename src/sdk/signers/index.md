@@ -1,4 +1,4 @@
-## Signers
+# Signers
 
 - [Keys](keys.md)
 - [Browser Extension](../nips/07.md)

@@ -1,9 +1,9 @@
-## Event Building
+# Event Building
 
 A convenient way to create events is by using the `EventBuilder`. 
 It allows to build `standard` and/or `custom` events.
 
-### Construct the event
+## Construct the event
 
 Standard events can be composed by using the dedicated constructors.
 In the below example we are going to build a text note:
@@ -211,7 +211,7 @@ If you need to create a non-standard event, you can use the default `EventBuilde
 </section>
 </custom-tabs>
 
-### Build and sign the event
+## Build and sign the event
 
 After the `EventBuilder` construction, you can finally build and sign the event:
 
@@ -281,7 +281,7 @@ After the `EventBuilder` construction, you can finally build and sign the event:
 </section>
 </custom-tabs>
 
-### Full example
+## Full example
 
 <custom-tabs category="lang">
 

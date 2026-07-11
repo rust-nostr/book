@@ -1,7 +1,6 @@
 # Summary
 
 [Introduction](README.md)
-[Projects](projects.md)
 
 # SDK
 
@@ -74,9 +73,3 @@
   - [Installation]()
 
 - [Shell]()
----
-
-[Donate](donate.md)
-[Patrons](patrons.md)
-[Maintainers](maintainers.md)
-[License](license.md)

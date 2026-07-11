@@ -6,7 +6,7 @@
 
 * [Just](https://github.com/casey/just): install with `cargo install just`
 
-Serve the site with:
+Serve the book with:
 
 ```bash
 just serve

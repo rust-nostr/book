@@ -16,7 +16,7 @@ Alternatively, you can add it directly from `git` source:
 
 ```toml
 [dependencies]
-nostr-sdk = { git = "https://github.com/rust-nostr/nostr", tag = "v0.44.0" }
+nostr-sdk = { git = "https://github.com/nostrdevkit/nostr", tag = "v0.44.0" }
 ```
 
 ```admonish info
@@ -67,7 +67,7 @@ The following OS and architectures are supported:
 | macOS         | ✅      | ✅       | ❌     | ❌    | ❌       |
 | Windows       | ✅      | ✅       | ❌     | ✅    | ❌       |
 
-Are you interested in other platforms? Open an issue [here](https://github.com/rust-nostr/nostr-sdk-ffi).
+Are you interested in other platforms? Open an issue [here](https://github.com/nostrdevkit/nostr-sdk-ffi).
 
 <small>* PyPI currently doesn't allow uploading riscv64 wheels</small>
 
@@ -204,7 +204,7 @@ The following OS and architectures are supported:
 | macOS         | ✅      | ✅       | ❌     | ❌    | ❌       | `nostr-sdk-jvm` and `nostr-sdk-kmp` |
 | Windows       | ✅      | ✅       | ❌     | ✅    | ❌       | `nostr-sdk-jvm` and `nostr-sdk-kmp` |
 
-Are you interested in other platforms? Open an issue [here](https://github.com/rust-nostr/nostr-sdk-ffi).
+Are you interested in other platforms? Open an issue [here](https://github.com/nostrdevkit/nostr-sdk-ffi).
 
 ## Known issues
 
@@ -244,7 +244,7 @@ dependencies {
 Via `File > Add Packages...`, add
 
 ```
-https://github.com/rust-nostr/nostr-sdk-swift.git
+https://github.com/nostrdevkit/nostr-sdk-swift.git
 ```
 
 as a package dependency in Xcode.
@@ -254,7 +254,7 @@ as a package dependency in Xcode.
 Add the following to the dependency array in your `Package.swift`:
 
 ``` swift
-.package(url: "https://github.com/rust-nostr/nostr-sdk-swift.git", from: "0.44.2"),
+.package(url: "https://github.com/nostrdevkit/nostr-sdk-swift.git", from: "0.44.2"),
 ```
 
 ## Supported platforms
@@ -271,7 +271,7 @@ The following OS and architectures are supported:
 | watchOS          | ❌      | ❌       | ❌     | ❌    |
 | tvOS             | ❌      | ❌       | ❌     | ❌    |
 
-Are you interested in other platforms? Open an issue [here](https://github.com/rust-nostr/nostr-sdk-ffi).
+Are you interested in other platforms? Open an issue [here](https://github.com/nostrdevkit/nostr-sdk-ffi).
 
 </section>
 
@@ -302,7 +302,7 @@ The following OS and architectures are supported:
 | macOS         | ✅      | ✅       | ❌     | ❌    | ❌       |
 | Windows       | ✅      | ✅       | ❌     | ✅    | ❌       |
 
-Are you interested in other platforms? Open an issue [here](https://github.com/rust-nostr/nostr-sdk-ffi).
+Are you interested in other platforms? Open an issue [here](https://github.com/nostrdevkit/nostr-sdk-ffi).
 
 </section>
 
@@ -314,7 +314,7 @@ Add the following code to your package:
 ```yaml
 nostr_sdk:
     git:
-        url: https://github.com/rust-nostr/nostr-sdk-flutter.git
+        url: https://github.com/nostrdevkit/nostr-sdk-flutter.git
         ref: 22f12c9ba52daebe8ba98f65f02ffe63fab886a8
 ```
 

@@ -1,7 +1,7 @@
 [book]
-title = "Rust Nostr Book"
+title = "Nostr Dev Kit Book"
 description = ""
-authors = ["Yuki Kishimoto <yukikishimoto@protonmail.com>", "Rust Nostr Developers"]
+authors = ["Yuki Kishimoto <yukikishimoto@protonmail.com>", "Nostr Dev Kit Developers"]
 language = "en"
 multilingual = false
 src = "src"
@@ -15,7 +15,7 @@ default-theme = "ayu"
 preferred-dark-theme = "ayu"
 additional-js = ["./tabs.js"]
 additional-css = ["./mdbook-admonish.css"]
-git-repository-url = "https://github.com/rust-nostr"
+git-repository-url = "https://github.com/nostrdevkit"
 
 # This line change the path of the main book build from `book/` to `book/html`.
 # If this line will be removed, the deploy book CI must be updated.

@@ -1,6 +1,6 @@
-# rust-nostr book
+# Nostr Dev Kit book
 
-This book contains the technical documentation for the `rust-nostr` libraries.
+This book contains the technical documentation for the Nostr Dev Kit libraries.
 
 Start with [Getting Started](sdk/getting-started.md) for installation and a first example.
 

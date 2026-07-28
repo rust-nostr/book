@@ -4,17 +4,13 @@ default:
 
 # install book depends
 init:
-	@mdbook --version || \
-	cargo binstall -y --force mdbook --version 0.4.40 || \
-	cargo install --force mdbook --version 0.4.40
-	@mdbook-linkcheck --version || \
-	cargo binstall -y --force mdbook-linkcheck --version 0.7.7 || \
-	cargo install --force mdbook-linkcheck --version 0.7.7
-	@mdbook-admonish --version || \
-	cargo binstall -y --force mdbook-admonish --version 1.15.0 || \
-	cargo install --force mdbook-admonish --version 1.15.0
-	@mdbook-snippets --version || \
-	cargo install --force --path ./snippets-processor
+	@test "$(mdbook --version 2>/dev/null)" = "mdbook v0.5.4" || \
+	cargo binstall -y --force mdbook --version 0.5.4 || \
+	cargo install --locked --force mdbook --version 0.5.4
+	@test "$(mdbook-linkcheck2 --version 2>/dev/null)" = "mdbook-linkcheck2 0.12.2" || \
+	cargo install --locked --force mdbook-linkcheck2 --version 0.12.2
+	@test "$(mdbook-snippets --version 2>/dev/null)" = "mdbook-snippets 0.2.0" || \
+	cargo install --locked --force --path ./snippets-processor
 
 # build book
 build: init
@@ -34,6 +30,5 @@ check: build test
 # clean depends
 clean:
 	cargo uninstall mdbook
-	cargo uninstall mdbook-linkcheck
-	cargo uninstall mdbook-admonish
+	cargo uninstall mdbook-linkcheck2
 	cargo uninstall mdbook-snippets

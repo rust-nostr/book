@@ -2,11 +2,10 @@
 
 use std::io;
 
-use clap::{crate_version, Arg, ArgMatches, Command};
-use mdbook::book::Book;
-use mdbook::errors::{Error, Result};
-use mdbook::preprocess::{CmdPreprocessor, Preprocessor, PreprocessorContext};
-use mdbook::BookItem;
+use clap::{Arg, ArgMatches, Command};
+use mdbook_preprocessor::book::{Book, BookItem};
+use mdbook_preprocessor::errors::{Error, Result};
+use mdbook_preprocessor::{parse_input, Preprocessor, PreprocessorContext, MDBOOK_VERSION};
 
 fn main() -> Result<()> {
     // set up app
@@ -26,7 +25,7 @@ fn main() -> Result<()> {
 /// Parse CLI options.
 pub fn make_app() -> Command {
     Command::new("mdbook-snippets")
-        .version(crate_version!())
+        .version(env!("CARGO_PKG_VERSION"))
         .about("A preprocessor that removes leading whitespace from code snippets.")
         .subcommand(
             Command::new("supports")
@@ -40,7 +39,7 @@ fn handle_supports(pre: &dyn Preprocessor, sub_args: &ArgMatches) -> Result<()> 
     let renderer = sub_args
         .get_one::<String>("renderer")
         .expect("Required argument");
-    let supported = pre.supports_renderer(renderer);
+    let supported = pre.supports_renderer(renderer)?;
     if supported {
         Ok(())
     } else {
@@ -52,7 +51,7 @@ fn handle_supports(pre: &dyn Preprocessor, sub_args: &ArgMatches) -> Result<()> 
 
 /// Preprocess `book` using `pre` and print it out.
 fn handle_preprocessing(pre: &dyn Preprocessor) -> Result<()> {
-    let (ctx, book) = CmdPreprocessor::parse_input(io::stdin())?;
+    let (ctx, book) = parse_input(io::stdin())?;
     check_mdbook_version(&ctx.mdbook_version);
 
     let processed_book = pre.run(&ctx, book)?;
@@ -62,12 +61,12 @@ fn handle_preprocessing(pre: &dyn Preprocessor) -> Result<()> {
 
 /// Produce a warning on mdBook version mismatch.
 fn check_mdbook_version(version: &str) {
-    if version != mdbook::MDBOOK_VERSION {
+    if version != MDBOOK_VERSION {
         eprintln!(
             "This mdbook-snippets was built against mdbook v{}, \
             but we are being called from mdbook v{version}. \
             If you have any issue, this might be a reason.",
-            mdbook::MDBOOK_VERSION,
+            MDBOOK_VERSION,
         )
     }
 }

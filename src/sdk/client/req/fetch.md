@@ -212,9 +212,8 @@ You may want to fetch the events from specific relays:
 </section>
 </custom-tabs>
 
-```admonish warning
-The specified relays must be already added and connected!
-```
+> [!WARNING]
+> The specified relays must be already added and connected!
 
 ## Full example
 

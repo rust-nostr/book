@@ -19,9 +19,8 @@ Alternatively, you can add it directly from `git` source:
 nostr-sdk = { git = "https://github.com/nostrdevkit/nostr", tag = "v0.44.0" }
 ```
 
-```admonish info
-To use a specific commit, use `rev` instead of `tag`.
-```
+> [!NOTE]
+> To use a specific commit, use `rev` instead of `tag`.
 
 Import the library in your code:
 

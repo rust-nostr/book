@@ -1,4 +1,4 @@
-test: rust python js kotlin flutter swift csharp
+test: rust python js kotlin swift csharp
 
 rust:
 	cd rust && cargo build
@@ -14,9 +14,6 @@ kotlin:
 
 csharp:
     cd csharp && dotnet build
-
-flutter:
-	bash flutter/check.sh
 
 [macos]
 swift:

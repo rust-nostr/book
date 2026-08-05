@@ -60,15 +60,6 @@ The first step is to generate random keys needed for the client and construct th
 ```
 
 </section>
-
-<div slot="title">Flutter</div>
-<section>
-
-```dart,ignore
-{{#include ../../snippets/flutter/lib/hello.dart:client}}
-```
-
-</section>
 </custom-tabs>
 
 ## Add some relays and connect
@@ -126,15 +117,6 @@ Next, add some relays to your client and connect to them.
 
 ```cs,ignore
 {{#include ../../snippets/csharp/Hello.cs:connect}}
-```
-
-</section>
-
-<div slot="title">Flutter</div>
-<section>
-
-```dart,ignore
-{{#include ../../snippets/flutter/lib/hello.dart:connect}}
 ```
 
 </section>
@@ -200,15 +182,6 @@ build a text note with the [EventBuilder](event/builder.md) and publish it to re
 ```
 
 </section>
-
-<div slot="title">Flutter</div>
-<section>
-
-```dart,ignore
-{{#include ../../snippets/flutter/lib/hello.dart:publish}}
-```
-
-</section>
 </custom-tabs>
 
 ## Inspect the output
@@ -269,15 +242,6 @@ Published the event, you can inspect the output to ensure everything worked corr
 ```
 
 </section>
-
-<div slot="title">Flutter</div>
-<section>
-
-```dart,ignore
-{{#include ../../snippets/flutter/lib/hello.dart:output}}
-```
-
-</section>
 </custom-tabs>
 
 ## Full example
@@ -335,15 +299,6 @@ Here’s the full example that includes all the steps from generating keys to in
 
 ```cs,ignore
 {{#include ../../snippets/csharp/Hello.cs:full}}
-```
-
-</section>
-
-<div slot="title">Flutter</div>
-<section>
-
-```dart,ignore
-{{#include ../../snippets/flutter/lib/hello.dart:full}}
 ```
 
 </section>

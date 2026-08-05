@@ -120,21 +120,9 @@ jobs:
         working-directory: snippets/csharp
         run: dotnet build
 
-  check-flutter:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - uses: subosito/flutter-action@v2
-
-      - name: Check
-        working-directory: snippets/flutter
-        run: bash check.sh
-
   deploy:
     name: Deploy book
-    needs: [check-book, check-rust, check-python, check-js, check-kotlin, check-swift, check-csharp, check-flutter]
+    needs: [check-book, check-rust, check-python, check-js, check-kotlin, check-swift, check-csharp]
     if: github.ref == 'refs/heads/master'
     environment:
       name: github-pages

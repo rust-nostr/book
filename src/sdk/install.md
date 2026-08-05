@@ -304,18 +304,4 @@ The following OS and architectures are supported:
 Are you interested in other platforms? Open an issue [here](https://github.com/nostrdevkit/nostr-sdk-ffi).
 
 </section>
-
-<div slot="title">Flutter</div>
-<section>
-
-Add the following code to your package:
-
-```yaml
-nostr_sdk:
-    git:
-        url: https://github.com/nostrdevkit/nostr-sdk-flutter.git
-        ref: 22f12c9ba52daebe8ba98f65f02ffe63fab886a8
-```
-
-</section>
 </custom-tabs>

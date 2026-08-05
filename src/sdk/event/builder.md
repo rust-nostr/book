@@ -63,15 +63,6 @@ In the below example we are going to build a text note:
 ```
 
 </section>
-
-<div slot="title">Flutter</div>
-<section>
-
-```dart,ignore
-{{#include ../../../snippets/flutter/lib/event/builder.dart:standard}}
-```
-
-</section>
 </custom-tabs>
 
 You can also customize the builder, for example, by specifying a POW difficulty, 
@@ -132,15 +123,6 @@ setting a fixed timestamp or adding more tags:
 ```
 
 </section>
-
-<div slot="title">Flutter</div>
-<section>
-
-```dart,ignore
-{{#include ../../../snippets/flutter/lib/event/builder.dart:std-custom}}
-```
-
-</section>
 </custom-tabs>
 
 If you need to create a non-standard event, you can use the default `EventBuilder` constructor:
@@ -197,15 +179,6 @@ If you need to create a non-standard event, you can use the default `EventBuilde
 
 ```cs,ignore
 {{#include ../../../snippets/csharp/EventBuilding.cs:custom}}
-```
-
-</section>
-
-<div slot="title">Flutter</div>
-<section>
-
-```dart,ignore
-{{#include ../../../snippets/flutter/lib/event/builder.dart:custom}}
 ```
 
 </section>
@@ -270,15 +243,6 @@ After the `EventBuilder` construction, you can finally build and sign the event:
 ```
 
 </section>
-
-<div slot="title">Flutter</div>
-<section>
-
-```dart,ignore
-{{#include ../../../snippets/flutter/lib/event/builder.dart:sign}}
-```
-
-</section>
 </custom-tabs>
 
 ## Full example
@@ -335,15 +299,6 @@ After the `EventBuilder` construction, you can finally build and sign the event:
 
 ```cs,ignore
 {{#include ../../../snippets/csharp/EventBuilding.cs:full}}
-```
-
-</section>
-
-<div slot="title">Flutter</div>
-<section>
-
-```dart,ignore
-{{#include ../../../snippets/flutter/lib/event/builder.dart:full}}
 ```
 
 </section>

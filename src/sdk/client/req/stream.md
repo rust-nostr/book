@@ -60,15 +60,6 @@ After building the client and connecting the relays, we can create a [`Filter`](
 ```
 
 </section>
-
-<div slot="title">Flutter</div>
-<section>
-
-```dart,ignore
-{{#include ../../../../snippets/flutter/lib/req/stream.dart:init-stream}}
-```
-
-</section>
 </custom-tabs>
 
 ## Consume the stream
@@ -129,15 +120,6 @@ Now that we have the stream, we can consume it and handle the received [`Event`]
 ```
 
 </section>
-
-<div slot="title">Flutter</div>
-<section>
-
-```dart,ignore
-{{#include ../../../../snippets/flutter/lib/req/stream.dart:consume-stream}}
-```
-
-</section>
 </custom-tabs>
 
 ## Full example
@@ -193,15 +175,6 @@ Now that we have the stream, we can consume it and handle the received [`Event`]
 
 ```cs,ignore
 {{#include ../../../../snippets/csharp/Req/Stream.cs:full}}
-```
-
-</section>
-
-<div slot="title">Flutter</div>
-<section>
-
-```dart,ignore
-{{#include ../../../../snippets/flutter/lib/req/stream.dart:full}}
 ```
 
 </section>

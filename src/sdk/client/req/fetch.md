@@ -61,15 +61,6 @@ Then, add the relays and connect.
 ```
 
 </section>
-
-<div slot="title">Flutter</div>
-<section>
-
-```dart,ignore
-{{#include ../../../../snippets/flutter/lib/req/fetch.dart:client}}
-```
-
-</section>
 </custom-tabs>
 
 <small>1. In some cases is required the signer to preform the NIP-42 authentication (i.e., to access to private/paid relays).</small>
@@ -129,15 +120,6 @@ After building the client and connecting the relays, we can create a [`Filter`](
 
 ```cs,ignore
 {{#include ../../../../snippets/csharp/Req/Fetch.cs:fetch}}
-```
-
-</section>
-
-<div slot="title">Flutter</div>
-<section>
-
-```dart,ignore
-{{#include ../../../../snippets/flutter/lib/req/fetch.dart:fetch}}
 ```
 
 </section>
@@ -201,15 +183,6 @@ You may want to fetch the events from specific relays:
 ```
 
 </section>
-
-<div slot="title">Flutter</div>
-<section>
-
-```dart,ignore
-{{#include ../../../../snippets/flutter/lib/req/fetch.dart:fetch-from}}
-```
-
-</section>
 </custom-tabs>
 
 > [!WARNING]
@@ -268,15 +241,6 @@ You may want to fetch the events from specific relays:
 
 ```cs,ignore
 {{#include ../../../../snippets/csharp/Req/Fetch.cs:full}}
-```
-
-</section>
-
-<div slot="title">Flutter</div>
-<section>
-
-```dart,ignore
-{{#include ../../../../snippets/flutter/lib/req/fetch.dart:full}}
 ```
 
 </section>

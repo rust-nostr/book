@@ -57,15 +57,6 @@
 ```
 
 </section>
-
-<div slot="title">Flutter</div>
-<section>
-
-```dart,ignore
-{{#include ../../../snippets/flutter/lib/event/json.dart:deserialize}}
-```
-
-</section>
 </custom-tabs>
 
 ## Serialization
@@ -125,15 +116,6 @@
 ```
 
 </section>
-
-<div slot="title">Flutter</div>
-<section>
-
-```dart,ignore
-{{#include ../../../snippets/flutter/lib/event/json.dart:serialize}}
-```
-
-</section>
 </custom-tabs>
 
 ## Full example
@@ -190,15 +172,6 @@
 
 ```cs,ignore
 {{#include ../../../snippets/csharp/EventJson.cs:full}}
-```
-
-</section>
-
-<div slot="title">Flutter</div>
-<section>
-
-```dart,ignore
-{{#include ../../../snippets/flutter/lib/event/json.dart:full}}
 ```
 
 </section>

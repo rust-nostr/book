@@ -59,15 +59,6 @@ To generate a new key pair use the `generate()` method:
 ```
 
 </section>
-
-<div slot="title">Flutter</div>
-<section>
-
-```dart,ignore
-{{#include ../../../snippets/flutter/lib/keys.dart:generate}}
-```
-
-</section>
 </custom-tabs>
 
 ## Keys parsing
@@ -125,14 +116,5 @@ To generate a new key pair use the `generate()` method:
 ```cs,ignore
 {{#include ../../../snippets/csharp/KeysGenRestore.cs:restore}}
 ```
-</section>
-
-<div slot="title">Flutter</div>
-<section>
-
-```dart,ignore
-{{#include ../../../snippets/flutter/lib/keys.dart:restore}}
-```
-
 </section>
 </custom-tabs>

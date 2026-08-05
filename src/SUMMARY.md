@@ -18,30 +18,20 @@
 - [Filters](sdk/messages/filters.md)
 
 - [Client](sdk/client/index.md)
-    - [Options](sdk/client/options/index.md)
-        - [Proxy](sdk/client/options/proxy.md)
-        - [Embedded Tor](sdk/client/options/tor.md)
     - [Requesting events](sdk/client/req/index.md)
         - [Fetch](sdk/client/req/fetch.md) 
         - [Stream](sdk/client/req/stream.md)
         - [Sync](sdk/client/req/sync.md)
         - [Subscribe](sdk/client/req/subscribe.md)
 
-- [Middleware]()
-    - [Admission]()
-    - [Authentication]()
-
 - [NIPs](sdk/nips/index.md)
     - [NIP-01: Basic protocol flow description](sdk/nips/01.md)
     - [NIP-05: Mapping nostr keys to DNS-based internet identifiers](sdk/nips/05.md)
     - [NIP-06: Key derivation from seed phrase](sdk/nips/06.md)
-    - [NIP-07: Browser Extension Signer](sdk/nips/07.md)
-    - [NIP-09: Event Deletion Request](sdk/nips/09.md)
     - [NIP-17: Private Direct Messages](sdk/nips/17.md)
     - [NIP-19: bech32-encoded entities](sdk/nips/19.md)
     - [NIP-21: nostr URI scheme](sdk/nips/21.md)
     - [NIP-44: Encrypted Payloads](sdk/nips/44.md)
-    - [NIP-46: Nostr Remote Signing](sdk/nips/46.md)
     - [NIP-47: Nostr Wallet Connect](sdk/nips/47.md)
     - [NIP-49: Private Key Encryption](sdk/nips/49.md)
     - [NIP-59: Gift Wrap](sdk/nips/59.md)
@@ -50,26 +40,6 @@
 # Advanced
 
 - [Enabling logging](sdk/logging.md)
-- [Event]()
-  - [ID](sdk/event/id.md)
-  - [Kind](sdk/event/kind.md)
-  - [Tag](sdk/event/tag.md)
 - [Messages](sdk/messages/index.md)
     - [Client Message](sdk/messages/client.md)
     - [Relay Message](sdk/messages/relay.md)
-
----
-
-# Keyring
-
-- [Getting Started]()
-  - [Installation]()
-
----
-
-# CLI
-
-- [Getting Started]()
-  - [Installation]()
-
-- [Shell]()

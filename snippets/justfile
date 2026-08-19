@@ -1,7 +1,7 @@
 test: rust python js kotlin swift csharp
 
 rust:
-	cd rust && cargo build
+	cd rust && cargo check --all-targets
 
 python:
 	bash python/check.sh
@@ -10,10 +10,10 @@ js:
 	bash js/check.sh
 
 kotlin:
-	cd kotlin && ./gradlew build
+	cd kotlin && ./gradlew build --no-daemon
 
 csharp:
-    cd csharp && dotnet build
+	cd csharp && dotnet build
 
 [macos]
 swift:
@@ -21,8 +21,8 @@ swift:
 
 [linux]
 swift:
-    @echo "This command is not supported on Linux platforms (require macOS)."
+	@echo "Swift snippets require macOS; CI compiles them on macos-latest."
 
 [windows]
 swift:
-    @echo "This command is not supported on Windows platforms (require macOS)."
+	@echo "Swift snippets require macOS; CI compiles them on macos-latest."

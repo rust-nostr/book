@@ -11,7 +11,7 @@ repositories {
 
 dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3")
-    implementation("org.rust-nostr:nostr-sdk-jvm:0.44.2")
+    implementation("org.nostrdevkit:nostr-sdk-jvm:0.45.1")
 }
 
 tasks.test {

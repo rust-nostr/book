@@ -3,42 +3,64 @@
 <div slot="title">Rust</div>
 <section>
 
-TODO
+<!-- Rust example -->
 
 </section>
 
 <div slot="title">Python</div>
 <section>
 
-TODO
+<!-- Python example -->
 
 </section>
 
 <div slot="title">JavaScript</div>
 <section>
 
-TODO
+<custom-tabs category="javascript-runtime">
+
+<div slot="title">Node.js</div>
+<section>
+
+<!-- Node.js example -->
+
+</section>
+
+<div slot="title">Web</div>
+<section>
+
+<!-- Web example -->
+
+</section>
+
+<div slot="title">React Native</div>
+<section>
+
+<!-- React Native example -->
+
+</section>
+</custom-tabs>
 
 </section>
 
 <div slot="title">Kotlin</div>
 <section>
 
-TODO
+<!-- Kotlin example -->
 
 </section>
 
 <div slot="title">Swift</div>
 <section>
 
-TODO
+<!-- Swift example -->
 
 </section>
 
 <div slot="title">C#</div>
 <section>
 
-TODO
+<!-- C# example -->
 
 </section>
 </custom-tabs>

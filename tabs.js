@@ -1,14 +1,12 @@
 (function () {
     'use strict';
 
+    const changeEvent = 'mdbook-category-changed';
+
     customElements.define('custom-tabs', class extends HTMLElement {
         constructor() {
             super();
-            this._selected = null;
-
-            // Create shadow DOM for the component.
-            let shadowRoot = this.attachShadow({ mode: 'open' });
-            shadowRoot.innerHTML = `
+            this.attachShadow({ mode: 'open' }).innerHTML = `
                 <style>
                     :host {
                         display: flex;
@@ -26,7 +24,7 @@
                         position: relative;
                     }
 
-                    #tabs ::slotted(*) {
+                    #tabs ::slotted([slot="title"]) {
                         color: var(--mdc-theme-text-primary);
                         padding: 12px 16px;
                         text-align: center;
@@ -41,150 +39,157 @@
                         font-weight: bold;
                     }
 
-                    #tabs ::slotted([tabindex="0"]), #tabs ::slotted(*:hover) {
+                    #tabs ::slotted([aria-selected="true"]),
+                    #tabs ::slotted([slot="title"]:hover) {
                         color: var(--mdc-theme-primary);
                         background-color: var(--mdc-theme-background);
                         border-bottom-color: var(--mdc-theme-primary);
                     }
 
-                    #tabsLine {
-                        border-top: 1px solid var(--mdc-theme-divider);
-                        margin-top: -1px;
-                        position: absolute;
-                        width: 100%;
-                        z-index: 1;
+                    #tabs ::slotted([slot="title"]:focus-visible) {
+                        outline: 2px solid currentColor;
+                        outline-offset: -2px;
                     }
 
                     #panels {
-                        padding: 0px;
+                        padding: 0;
                     }
 
-                    #panels ::slotted([aria-hidden="true"]) {
+                    #panels ::slotted([hidden]) {
                         display: none;
                     }
 
-                    pre {
-                        margin: 0;
-                    }
-
-                    /* Responsive styles */
                     @media (max-width: 600px) {
-                        #tabs {
-                            flex-wrap: nowrap;
-                        }
-
-                        #tabs ::slotted(*) {
+                        #tabs ::slotted([slot="title"]) {
                             flex-grow: 1;
                             flex-shrink: 0;
                         }
                     }
                 </style>
-                <div id="tabs">
-                    <slot id="tabsSlot" name="title"></slot>
+                <div id="tabs" role="tablist" aria-label="Code language">
+                    <slot id="tabs-slot" name="title"></slot>
                 </div>
                 <div id="panels">
-                    <slot id="panelsSlot"></slot>
+                    <slot id="panels-slot"></slot>
                 </div>
             `;
         }
 
-        get selected() {
-            return this._selected;
-        }
-
-        set selected(idx) {
-            this._selected = idx;
-            this._selectTab(idx);
-            this.setAttribute('selected', idx);
-        }
-
         connectedCallback() {
-            this.setAttribute('role', 'tablist');
-            const tabsSlot = this.shadowRoot.querySelector('#tabsSlot');
-            const panelsSlot = this.shadowRoot.querySelector('#panelsSlot');
-            this.tabs = tabsSlot.assignedNodes({ flatten: true });
-            this.panels = panelsSlot.assignedNodes({ flatten: true }).filter(el => el.nodeType === Node.ELEMENT_NODE);
-            // Save refer to we can remove listeners later.
-            this._boundOnTitleClick = this._onTitleClick.bind(this);
-            this._boundOnSiblingCategoryChanged = this._onSiblingCategoryChanged.bind(this);
-            tabsSlot.addEventListener('click', this._boundOnTitleClick);
-            document.addEventListener('mdbook-category-changed', this._boundOnSiblingCategoryChanged);
-            this.selected = this._findFirstSelectedTab() || this._findStoredSelectedTab() || 0;
+            const tabsSlot = this.shadowRoot.querySelector('#tabs-slot');
+            const panelsSlot = this.shadowRoot.querySelector('#panels-slot');
+            this.tabs = tabsSlot.assignedElements({ flatten: true });
+            this.panels = panelsSlot.assignedElements({ flatten: true });
+
+            if (this.tabs.length !== this.panels.length || this.tabs.length === 0) {
+                console.error('custom-tabs requires one panel for every title');
+                return;
+            }
+
+            this.tabs.forEach((tab, index) => {
+                const id = `tab-${this._instanceId()}-${index}`;
+                const panelId = `panel-${this._instanceId()}-${index}`;
+                tab.id = id;
+                tab.setAttribute('role', 'tab');
+                tab.setAttribute('aria-controls', panelId);
+                this.panels[index].id = panelId;
+                this.panels[index].setAttribute('role', 'tabpanel');
+                this.panels[index].setAttribute('aria-labelledby', id);
+            });
+
+            this._onClick = this._handleClick.bind(this);
+            this._onKeydown = this._handleKeydown.bind(this);
+            this._onCategoryChange = this._handleCategoryChange.bind(this);
+            tabsSlot.addEventListener('click', this._onClick);
+            tabsSlot.addEventListener('keydown', this._onKeydown);
+            document.addEventListener(changeEvent, this._onCategoryChange);
+
+            const explicit = this.tabs.findIndex((tab) => tab.hasAttribute('selected'));
+            const stored = this._storedLabel();
+            const storedIndex = this.tabs.findIndex((tab) => this._label(tab) === stored);
+            this._select(explicit >= 0 ? explicit : storedIndex >= 0 ? storedIndex : 0, false);
         }
 
         disconnectedCallback() {
-            const tabsSlot = this.shadowRoot.querySelector('#tabsSlot');
-            tabsSlot.removeEventListener('click', this._boundOnTitleClick);
-            document.removeEventListener('mdbook-category-changed', this._boundOnSiblingCategoryChanged);
+            const tabsSlot = this.shadowRoot.querySelector('#tabs-slot');
+            tabsSlot.removeEventListener('click', this._onClick);
+            tabsSlot.removeEventListener('keydown', this._onKeydown);
+            document.removeEventListener(changeEvent, this._onCategoryChange);
         }
 
-        _onTitleClick(e) {
-            if (e.target.slot === 'title') {
-                this.selected = this.tabs.indexOf(e.target);
-                e.target.focus();
+        _instanceId() {
+            if (!this._id) {
+                this._id = Math.random().toString(36).slice(2);
+            }
+            return this._id;
+        }
+
+        _label(tab) {
+            return tab.textContent.trim();
+        }
+
+        _storedLabel() {
+            const category = this.getAttribute('category');
+            if (!category) return null;
+            try {
+                return localStorage.getItem(`mdbook-tabs-${category}`);
+            } catch (_) {
+                return null;
             }
         }
 
-        _findFirstSelectedTab() {
-            let selectedIdx;
-            for (let [i, tab] of this.tabs.entries()) {
-                tab.setAttribute('role', 'tab');
-                if (tab.hasAttribute('selected')) {
-                    selectedIdx = i;
-                }
+        _handleClick(event) {
+            const index = this.tabs.indexOf(event.target);
+            if (index >= 0) {
+                this._select(index, true);
+                this.tabs[index].focus();
             }
-            return selectedIdx;
         }
 
-        _findStoredSelectedTab() {
-            let selectedIdx;
-            if (this.getAttribute("category")) {
-                let selectedText;
+        _handleKeydown(event) {
+            const current = this.tabs.indexOf(event.target);
+            if (current < 0) return;
+
+            let next = current;
+            if (event.key === 'ArrowRight') next = (current + 1) % this.tabs.length;
+            else if (event.key === 'ArrowLeft') next = (current - 1 + this.tabs.length) % this.tabs.length;
+            else if (event.key === 'Home') next = 0;
+            else if (event.key === 'End') next = this.tabs.length - 1;
+            else return;
+
+            event.preventDefault();
+            this._select(next, true);
+            this.tabs[next].focus();
+        }
+
+        _handleCategoryChange(event) {
+            if (event.detail.category !== this.getAttribute('category')) return;
+            const index = this.tabs.findIndex((tab) => this._label(tab) === event.detail.label);
+            if (index >= 0) this._select(index, false);
+        }
+
+        _select(index, propagate) {
+            this.tabs.forEach((tab, tabIndex) => {
+                const selected = tabIndex === index;
+                tab.tabIndex = selected ? 0 : -1;
+                tab.setAttribute('aria-selected', String(selected));
+                this.panels[tabIndex].hidden = !selected;
+            });
+
+            const category = this.getAttribute('category');
+            const label = this._label(this.tabs[index]);
+            this.setAttribute('selected', label);
+
+            if (category) {
                 try {
-                    selectedText = localStorage.getItem('mdbook-tabs-' + this.getAttribute("category"));
-                } catch (e) {
-                    console.error('Error accessing localStorage', e);
-                }
-                if (selectedText) {
-                    for (let [i, tab] of this.tabs.entries()) {
-                        if (tab.textContent === selectedText) {
-                            selectedIdx = i;
-                            break;
-                        }
-                    }
+                    localStorage.setItem(`mdbook-tabs-${category}`, label);
+                } catch (_) {
+                    // Storage can be unavailable in privacy-restricted contexts.
                 }
             }
-            return selectedIdx;
-        }
 
-        _selectTab(idx = null, propagate = true) {
-            let category = this.getAttribute("category");
-            for (let i = 0, tab; tab = this.tabs[i]; ++i) {
-                let select = i === idx;
-                tab.setAttribute('tabindex', select ? 0 : -1);
-                tab.setAttribute('aria-selected', select);
-                this.panels[i].setAttribute('aria-hidden', !select);
-                if (select && category && tab.textContent) {
-                    try {
-                        localStorage.setItem('mdbook-tabs-' + category, tab.textContent);
-                    } catch (e) {
-                        console.error('Error accessing localStorage', e);
-                    }
-                }
-            }
             if (propagate) {
-                document.dispatchEvent(new CustomEvent(
-                    'mdbook-category-changed',
-                    { detail: { category: category, idx: idx }}
-                ));
-            }
-        }
-
-        _onSiblingCategoryChanged(e) {
-            let category = this.getAttribute("category")
-            if (category === e.detail.category) {
-                this._selectTab(e.detail.idx, false);
-                this.setAttribute('selected', e.detail.idx);
+                document.dispatchEvent(new CustomEvent(changeEvent, { detail: { category, label } }));
             }
         }
     });

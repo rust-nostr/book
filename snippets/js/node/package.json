@@ -1,0 +1,14 @@
+{
+  "name": "nostr-book-node-snippets",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "check": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@nostrdevkit/nostr-sdk-node": "0.45.1"
+  },
+  "devDependencies": {
+    "typescript": "5.9.3"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "name": "nostr-book-react-native-snippets",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "check": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@nostrdevkit/nostr-sdk-react-native": "0.45.1"
+  },
+  "devDependencies": {
+    "typescript": "5.9.3"
+  }
+}

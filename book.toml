@@ -1,24 +1,29 @@
 [book]
-title = "Nostr Dev Kit Book"
-description = ""
+title = "Nostr Dev Kit"
+description = "A practical introduction to the Nostr Dev Kit libraries and native bindings."
 authors = ["Yuki Kishimoto <yukikishimoto@protonmail.com>", "Nostr Dev Kit Developers"]
 language = "en"
 src = "src"
 
 [build]
 build-dir = "output"
+create-missing = false
 
 [output.html]
-theme="theme"
-default-theme = "ayu"
+default-theme = "auto"
 preferred-dark-theme = "ayu"
-additional-js = ["./tabs.js"]
-git-repository-url = "https://github.com/nostrdevkit"
-
-# This line change the path of the main book build from `book/` to `book/html`.
-# If this line will be removed, the deploy book CI must be updated.
-[output.linkcheck]
-command = "mdbook-linkcheck2"
+additional-js = ["tabs.js"]
+git-repository-url = "https://github.com/nostrdevkit/book"
+site-url = "/"
+cname = "doc.nostrdevkit.org"
+input-404 = "404.md"
+sidebar-header-nav = false
 
 [preprocessor.snippets]
 after = ["links"]
+
+[output.html.playground]
+runnable = false
+
+[output.linkcheck]
+command = "mdbook-linkcheck2"

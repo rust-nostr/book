@@ -1,3 +1,0 @@
-# Signers
-
-- [Keys](keys.md)

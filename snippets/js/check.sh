@@ -1,10 +1,10 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-set -exuo pipefail
+set -euo pipefail
 
-SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
-cd "${SCRIPT_DIR}"
-
-npm i
-npx tsc
+for runtime in node web react-native; do
+    npm install --legacy-peer-deps --prefix "${SCRIPT_DIR}/${runtime}"
+    npm run check --prefix "${SCRIPT_DIR}/${runtime}"
+done

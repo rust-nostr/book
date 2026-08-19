@@ -2,67 +2,62 @@ name: CI
 
 on:
   push:
-    branches: [ master ]
+    branches: [master]
   pull_request:
-    branches: [ master ]
+    branches: [master]
 
-# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
   contents: read
-  pages: write
-  id-token: write
-
-# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
-# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
-concurrency:
-  group: "pages"
-  cancel-in-progress: false
 
 jobs:
   check-book:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Setup just
         uses: extractions/setup-just@v3
 
-      - name: Rust Cache
-        uses: Swatinem/rust-cache@v2.7.8
+      - name: Cache Rust tools
+        uses: Swatinem/rust-cache@v2.9.1
 
-      - name: Check
+      - name: Build book and check links
         run: just build
 
-      - name: Upload built book
-        uses: actions/upload-artifact@v4
+      - name: Upload Pages artifact
+        if: github.event_name == 'push'
+        uses: actions/upload-pages-artifact@v4
         with:
-          name: built-book
-          path: ./output/html
+          path: output/html
 
   check-rust:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
-      - name: Rust Cache
-        uses: Swatinem/rust-cache@v2.7.8
+      - name: Cache Rust dependencies
+        uses: Swatinem/rust-cache@v2.9.1
+        with:
+          workspaces: snippets/rust
 
       - name: Check
         working-directory: snippets/rust
-        run: cargo build
+        run: cargo check --all-targets
 
   check-python:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Setup Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v6
         with:
-          python-version: "3.12"
+          python-version: '3.12'
+          cache: pip
+          cache-dependency-path: snippets/python/requirements.txt
 
       - name: Check
         working-directory: snippets/python
@@ -70,36 +65,49 @@ jobs:
 
   check-js:
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        runtime: [node, web, react-native]
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v7
+        with:
+          node-version: '22'
+
+      - name: Install dependencies
+        working-directory: snippets/js/${{ matrix.runtime }}
+        run: npm install --legacy-peer-deps
 
       - name: Check
-        working-directory: snippets/js
-        run: bash check.sh
+        working-directory: snippets/js/${{ matrix.runtime }}
+        run: npm run check
 
   check-kotlin:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
-      # Required for kotlin snippets
-      - name: Set up Java 17
-        uses: actions/setup-java@v2
+      - name: Setup Java 17
+        uses: actions/setup-java@v5
         with:
-          distribution: "temurin"
-          java-version: 17
+          distribution: temurin
+          java-version: '17'
+          cache: gradle
 
       - name: Check
         working-directory: snippets/kotlin
-        run: ./gradlew build
+        run: ./gradlew build --no-daemon
 
   check-swift:
     runs-on: macos-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Check
         working-directory: snippets/swift
@@ -109,10 +117,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
-      - name: Setup dotnet
-        uses: actions/setup-dotnet@v4
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v6
         with:
           dotnet-version: '10.0.x'
 
@@ -122,27 +130,26 @@ jobs:
 
   deploy:
     name: Deploy book
-    needs: [check-book, check-rust, check-python, check-js, check-kotlin, check-swift, check-csharp]
-    if: github.ref == 'refs/heads/master'
+    needs:
+      - check-book
+      - check-rust
+      - check-python
+      - check-js
+      - check-kotlin
+      - check-swift
+      - check-csharp
+    if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    concurrency:
+      group: pages
+      cancel-in-progress: false
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Download built book
-        uses: actions/download-artifact@v4
-        with:
-          name: built-book
-          path: ./output/html
-
-      - name: Upload pages artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: './output/html'
-
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4

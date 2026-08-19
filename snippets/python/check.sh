@@ -15,4 +15,4 @@ python -m venv "${PYTHON_ENV_PATH}" || virtualenv "${PYTHON_ENV_PATH}"
 pip install -r "${SCRIPT_DIR}/requirements.txt"
 
 # Check
-pyright "${SCRIPT_DIR}/src"
+pyright --project "${SCRIPT_DIR}"

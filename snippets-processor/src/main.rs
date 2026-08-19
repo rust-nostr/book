@@ -1,5 +1,3 @@
-// Copied from https://github.com/breez/breez-sdk-docs/tree/74f018a647820ce515a564083b9986157ee7f894/snippets-processor
-
 use std::io;
 
 use clap::{Arg, ArgMatches, Command};
@@ -8,119 +6,166 @@ use mdbook_preprocessor::errors::{Error, Result};
 use mdbook_preprocessor::{parse_input, Preprocessor, PreprocessorContext, MDBOOK_VERSION};
 
 fn main() -> Result<()> {
-    // set up app
-    let matches = make_app().get_matches();
-    let pre = SnippetsProcessor;
+    let matches = command().get_matches();
+    let preprocessor = SnippetsProcessor;
 
-    // determine what behaviour has been requested
-    if let Some(sub_args) = matches.subcommand_matches("supports") {
-        // handle cmdline supports
-        handle_supports(&pre, sub_args)
+    if let Some(arguments) = matches.subcommand_matches("supports") {
+        handle_supports(&preprocessor, arguments)
     } else {
-        // handle preprocessing
-        handle_preprocessing(&pre)
+        handle_preprocessing(&preprocessor)
     }
 }
 
-/// Parse CLI options.
-pub fn make_app() -> Command {
+fn command() -> Command {
     Command::new("mdbook-snippets")
         .version(env!("CARGO_PKG_VERSION"))
-        .about("A preprocessor that removes leading whitespace from code snippets.")
+        .about("Remove shared leading whitespace from fenced code blocks")
         .subcommand(
             Command::new("supports")
-                .arg(Arg::new("renderer").required(true))
-                .about("Check whether a renderer is supported by this preprocessor"),
+                .about("Check whether a renderer is supported")
+                .arg(Arg::new("renderer").required(true)),
         )
 }
 
-/// Tell mdBook if we support what it asks for.
-fn handle_supports(pre: &dyn Preprocessor, sub_args: &ArgMatches) -> Result<()> {
-    let renderer = sub_args
+fn handle_supports(preprocessor: &dyn Preprocessor, arguments: &ArgMatches) -> Result<()> {
+    let renderer = arguments
         .get_one::<String>("renderer")
-        .expect("Required argument");
-    let supported = pre.supports_renderer(renderer)?;
-    if supported {
+        .ok_or_else(|| Error::msg("missing renderer argument"))?;
+
+    if preprocessor.supports_renderer(renderer)? {
         Ok(())
     } else {
         Err(Error::msg(format!(
-            "The snippets preprocessor does not support the '{renderer}' renderer",
+            "the snippets preprocessor does not support the '{renderer}' renderer"
         )))
     }
 }
 
-/// Preprocess `book` using `pre` and print it out.
-fn handle_preprocessing(pre: &dyn Preprocessor) -> Result<()> {
-    let (ctx, book) = parse_input(io::stdin())?;
-    check_mdbook_version(&ctx.mdbook_version);
+fn handle_preprocessing(preprocessor: &dyn Preprocessor) -> Result<()> {
+    let (context, book) = parse_input(io::stdin())?;
+    warn_on_version_mismatch(&context.mdbook_version);
 
-    let processed_book = pre.run(&ctx, book)?;
+    let processed_book = preprocessor.run(&context, book)?;
     serde_json::to_writer(io::stdout(), &processed_book)?;
     Ok(())
 }
 
-/// Produce a warning on mdBook version mismatch.
-fn check_mdbook_version(version: &str) {
+fn warn_on_version_mismatch(version: &str) {
     if version != MDBOOK_VERSION {
         eprintln!(
-            "This mdbook-snippets was built against mdbook v{}, \
-            but we are being called from mdbook v{version}. \
-            If you have any issue, this might be a reason.",
-            MDBOOK_VERSION,
-        )
+            "mdbook-snippets was built for mdBook v{}, but mdBook v{version} invoked it",
+            MDBOOK_VERSION
+        );
     }
 }
 
 struct SnippetsProcessor;
+
 impl Preprocessor for SnippetsProcessor {
     fn name(&self) -> &str {
         "snippets"
     }
 
-    fn run(&self, _ctx: &PreprocessorContext, mut book: Book) -> Result<Book> {
+    fn run(&self, _context: &PreprocessorContext, mut book: Book) -> Result<Book> {
         book.for_each_mut(|item| {
             if let BookItem::Chapter(chapter) = item {
-                let mut resulting_lines: Vec<String> = vec![];
-                let mut in_block = false;
-                let mut block_lines: Vec<String> = vec![];
-                let mut min_indentation: usize = 0;
-                for line in chapter.content.lines() {
-                    if line.starts_with("```") {
-                        if in_block {
-                            // This is end of block
-                            // Replace previous lines
-                            for block_line in block_lines.iter().cloned() {
-                                let indent = std::cmp::min(min_indentation, block_line.len());
-                                resulting_lines.push(block_line[indent..].to_string())
-                            }
-                            in_block = false;
-                        } else {
-                            // Start of block
-                            in_block = true;
-                            block_lines = vec![];
-                            min_indentation = usize::MAX;
-                        }
-
-                        resulting_lines.push(line.to_string());
-                        continue;
-                    }
-
-                    if in_block {
-                        let line = line.replace('\t', "    ");
-                        block_lines.push(line.clone());
-                        let trimmed = line.trim_start_matches(' ');
-                        if !trimmed.is_empty() {
-                            min_indentation =
-                                std::cmp::min(min_indentation, line.len() - trimmed.len())
-                        }
-                    } else {
-                        resulting_lines.push(line.to_string());
-                    }
-                }
-
-                chapter.content = resulting_lines.join("\n");
+                chapter.content = dedent_code_blocks(&chapter.content);
             }
         });
         Ok(book)
+    }
+}
+
+fn dedent_code_blocks(content: &str) -> String {
+    let mut output = Vec::new();
+    let mut block = Vec::new();
+    let mut fence = None;
+
+    for line in content.lines() {
+        if let Some(marker) = fence_marker(line) {
+            if fence == Some(marker) {
+                append_dedented(&mut output, &mut block);
+                fence = None;
+                output.push(line.to_owned());
+                continue;
+            }
+
+            if fence.is_none() {
+                fence = Some(marker);
+                output.push(line.to_owned());
+                continue;
+            }
+        }
+
+        if fence.is_some() {
+            block.push(line.replace('\t', "    "));
+        } else {
+            output.push(line.to_owned());
+        }
+    }
+
+    append_dedented(&mut output, &mut block);
+
+    let mut result = output.join("\n");
+    if content.ends_with('\n') {
+        result.push('\n');
+    }
+    result
+}
+
+fn fence_marker(line: &str) -> Option<char> {
+    let line = line.trim_start();
+    if line.starts_with("```") {
+        Some('`')
+    } else if line.starts_with("~~~") {
+        Some('~')
+    } else {
+        None
+    }
+}
+
+fn append_dedented(output: &mut Vec<String>, block: &mut Vec<String>) {
+    let indentation = block
+        .iter()
+        .filter(|line| !line.trim().is_empty())
+        .map(|line| line.len() - line.trim_start_matches(' ').len())
+        .min()
+        .map_or(0, |indentation| indentation);
+
+    output.extend(block.drain(..).map(|line| {
+        let indentation = indentation.min(line.len());
+        line[indentation..].to_owned()
+    }));
+}
+
+#[cfg(test)]
+mod tests {
+    use super::dedent_code_blocks;
+
+    #[test]
+    fn removes_shared_indentation_inside_fences_only() {
+        let markdown = "  prose\n```rust\n    fn main() {\n        println!(\"hi\");\n    }\n```\n";
+
+        assert_eq!(
+            dedent_code_blocks(markdown),
+            "  prose\n```rust\nfn main() {\n    println!(\"hi\");\n}\n```\n"
+        );
+    }
+
+    #[test]
+    fn preserves_relative_indentation_and_blank_lines() {
+        let markdown = "~~~python\n\tasync def main():\n\n\t\tawait run()\n~~~";
+
+        assert_eq!(
+            dedent_code_blocks(markdown),
+            "~~~python\nasync def main():\n\n    await run()\n~~~"
+        );
+    }
+
+    #[test]
+    fn keeps_unclosed_blocks_in_the_output() {
+        let markdown = "```text\n    still visible";
+
+        assert_eq!(dedent_code_blocks(markdown), "```text\nstill visible");
     }
 }

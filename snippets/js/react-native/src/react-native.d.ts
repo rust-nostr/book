@@ -5,3 +5,8 @@ declare module "react-native" {
         getEnforcing<T>(name: string): T;
     };
 }
+
+declare const console: {
+    log(...data: unknown[]): void;
+    error(...data: unknown[]): void;
+};

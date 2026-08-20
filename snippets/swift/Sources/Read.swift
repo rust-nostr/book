@@ -20,7 +20,7 @@ func streamEvents() async throws {
 
     while let item = await stream.next() {
         if let event = item.event {
-            print("\(item.relayUrl): \(event.asJson())")
+            print("\(item.relayUrl): \(try event.asJson())")
         } else if let error = item.error {
             print("\(item.relayUrl): \(error)")
         }
@@ -45,7 +45,7 @@ func fetchEvents() async throws {
     )
 
     for event in events {
-        print(event.asJson())
+        print(try event.asJson())
     }
 
 }

@@ -20,6 +20,7 @@ This example creates a text note, verifies it, round-trips its protocol JSON, an
 
 ```rust
 {{#include ../snippets/rust/src/bin/protocol.rs:imports}}
+
 {{#include ../snippets/rust/src/bin/protocol.rs:event}}
 ```
 
@@ -30,6 +31,7 @@ This example creates a text note, verifies it, round-trips its protocol JSON, an
 
 ```python
 {{#include ../snippets/python/src/core.py:imports}}
+
 {{#include ../snippets/python/src/core.py:event}}
 ```
 
@@ -45,6 +47,7 @@ This example creates a text note, verifies it, round-trips its protocol JSON, an
 
 ```typescript
 {{#include ../snippets/js/node/src/core.ts:imports}}
+
 {{#include ../snippets/js/node/src/core.ts:event}}
 ```
 
@@ -55,6 +58,7 @@ This example creates a text note, verifies it, round-trips its protocol JSON, an
 
 ```typescript
 {{#include ../snippets/js/web/src/core.ts:imports}}
+
 {{#include ../snippets/js/web/src/core.ts:event}}
 ```
 
@@ -65,6 +69,7 @@ This example creates a text note, verifies it, round-trips its protocol JSON, an
 
 ```typescript
 {{#include ../snippets/js/react-native/src/core.ts:imports}}
+
 {{#include ../snippets/js/react-native/src/core.ts:event}}
 ```
 
@@ -78,6 +83,7 @@ This example creates a text note, verifies it, round-trips its protocol JSON, an
 
 ```kotlin
 {{#include ../snippets/kotlin/src/main/kotlin/Core.kt:imports}}
+
 {{#include ../snippets/kotlin/src/main/kotlin/Core.kt:event}}
 ```
 
@@ -88,6 +94,7 @@ This example creates a text note, verifies it, round-trips its protocol JSON, an
 
 ```swift
 {{#include ../snippets/swift/Sources/Core.swift:imports}}
+
 {{#include ../snippets/swift/Sources/Core.swift:event}}
 ```
 
@@ -98,6 +105,7 @@ This example creates a text note, verifies it, round-trips its protocol JSON, an
 
 ```csharp
 {{#include ../snippets/csharp/Core.cs:header}}
+
 {{#include ../snippets/csharp/Core.cs:event}}
 {{#include ../snippets/csharp/Core.cs:footer}}
 ```

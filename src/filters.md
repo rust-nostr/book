@@ -25,6 +25,7 @@ The example limits the author, kind, lower time boundary, and number of stored r
 
 ```rust
 {{#include ../snippets/rust/src/bin/protocol.rs:imports}}
+
 {{#include ../snippets/rust/src/bin/protocol.rs:filter}}
 ```
 
@@ -35,6 +36,7 @@ The example limits the author, kind, lower time boundary, and number of stored r
 
 ```python
 {{#include ../snippets/python/src/core.py:imports}}
+
 {{#include ../snippets/python/src/core.py:filter}}
 ```
 
@@ -50,6 +52,7 @@ The example limits the author, kind, lower time boundary, and number of stored r
 
 ```typescript
 {{#include ../snippets/js/node/src/core.ts:imports}}
+
 {{#include ../snippets/js/node/src/core.ts:filter}}
 ```
 
@@ -60,6 +63,7 @@ The example limits the author, kind, lower time boundary, and number of stored r
 
 ```typescript
 {{#include ../snippets/js/web/src/core.ts:imports}}
+
 {{#include ../snippets/js/web/src/core.ts:filter}}
 ```
 
@@ -70,6 +74,7 @@ The example limits the author, kind, lower time boundary, and number of stored r
 
 ```typescript
 {{#include ../snippets/js/react-native/src/core.ts:imports}}
+
 {{#include ../snippets/js/react-native/src/core.ts:filter}}
 ```
 
@@ -83,6 +88,7 @@ The example limits the author, kind, lower time boundary, and number of stored r
 
 ```kotlin
 {{#include ../snippets/kotlin/src/main/kotlin/Core.kt:imports}}
+
 {{#include ../snippets/kotlin/src/main/kotlin/Core.kt:filter}}
 ```
 
@@ -93,6 +99,7 @@ The example limits the author, kind, lower time boundary, and number of stored r
 
 ```swift
 {{#include ../snippets/swift/Sources/Core.swift:imports}}
+
 {{#include ../snippets/swift/Sources/Core.swift:filter}}
 ```
 
@@ -103,6 +110,7 @@ The example limits the author, kind, lower time boundary, and number of stored r
 
 ```csharp
 {{#include ../snippets/csharp/Core.cs:header}}
+
 {{#include ../snippets/csharp/Core.cs:filter}}
 {{#include ../snippets/csharp/Core.cs:footer}}
 ```

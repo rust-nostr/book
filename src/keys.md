@@ -22,6 +22,7 @@ The following code creates a temporary identity, encodes its public key as bech3
 
 ```rust
 {{#include ../snippets/rust/src/bin/protocol.rs:imports}}
+
 {{#include ../snippets/rust/src/bin/protocol.rs:keys}}
 ```
 
@@ -32,6 +33,7 @@ The following code creates a temporary identity, encodes its public key as bech3
 
 ```python
 {{#include ../snippets/python/src/core.py:imports}}
+
 {{#include ../snippets/python/src/core.py:keys}}
 ```
 
@@ -47,6 +49,7 @@ The following code creates a temporary identity, encodes its public key as bech3
 
 ```typescript
 {{#include ../snippets/js/node/src/core.ts:imports}}
+
 {{#include ../snippets/js/node/src/core.ts:keys}}
 ```
 
@@ -57,6 +60,7 @@ The following code creates a temporary identity, encodes its public key as bech3
 
 ```typescript
 {{#include ../snippets/js/web/src/core.ts:imports}}
+
 {{#include ../snippets/js/web/src/core.ts:keys}}
 ```
 
@@ -67,6 +71,7 @@ The following code creates a temporary identity, encodes its public key as bech3
 
 ```typescript
 {{#include ../snippets/js/react-native/src/core.ts:imports}}
+
 {{#include ../snippets/js/react-native/src/core.ts:keys}}
 ```
 
@@ -80,6 +85,7 @@ The following code creates a temporary identity, encodes its public key as bech3
 
 ```kotlin
 {{#include ../snippets/kotlin/src/main/kotlin/Core.kt:imports}}
+
 {{#include ../snippets/kotlin/src/main/kotlin/Core.kt:keys}}
 ```
 
@@ -90,6 +96,7 @@ The following code creates a temporary identity, encodes its public key as bech3
 
 ```swift
 {{#include ../snippets/swift/Sources/Core.swift:imports}}
+
 {{#include ../snippets/swift/Sources/Core.swift:keys}}
 ```
 
@@ -100,6 +107,7 @@ The following code creates a temporary identity, encodes its public key as bech3
 
 ```csharp
 {{#include ../snippets/csharp/Core.cs:header}}
+
 {{#include ../snippets/csharp/Core.cs:keys}}
 {{#include ../snippets/csharp/Core.cs:footer}}
 ```

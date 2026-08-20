@@ -21,6 +21,7 @@ The example downloads up to 20 matching text notes into the database.
 
 ```rust
 {{#include ../snippets/rust/src/bin/database.rs:imports}}
+
 {{#include ../snippets/rust/src/bin/database.rs:sync}}
 ```
 
@@ -31,6 +32,7 @@ The example downloads up to 20 matching text notes into the database.
 
 ```python
 {{#include ../snippets/python/src/database.py:imports}}
+
 {{#include ../snippets/python/src/database.py:sync}}
 ```
 
@@ -46,6 +48,7 @@ The example downloads up to 20 matching text notes into the database.
 
 ```typescript
 {{#include ../snippets/js/node/src/database.ts:imports}}
+
 {{#include ../snippets/js/node/src/database.ts:sync}}
 ```
 
@@ -65,6 +68,7 @@ durable local replica.
 
 ```typescript
 {{#include ../snippets/js/react-native/src/database.ts:imports}}
+
 {{#include ../snippets/js/react-native/src/database.ts:sync}}
 ```
 
@@ -78,6 +82,7 @@ durable local replica.
 
 ```kotlin
 {{#include ../snippets/kotlin/src/main/kotlin/Database.kt:imports}}
+
 {{#include ../snippets/kotlin/src/main/kotlin/Database.kt:sync}}
 ```
 
@@ -88,6 +93,7 @@ durable local replica.
 
 ```swift
 {{#include ../snippets/swift/Sources/Database.swift:imports}}
+
 {{#include ../snippets/swift/Sources/Database.swift:sync}}
 ```
 
@@ -100,6 +106,7 @@ Pass a URL-derived path inside Application Support or another application-owned 
 
 ```csharp
 {{#include ../snippets/csharp/Database.cs:header}}
+
 {{#include ../snippets/csharp/Database.cs:sync}}
 {{#include ../snippets/csharp/Database.cs:footer}}
 ```

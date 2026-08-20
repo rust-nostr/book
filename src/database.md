@@ -29,6 +29,7 @@ Add the backend alongside `nostr-sdk`:
 
 ```rust
 {{#include ../snippets/rust/src/bin/database.rs:imports}}
+
 {{#include ../snippets/rust/src/bin/database.rs:database}}
 ```
 
@@ -39,6 +40,7 @@ Add the backend alongside `nostr-sdk`:
 
 ```python
 {{#include ../snippets/python/src/database.py:imports}}
+
 {{#include ../snippets/python/src/database.py:database}}
 ```
 
@@ -54,6 +56,7 @@ Add the backend alongside `nostr-sdk`:
 
 ```typescript
 {{#include ../snippets/js/node/src/database.ts:imports}}
+
 {{#include ../snippets/js/node/src/database.ts:database}}
 ```
 
@@ -73,6 +76,7 @@ durable browser data.
 
 ```typescript
 {{#include ../snippets/js/react-native/src/database.ts:imports}}
+
 {{#include ../snippets/js/react-native/src/database.ts:database}}
 ```
 
@@ -88,6 +92,7 @@ Pass an absolute path inside the application's data directory as `databasePath`.
 
 ```kotlin
 {{#include ../snippets/kotlin/src/main/kotlin/Database.kt:imports}}
+
 {{#include ../snippets/kotlin/src/main/kotlin/Database.kt:database}}
 ```
 
@@ -100,6 +105,7 @@ On Android, use a path inside the application files directory rather than a rela
 
 ```swift
 {{#include ../snippets/swift/Sources/Database.swift:imports}}
+
 {{#include ../snippets/swift/Sources/Database.swift:database}}
 ```
 
@@ -112,6 +118,7 @@ Pass a URL-derived path inside Application Support or another application-owned 
 
 ```csharp
 {{#include ../snippets/csharp/Database.cs:header}}
+
 {{#include ../snippets/csharp/Database.cs:database}}
 {{#include ../snippets/csharp/Database.cs:footer}}
 ```

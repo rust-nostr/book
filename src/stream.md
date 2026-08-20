@@ -21,6 +21,7 @@ The following example reads up to 20 text notes per relay and applies a ten-seco
 
 ```rust
 {{#include ../snippets/rust/src/bin/read.rs:imports}}
+
 {{#include ../snippets/rust/src/bin/read.rs:stream}}
 ```
 
@@ -31,6 +32,7 @@ The following example reads up to 20 text notes per relay and applies a ten-seco
 
 ```python
 {{#include ../snippets/python/src/read.py:imports}}
+
 {{#include ../snippets/python/src/read.py:stream}}
 ```
 
@@ -46,6 +48,7 @@ The following example reads up to 20 text notes per relay and applies a ten-seco
 
 ```typescript
 {{#include ../snippets/js/node/src/read.ts:imports}}
+
 {{#include ../snippets/js/node/src/read.ts:stream}}
 ```
 
@@ -56,6 +59,7 @@ The following example reads up to 20 text notes per relay and applies a ten-seco
 
 ```typescript
 {{#include ../snippets/js/web/src/read.ts:imports}}
+
 {{#include ../snippets/js/web/src/read.ts:stream}}
 ```
 
@@ -66,6 +70,7 @@ The following example reads up to 20 text notes per relay and applies a ten-seco
 
 ```typescript
 {{#include ../snippets/js/react-native/src/read.ts:imports}}
+
 {{#include ../snippets/js/react-native/src/read.ts:stream}}
 ```
 
@@ -79,6 +84,7 @@ The following example reads up to 20 text notes per relay and applies a ten-seco
 
 ```kotlin
 {{#include ../snippets/kotlin/src/main/kotlin/Read.kt:imports}}
+
 {{#include ../snippets/kotlin/src/main/kotlin/Read.kt:stream}}
 ```
 
@@ -89,6 +95,7 @@ The following example reads up to 20 text notes per relay and applies a ten-seco
 
 ```swift
 {{#include ../snippets/swift/Sources/Read.swift:imports}}
+
 {{#include ../snippets/swift/Sources/Read.swift:stream}}
 ```
 
@@ -99,6 +106,7 @@ The following example reads up to 20 text notes per relay and applies a ten-seco
 
 ```csharp
 {{#include ../snippets/csharp/Read.cs:header}}
+
 {{#include ../snippets/csharp/Read.cs:stream}}
 {{#include ../snippets/csharp/Read.cs:footer}}
 ```

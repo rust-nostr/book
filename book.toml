@@ -10,9 +10,10 @@ build-dir = "output"
 create-missing = false
 
 [output.html]
-default-theme = "auto"
-preferred-dark-theme = "ayu"
+default-theme = "dark"
+preferred-dark-theme = "dark"
 additional-js = ["tabs.js"]
+additional-css = ["theme/css/nostrdevkit_theme.css"]
 git-repository-url = "https://github.com/nostrdevkit/book"
 site-url = "/"
 cname = "doc.nostrdevkit.org"
